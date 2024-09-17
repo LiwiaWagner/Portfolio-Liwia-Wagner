@@ -1,0 +1,117 @@
+nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    padding: 1.75rem 0rem;
+    z-index: 99
+}
+
+.nav__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 85%;
+    max-width: 1920px;
+    margin-inline: auto;
+    background-color: transparent;
+}
+
+.nav__left__container {
+    width: 100%;
+    text-decoration: none;
+    font-family: 'Manrope', sans-serif;
+    color: black;
+    font-size: 1.125rem;
+    line-height: 1.5rem;
+    font-weight: 500;
+    letter-spacing: 0.15rem;
+    overflow-x: hidden
+}
+
+.nav__right__container {
+    display: flex;
+    align-items: center;
+    font-family: 'Manrope', sans-serif;
+    font-size: 1rem;
+    color: red; /* #484848; */
+    font-style: normal;
+    font-weight: 100;
+    line-height: normal;
+    letter-spacing: 0.3rem;
+    gap: 2.5rem;
+    list-style: none
+}
+
+a {
+    text-decoration: none
+}
+
+.nav__link {
+    position: relative
+}
+
+.nav__link:hover {
+    font-weight: 500;
+    transition: 0.25s
+}
+
+.nav__link.active {
+    font-weight: 500;
+    background-color: red;
+}
+
+.nav__toggle__btn {
+    display: none
+}
+
+@media screen and (max-width: 900px) {
+    .nav__toggle__btn {
+        display: block;
+        background-color: transparent;
+        font-size: 1.6rem;
+    }
+
+    .nav__toggle__btn svg {
+        color: black
+    }
+
+    .nav__link {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        top: 0;
+    }
+
+    .nav__right__container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background-color: red;
+        padding: 1rem 4rem;
+        width: 100vw;
+        gap: 0
+    }
+
+    .nav__link.active {
+        display: none
+    }
+
+    .nav__link {
+        height: 4rem;
+        width: 100%;
+    }
+
+    .nav__link:hover {
+        font-weight: 100
+    }
+
+    .show__nav {
+        display: flex
+    }
+
+    .hide__nav {
+        display: none
+    }
+}

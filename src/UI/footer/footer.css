@@ -1,0 +1,28 @@
+.footer__container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 85%;
+    max-width: 1920px;
+    margin-inline: auto;
+    background-color: transparent
+}
+
+.footer__icons {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    gap: 1rem;
+}
+
+.footer__name {
+    display: flex;
+    align-items: center
+}
+
+.footer__name__text {
+    font-family: 'Manrope', sans-serif;
+    font-size: 1rem;
+    font-weight: 300;
+    padding-left: 0.2rem;
+}

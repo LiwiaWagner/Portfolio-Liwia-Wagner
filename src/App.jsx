@@ -1,5 +1,5 @@
 import React from 'react'
-import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import { BrowserRouter, Routes, Route} from 'react-router-dom'
 import Header from './UI/header/Header.jsx'
 import Navbar from './UI/navbar/Navbar.jsx'
 import Home from './pages/home/Home.jsx'
@@ -11,12 +11,11 @@ import Footer from './UI/footer/Footer.jsx'
 const App = () => {
     return (
         <BrowserRouter>
-            <Header />
             <Navbar />
-            <Routes>
-                <Route path='/' element={<Home ></Home>}></Route>
-                <Route path='/about' element={<About></About>}></Route>
-            </Routes>
+                <Routes>
+                    <Route path='/' element={<Home />} />
+                    <Route path='/about' element={<About />} />
+                </Routes>
             <Footer />
         </BrowserRouter>
     )
