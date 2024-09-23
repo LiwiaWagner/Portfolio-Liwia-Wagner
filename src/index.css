@@ -1,56 +1,139 @@
-*,
-*::before, 
-*::after {
-    margin: 0;
-    padding: 0;
-    border: 0;
-    outline: 0;
-    box-sizing: border-box
-};
+:root {
+  /* Colors */
+  /* --- primary palette */
+  --black: #000000;
+  --white: #ffffff;
+  --boring: #666666;
 
-body {
-    font-family: "Manrope", sans-serif;
-    color: black;
-    font-size: 1.2rem;
-    line-height: 1.5rem;
-    font-weight: 400;
-    overflow-x: hidden
-};
+  /* --- secondary palette */
+  --accent: #0484e7;
+  --success: #21a663;
+  --warning: #f59b00;
+  --error: #d63333;
 
-.container {
-    display: flex;
-    justify-content: center;
+  /* --- extended palette */
+  /* - neutrals */
+  --dark-gray: #333333;
+  --slate: #484848;
+  --grandma: #999999;
+  --concrete: #dddddd;
+  --egg-white: #f5f5f5;
+
+  /* - reds */
+  --blood-clot: #8a0f0f;
+  --red: #cc0000;
+  --sunset: #e16666;
+  --salmon: #eb9999;
+  --sunburn: #f5cdcc;
+  --rosie: #fce3e3;
+
+  /* - yellows */
+  --midday: #ca6602;
+  --citric-dream: #ffcd00;
+  --cosmic-banana: #ffdb48;
+  --bananarama: #ffe785;
+  --gross-wallpaper: #feec9a;
+  --yellowish: #fef9dc;
+
+  /* - greens */
+  --wald: #0c5f35;
+  --forest: #1e995b;
+  --grass: #21a663;
+  --go-time: #4fc489;
+  --dolla-bill: #7ec8a3;
+  --mint: #c9eedb;
+  --greenish: #ebf9f2;
+
+  /* - cyans */
+  --doona: #008da6;
+  --fish-tank: #00a3bf;
+  --party: #00b8d9;
+  --sea-breeze: #00c7e6;
+  --lagoon: #79e2f2;
+  --soap: #b3f5ff;
+  --cyanish: #e6fcff;
+
+  /* - blues */
+  --school-uniform: #023f6e;
+  --ocean: #0361aa;
+  --sky: #0484e7;
+  --san-francisco-bay: #229dfb;
+  --afternoon: #78c4fd;
+  --pastel-dream: #cde9fe;
+  --blueish: #ecf6fd;
+
+  /* - blue grays */
+  --dark-and-stormy: #2e3f4c;
+  --deep-sea: #2f5574;
+  --storm-coming: #506d85;
+  --black-coral: #738a9d;
+  --battleship: #96a7b6;
+  --ash: #b9c5ce;
+  --cadet: #dce2e8;
+
+  /* - violets */
+  --royal: #403294;
+  --prince: #5243aa;
+  --cadbury: #6554c0;
+  --romantic: #8777d9;
+  --aura: #998dd9;
+  --lavender: #c0b6f2;
+  --violetish: #eae6ff;
+
+  /* - purples */
+  --sangria: #550736;
+  --boysenberry: #710948;
+  --jam: #890c58;
+  --mauve: #a13d79;
+  --iris: #b86c9b;
+  --periwinkle: #d19fbd;
+  --heather: #e7cede;
+
+  /* - pinks */
+  --mahogany: #6e022a;
+  --rich-pink: #ce034e;
+  --party-pink: #f2075e;
+  --eighties-fun: #fd2b78;
+  --rose: #fd78a9;
+  --pale-pink: #efcddf;
+  --pinkish: #fdecf2;
 }
 
-ul {
-    list-style: none;
-    text-decoration: none;
-};
+body {
+  overflow-x: hidden;
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  box-sizing: border-box;
+  font-family: "Manrope", sans-serif;
+}
 
 .container {
-    width: 100vw;
-    max-width: 1920px;
-    margin-inline: auto;
+  display: flex;
+  justify-content: center;
+  width: 100vw;
+  max-width: 1920px;
+  margin-inline: auto;
 }
 
 h1 {
-    font-size: 2.5rem
+  font-size: 2.5rem;
 }
 
 h2 {
-    font-size: 2rem
+  font-size: 2rem;
 }
 
 h3 {
-    font-size: 1.75rem
+  font-size: 1.75rem;
 }
 
 h4 {
-    font-size: 1.5rem
+  font-size: 1.5rem;
 }
-
-a {
-    color: black;
-}
-
-
