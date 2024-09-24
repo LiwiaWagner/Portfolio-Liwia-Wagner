@@ -55,6 +55,7 @@ const Navbar = () => {
           {isNavShowing ? <MdClose /> : <MdMenu />}
         </button>
       </div>
+      <div className="dropshaddow"></div>
     </nav>
   );
 };

@@ -1,4 +1,53 @@
 .about-main-container {
   background-color: #acb7c1;
   height: 80vh;
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: repeat(12, 1fr);
+}
+
+.grid-col-span-8 {
+  grid-column: span 8;
+}
+
+.grid-col-span-4 {
+  grid-column: span 4;
+}
+
+.grid-col-span-3 {
+  grid-column: span 3;
+}
+
+.grid-col-span-3 {
+  grid-column: span 2;
+}
+
+.article-main {
+  grid-column-start: span 8;
+  grid-row-start: 1;
+}
+
+img {
+  grid-column-start: 9;
+  grid-row: 1 / span 2;
+}
+
+.article-skills {
+  grid-column-start: 1;
+  grid-column-end: 4;
+  grid-row-start: span 2;
+}
+
+.article-tools {
+  grid-column-start: 4;
+  grid-column-end: 7;
+}
+
+.article-social {
+  grid-column-start: 7;
+  grid-column-end: 9;
+}
+
+.article-social a {
+  display: block;
 }

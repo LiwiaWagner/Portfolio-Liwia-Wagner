@@ -144,6 +144,10 @@ a {
   .hide-nav .nav-left-container {
     display: inline-block;
   }
+
+  .dropshaddow {
+    background-color: red;
+  }
 }
 
 @media screen and (max-width: 430px) {
