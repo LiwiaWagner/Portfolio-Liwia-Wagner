@@ -46,7 +46,14 @@ const Navbar = () => {
               ABOUT
             </NavLink>
           </li>
-          <li className="nav-link">RESUME</li>
+          <li className="nav-link">
+            <a
+              href={"./src/assets/cv_liwia_wagner.pdf"}
+              rel="noopener noreferrer"
+            >
+              RESUME
+            </a>
+          </li>
         </ul>
         <button
           className="nav-toggle-btn"

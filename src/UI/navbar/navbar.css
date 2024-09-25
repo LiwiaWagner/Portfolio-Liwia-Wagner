@@ -29,7 +29,7 @@ nav {
   color: var(--black);
   font-size: 1.125rem;
   line-height: 1.5rem;
-  font-weight: 600;
+  font-weight: 400;
   letter-spacing: 0.15rem;
   overflow-x: hidden;
 }
@@ -84,6 +84,11 @@ a {
 @media screen and (max-width: 900px) {
   nav {
     z-index: 99;
+  }
+
+  .nav-conatiner {
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
   }
 
   .nav-toggle-btn {
