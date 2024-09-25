@@ -1,6 +1,6 @@
 import React from "react";
 import "./about.css";
-import { BsTypeH1 } from "react-icons/bs";
+import profileImg from "../../assets/profile.jpeg";
 
 const About = () => {
   return (
@@ -32,7 +32,7 @@ const About = () => {
         </p>
       </article>
       <img
-        src="./src/assets/profile.jpeg"
+        src={profileImg}
         alt="The author stands surrunded by early autumn mountains."
       />
       <article className="article-skills">

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link, NavLink, useLocation } from "react-router-dom";
 import { MdMenu } from "react-icons/md";
 import { MdClose } from "react-icons/md";
@@ -9,13 +9,17 @@ const Navbar = () => {
 
   const location = useLocation();
 
+  useEffect(() => {
+    setIsNavShowing(false);
+  }, [location]);
+
   return (
     <nav>
       <div
         className={`nav-container ${isNavShowing ? "show-nav" : "hide-nav"}`}
       >
         <Link to="/" className="nav-left-container">
-          <div>LIWIA WAGNER</div>
+          <div className="logo">LIWIA WAGNER</div>
         </Link>
         <ul className="nav-right-container">
           <li className="nav-link">
@@ -48,7 +52,7 @@ const Navbar = () => {
           </li>
           <li className="nav-link">
             <a
-              href={"./src/assets/cv_liwia_wagner.pdf"}
+              href={require("../../assets/cv_liwia_wagner.pdf")}
               rel="noopener noreferrer"
             >
               RESUME
@@ -62,7 +66,6 @@ const Navbar = () => {
           {isNavShowing ? <MdClose /> : <MdMenu />}
         </button>
       </div>
-      <div className="dropshaddow"></div>
     </nav>
   );
 };

@@ -11,7 +11,7 @@ nav {
 
 .nav-container {
   display: flex;
-  justify-content: flex-end;
+  justify-content: space-between;
   align-items: center;
   padding-left: 3rem;
   padding-right: 3rem;
@@ -23,15 +23,22 @@ nav {
   background-color: transparent;
 }
 
+.nav-container.show-nav {
+  justify-content: flex-end;
+}
+
 .nav-left-container {
-  width: 100%;
+  width: max-content;
   text-decoration: none;
-  color: var(--black);
-  font-size: 1.125rem;
+  font-size: 1.4rem;
   line-height: 1.5rem;
-  font-weight: 400;
-  letter-spacing: 0.15rem;
+  font-weight: 500;
+  letter-spacing: 0rem;
   overflow-x: hidden;
+}
+
+.logo {
+  color: var(--black);
 }
 
 .nav-right-container {
@@ -82,11 +89,7 @@ a {
 }
 
 @media screen and (max-width: 900px) {
-  nav {
-    z-index: 99;
-  }
-
-  .nav-conatiner {
+  .nav-container {
     padding-left: 1.25rem;
     padding-right: 1.25rem;
   }
@@ -148,10 +151,6 @@ a {
 
   .hide-nav .nav-left-container {
     display: inline-block;
-  }
-
-  .dropshaddow {
-    background-color: red;
   }
 }
 
