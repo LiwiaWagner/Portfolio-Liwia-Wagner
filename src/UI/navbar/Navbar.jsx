@@ -19,7 +19,7 @@ const Navbar = () => {
         className={`nav-container ${isNavShowing ? "show-nav" : "hide-nav"}`}
       >
         <Link to="/" className="nav-left-container">
-          <div className="logo">LIWIA WAGNER</div>
+          <div>LIWIA WAGNER</div>
         </Link>
         <ul className="nav-right-container">
           <li className="nav-link">

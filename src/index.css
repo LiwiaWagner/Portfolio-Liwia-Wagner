@@ -97,6 +97,9 @@
   --rose: #fd78a9;
   --pale-pink: #efcddf;
   --pinkish: #fdecf2;
+
+  /* - background color */
+  --bg: #acb7c1;
 }
 
 body {

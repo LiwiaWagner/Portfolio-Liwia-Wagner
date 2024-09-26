@@ -12,12 +12,12 @@ body {
 }
 
 .article-main {
-  grid-column: 1 / span 8;
+  grid-column: 1 / span 6;
   grid-row-start: 1;
 }
 
 .article-main-bottom {
-  grid-column: 1 / span 8;
+  grid-column: 1 / span 6;
 }
 
 .article-main-p-1 {
@@ -33,7 +33,7 @@ body {
 }
 
 img {
-  grid-column: 9 / span 4;
+  grid-column: 7 / span 6;
   grid-row: 1 / span 3;
   width: calc(100% + 48px);
   height: 100%;
