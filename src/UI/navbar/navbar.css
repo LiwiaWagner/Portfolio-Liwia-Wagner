@@ -6,6 +6,7 @@ nav {
   position: sticky;
   top: 0;
   left: 0;
+  background-color: var(--background-color);
   z-index: 99;
 }
 
@@ -20,7 +21,6 @@ nav {
   position: relative;
   max-width: 1920px;
   margin-inline: auto;
-  background-color: var(--bg);
 }
 
 .nav-container.show-nav {
@@ -34,7 +34,6 @@ nav {
   line-height: 1.5rem;
   font-weight: 500;
   letter-spacing: 0rem;
-  overflow-x: hidden;
 }
 
 .logo {
@@ -65,7 +64,6 @@ a {
 .nav-link:hover {
   font-weight: 500;
   transition: all 0.25s ease;
-  will-change: top;
   color: var(--black);
 }
 
@@ -96,7 +94,7 @@ a {
 
   .nav-toggle-btn {
     display: inline-block;
-    background-color: transparent;
+    background-color: var(--bg);
     font-size: 1.6rem;
   }
 
@@ -120,7 +118,7 @@ a {
     right: 0;
     flex-direction: column;
     align-items: flex-end;
-    background-color: transparent;
+    background-color: var(--bg);
     width: 100vw;
     overflow: hidden;
   }
@@ -132,7 +130,7 @@ a {
     padding-right: 3rem;
     flex-direction: column;
     align-items: flex-end;
-    background-color: transparent;
+    background-color: var(--bg);
     gap: 3rem;
     width: 100vw;
     box-shadow: 0px 4px 80px -4px rgba(0, 0, 0, 0.25);
@@ -148,6 +146,8 @@ a {
 
   .show-nav .nav-right-container {
     display: flex;
+    padding-right: 1.25rem;
+    background-color: var(--background-color);
   }
 
   .show-nav .nav-left-container {
@@ -173,8 +173,8 @@ a {
   }
 
   .nav-container {
-    padding-left: 1.25rem;
-    padding-right: 1.25rem;
+    padding-left: 0.7rem;
+    padding-right: 0.7rem;
   }
 
   .nav-toggle-btn {
@@ -199,5 +199,10 @@ a {
     padding-top: 4rem;
     padding-right: 1.25rem;
     font-size: 1rem;
+  }
+
+  .show-nav .nav-right-container {
+    padding-right: 0.7rem;
+    position: sticky;
   }
 }
