@@ -1,7 +1,6 @@
 nav {
   place-items: center;
   height: 5rem;
-  width: 100vw;
   position: sticky;
   top: 0;
   left: 0;
@@ -140,7 +139,6 @@ a {
 
   .show-nav .nav-right-container {
     display: flex;
-    padding-right: 1.25rem;
   }
 
   .show-nav .nav-left-container {

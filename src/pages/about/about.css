@@ -45,8 +45,8 @@ body {
 
 img {
   grid-column: 7 / span 6;
-  /* grid-row-start: 1;
-  grid-row-end: 5; */
+  grid-row-start: 1;
+  grid-row-end: 5;
   width: calc(100% + 48px);
   height: 80vh;
   object-fit: cover;

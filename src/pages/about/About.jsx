@@ -5,6 +5,14 @@ import profileImg from "../../assets/profile.jpeg";
 const About = () => {
   useEffect(() => {
     document.body.style = "var(--background-color)";
+
+    const root = document.querySelector("#root");
+
+    root.classList.add("root");
+
+    return () => {
+      root.classList.remove("root");
+    };
   }, []);
 
   return (

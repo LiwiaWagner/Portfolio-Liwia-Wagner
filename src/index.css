@@ -116,6 +116,12 @@ body {
   font-family: "Manrope", sans-serif;
 }
 
+.root {
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  min-height: 100vh;
+}
+
 .container {
   display: flex;
   justify-content: center;
