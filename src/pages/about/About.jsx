@@ -14,6 +14,8 @@ const About = () => {
           <p>Hello there!</p>
           <p className="article-main-title-name"> I’m Liwia</p>
         </h1>
+      </article>
+      <article className="article-main-ps">
         <p className="article-main-p-1">
           I am a data visualization designer and developer with a strong
           technical background. Born and raised in the small town of Żyrardów in
@@ -26,6 +28,7 @@ const About = () => {
           ultimately returning to Poland, as there's no place like home.
         </p>
       </article>
+
       <article className="article-main-bottom">
         <p>
           I discovered my passion for data visualization during my first job,

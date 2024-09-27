@@ -37,8 +37,8 @@
 @media screen and (max-width: 900px) {
   .footer-container {
     margin-top: 3rem;
-    padding-left: 1.25rem;
-    padding-right: 1.25rem;
+    padding-left: 0.9rem;
+    padding-right: 0.9rem;
   }
 }
 
@@ -46,8 +46,8 @@
   .footer-container {
     height: 4rem;
     margin-top: 2.5rem;
-    padding-left: 1.25rem;
-    padding-right: 1.25rem;
+    padding-left: 0.9rem;
+    padding-right: 0.9rem;
   }
 
   .footer-name {

@@ -1,5 +1,4 @@
 nav {
-  display: grid;
   place-items: center;
   height: 5rem;
   width: 100vw;
@@ -111,16 +110,11 @@ a {
 
   .nav-right-container {
     position: absolute;
-    padding-top: 3rem;
-    padding-bottom: 3rem;
-    padding-right: 3rem;
     top: 100%;
     right: 0;
-    flex-direction: column;
-    align-items: flex-end;
-    background-color: var(--bg);
     width: 100vw;
     overflow: hidden;
+    padding-bottom: 100px;
   }
 
   .nav-right-container ul {
@@ -130,7 +124,7 @@ a {
     padding-right: 3rem;
     flex-direction: column;
     align-items: flex-end;
-    background-color: var(--bg);
+    background-color: var(--background-color);
     gap: 3rem;
     width: 100vw;
     box-shadow: 0px 4px 80px -4px rgba(0, 0, 0, 0.25);
@@ -147,7 +141,6 @@ a {
   .show-nav .nav-right-container {
     display: flex;
     padding-right: 1.25rem;
-    background-color: var(--background-color);
   }
 
   .show-nav .nav-left-container {
@@ -170,11 +163,13 @@ a {
 @media screen and (max-width: 430px) {
   nav {
     height: 3.125rem;
+    position: sticky;
+    background-color: var(--background-color);
   }
 
   .nav-container {
-    padding-left: 0.7rem;
-    padding-right: 0.7rem;
+    padding-left: 0.9rem;
+    padding-right: 0.9rem;
   }
 
   .nav-toggle-btn {
@@ -203,6 +198,5 @@ a {
 
   .show-nav .nav-right-container {
     padding-right: 0.7rem;
-    position: sticky;
   }
 }
