@@ -28,17 +28,17 @@ nav {
 .nav-left-container {
   width: max-content;
   text-decoration: none;
-  font-size: 1.4rem;
-  line-height: 1.5rem;
-  font-weight: 500;
-  letter-spacing: 0rem;
 }
 
 .logo {
   color: var(--black);
+  font-size: 1.3rem;
+  font-weight: 400;
+  line-height: 1.5rem;
+  letter-spacing: 0rem;
 }
 
-.nav-right-container {
+.nav-right-container ul {
   display: flex;
   align-items: center;
   font-size: 1rem;
@@ -85,6 +85,10 @@ a {
 }
 
 @media screen and (max-width: 900px) {
+  nav {
+    height: 4rem;
+  }
+
   .nav-container {
     padding-left: 1.25rem;
     padding-right: 1.25rem;
@@ -92,8 +96,9 @@ a {
 
   .nav-toggle-btn {
     display: inline-block;
+    justify-content: flex-end;
     background-color: var(--bg);
-    font-size: 1.6rem;
+    font-size: 1.4rem;
   }
 
   .nav-toggle-btn svg {
@@ -120,7 +125,7 @@ a {
     display: flex;
     padding-top: 3rem;
     padding-bottom: 3rem;
-    padding-right: 3rem;
+    padding-right: 1.25rem;
     flex-direction: column;
     align-items: flex-end;
     background-color: var(--background-color);
@@ -161,8 +166,10 @@ a {
 @media screen and (max-width: 430px) {
   nav {
     height: 3.125rem;
-    position: sticky;
-    background-color: var(--background-color);
+  }
+
+  .logo {
+    font-size: 1.1rem;
   }
 
   .nav-container {
@@ -187,11 +194,16 @@ a {
   }
 
   .nav-right-container {
-    box-shadow: none;
     height: 100vh;
     padding-top: 4rem;
     padding-right: 1.25rem;
     font-size: 1rem;
+    background-color: var(--background-color);
+  }
+
+  .nav-right-container ul {
+    box-shadow: none;
+    padding-right: 0rem;
   }
 
   .show-nav .nav-right-container {
