@@ -5,7 +5,7 @@ body {
 .about-main-container {
   background-color: #acb7c1;
   display: grid;
-  gap: 1.5rem;
+  gap: 1rem;
   padding-left: 3rem;
   padding-right: 3rem;
   grid-template-columns: repeat(12, 1fr);
@@ -31,7 +31,7 @@ body {
 .article-main-p-1 {
   font-size: 1rem;
   line-height: 1.8rem;
-  padding-bottom: 1.5rem;
+  padding-bottom: 1rem;
   padding-right: 2rem;
   align-self: end;
 }
@@ -43,35 +43,42 @@ body {
   padding-right: 2rem;
 }
 
-img {
+.img-container {
   grid-column: 7 / span 6;
   grid-row-start: 1;
   grid-row-end: 5;
   width: calc(100% + 48px);
-  height: 80vh;
-  object-fit: cover;
+  background: url("../../assets/profile.jpeg") no-repeat;
+  background-size: cover;
+  background-position: middle;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  vertical-align: middle;
   padding-top: 1rem;
 }
 
 .article-skills {
   grid-column: 1 / span 2;
   grid-row-start: 4;
-  font-size: 0.8rem;
-  line-height: 1.8rem;
+  font-size: 0.9rem;
+  line-height: 1.6rem;
 }
 
 .article-tools {
   grid-column: 3 / span 2;
   grid-row-start: 4;
-  font-size: 0.8rem;
-  line-height: 1.8rem;
+  font-size: 0.9rem;
+  line-height: 1.6rem;
 }
 
 .article-social {
   grid-column: 5 / span 2;
   grid-row-start: 4;
-  font-size: 0.8rem;
-  line-height: 1.8rem;
+  font-size: 0.9rem;
+  line-height: 1.6rem;
 }
 
 .article-social a {
@@ -82,10 +89,9 @@ img {
   display: flex;
   flex-direction: row;
   font-size: 2.5rem;
-  font-weight: 100;
+  font-weight: 300;
   color: black;
   margin-top: 3rem;
-  margin-bottom: 1.2rem;
 }
 
 .article-main-title p {

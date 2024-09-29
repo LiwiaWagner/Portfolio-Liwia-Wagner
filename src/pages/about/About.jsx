@@ -46,10 +46,13 @@ const About = () => {
           realized my love for making data make sense.
         </p>
       </article>
-      <img
-        src={profileImg}
-        alt="The author stands surrunded by early autumn mountains."
-      />
+      <div className="img-container">
+        {/* <img
+          src={profileImg}
+          alt="The author stands surrunded by early autumn mountains."
+        /> */}
+      </div>
+
       <article className="article-skills">
         <h6 className="article-sub-title">SKILLS</h6>
         <p>
