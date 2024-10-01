@@ -22,13 +22,13 @@ const About = () => {
           <p>Hello there!</p>
           <p className="article-main-title-name"> I’m Liwia</p>
         </h1>
-      </article>
-      <article className="article-main-ps">
+
         <p className="article-main-p-1">
           I am a data visualization designer and developer with a strong
           technical background. Born and raised in the small town of Żyrardów in
           central Poland, I now live and work in Warsaw.
         </p>
+
         <p className="article-main-p-2">
           From a young age, I dreamed of studying and living abroad. At 25, I
           left everything I knew and moved to Denmark to attend business school.
@@ -52,7 +52,6 @@ const About = () => {
           alt="The author stands surrunded by early autumn mountains."
         /> */}
       </div>
-
       <article className="article-skills">
         <h6 className="article-sub-title">SKILLS</h6>
         <p>
