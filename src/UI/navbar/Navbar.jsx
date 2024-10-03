@@ -54,6 +54,7 @@ const Navbar = () => {
             <li className="nav-link">
               <a
                 href={require("../../assets/cv_liwia_wagner.pdf")}
+                target="_blank"
                 rel="noopener noreferrer"
               >
                 RESUME

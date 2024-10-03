@@ -4,13 +4,14 @@ import Navbar from "./UI/navbar/Navbar.jsx";
 import Footer from "./UI/footer/Footer.jsx";
 import Home from "./pages/home/Home.jsx";
 import About from "./pages/about/About.jsx";
+import { Home2 } from "./pages/home/home2.jsx";
 
 const App = () => {
   return (
     <BrowserRouter>
       <Navbar />
       <Routes>
-        <Route path="/" element={<Home />} />
+        <Route path="/" element={<Home2 />} />
         <Route path="/about" element={<About />} />
       </Routes>
       <Footer />
