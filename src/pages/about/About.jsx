@@ -1,11 +1,11 @@
 import React, { useEffect } from "react";
 import "./about.css";
-import profileImg from "../../assets/profile.jpeg";
 
 const About = () => {
   useEffect(() => {
-    document.body.style = "var(--background-color)";
-  });
+    document.body.style = "--background-color: #acb7c1;";
+    return () => window.scrollTo(0, 0);
+  }, []);
 
   return (
     <main className="about-main-container">
@@ -38,12 +38,7 @@ const About = () => {
           realized my love for making data make sense.
         </p>
       </article>
-      <div className="img-container">
-        {/* <img
-          src={profileImg}
-          alt="The author stands surrunded by early autumn mountains."
-        /> */}
-      </div>
+      <div className="img-container"></div>
       <article className="article-skills">
         <h6 className="article-sub-title">SKILLS</h6>
         <p>

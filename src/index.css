@@ -98,7 +98,7 @@
   --pale-pink: #efcddf;
   --pinkish: #fdecf2;
 
-  --background-color: #acb7c1;
+  --background-color: #c4b9c0;
 }
 
 body {
@@ -145,6 +145,7 @@ h6 {
 }
 
 p {
-  color: var(--slate);
-  line-height: 1.5rem;
+  color: var(--black);
+  font-size: 1.1rem;
+  line-height: 1.8rem;
 }
