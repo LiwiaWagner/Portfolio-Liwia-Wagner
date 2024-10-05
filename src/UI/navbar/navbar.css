@@ -37,7 +37,7 @@ nav {
   display: flex;
   align-items: center;
   font-size: 1rem;
-  color: var(--slate);
+  color: var(--black);
   font-style: normal;
   font-weight: 100;
   line-height: normal;
@@ -66,11 +66,11 @@ a {
 }
 
 .nav-link a:visited {
-  color: var(--slate);
+  color: var(--black);
 }
 
 .nav-link a:focus {
-  color: var(--slate);
+  color: var(--black);
 }
 
 .nav-toggle-btn {

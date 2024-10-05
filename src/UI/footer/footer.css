@@ -3,7 +3,7 @@
   align-items: center;
   justify-content: space-between;
   padding: 0 3rem;
-  margin: 1rem 0 0 0;
+  margin: 2rem 0 0 0;
   height: 5rem;
   background-color: var(--background-color);
 }
@@ -22,11 +22,11 @@
 .footer-name {
   display: flex;
   align-items: center;
-  font-size: 0.75rem;
+  font-size: 0.8rem;
 }
 
 .footer-name-text {
-  font-weight: 300;
+  font-weight: 400;
   padding-left: 0 0 0 0.2rem;
 }
 

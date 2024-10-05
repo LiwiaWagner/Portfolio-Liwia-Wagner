@@ -60,7 +60,7 @@ body {
   background: url("../../assets/profile.jpeg") no-repeat;
   background-size: cover;
   background-position-y: center;
-  margin: 1rem 0 0 0;
+  margin: 2rem 0 0 0;
 }
 
 img {
@@ -149,16 +149,16 @@ a:visited {
     display: flex;
     flex-direction: column;
     gap: 1rem;
-    font-size: 1.5rem;
     font-weight: 200;
     padding: 0 0 1rem 0;
   }
 
   .article-main-title p {
+    font-size: 1.5rem;
     line-height: 1.7rem;
   }
 
-  .article-main-title-name {
+  .article-main-title p:nth-child(2) {
     font-size: 3.5rem;
     font-weight: 300;
   }
@@ -227,10 +227,11 @@ a:visited {
     font-size: 1.5rem;
     font-weight: 200;
     padding: 0 0 1rem 0;
+    margin: 2rem 0 0.9rem 0;
     grid-row-start: 1;
   }
 
-  .article-main-title-name {
+  .article-main-title p:nth-child(2) {
     font-size: 3rem;
     font-weight: 300;
   }
@@ -241,14 +242,14 @@ a:visited {
     padding: 0 0 1.5rem 0;
     font-size: 0.9rem;
     line-height: 1.5rem;
-    color: var(--slate);
+    color: var(--black);
   }
 
   .article-main-p-2 {
     grid-column: 1 / 6;
     font-size: 0.9rem;
     line-height: 1.5rem;
-    color: var(--slate);
+    color: var(--black);
   }
 
   .article-main-bottom {
@@ -259,7 +260,7 @@ a:visited {
   .article-main-bottom p {
     font-size: 0.9rem;
     line-height: 1.5rem;
-    color: var(--slate);
+    color: var(--black);
   }
 
   /* ---Picture*/
@@ -277,7 +278,7 @@ a:visited {
   /* ---Bottom section */
 
   .article-sub-title {
-    font-size: 1rem;
+    font-size: 1.15rem;
     font-weight: 500;
   }
 

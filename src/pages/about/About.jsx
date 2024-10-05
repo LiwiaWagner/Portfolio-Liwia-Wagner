@@ -12,7 +12,7 @@ const About = () => {
       <article className="article-main">
         <h1 className="article-main-title">
           <p>Hello there!</p>
-          <p className="article-main-title-name"> I’m Liwia</p>
+          <p> I’m Liwia</p>
         </h1>
 
         <p className="article-main-p-1">
@@ -42,15 +42,15 @@ const About = () => {
       <article className="article-skills">
         <h6 className="article-sub-title">SKILLS</h6>
         <p>
-          Data Visualization Design | Dashboard Design | UX/UI Design | DX
-          Research | User Reasarch | Data Analysis | Data Modelling | Data
+          Data Visualization Design + Dashboard Design + UX/UI Design + DX
+          Research + User Reasarch + Data Analysis + Data Modelling + Data
           Processing
         </p>
       </article>
       <article className="article-tools">
         <h6 className="article-sub-title">TOOLS & LANGUAGES</h6>
         <p>
-          Tableau | Mapbox | Figma | SQL | HTML/CSS | JavaScript | React.js |
+          Tableau + Mapbox + Figma + SQL + HTML/CSS + JavaScript + React.js +
           d3.js
         </p>
       </article>
