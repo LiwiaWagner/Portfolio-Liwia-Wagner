@@ -1,7 +1,5 @@
 /* ---Hero */
-.hero {
-  height: 24rem;
-}
+
 .hero-container {
   padding: 3rem 3rem 0 3rem;
 }
@@ -23,11 +21,13 @@
   font-weight: 400;
 }
 
-.project-container {
-  height: 3000px;
-}
-
 /* ---Top projects */
+
+.project-container {
+  display: flex;
+  margin: 1rem 3rem;
+  height: auto;
+}
 
 .projects-title {
   position: relative;
@@ -35,7 +35,7 @@
   font-weight: 100;
   letter-spacing: 0.2rem;
   padding: 0 0 0 4rem;
-  margin: 3rem 0 0 0;
+  margin: 3rem 3rem 2rem 3rem;
   color: var(--black);
 }
 
@@ -48,6 +48,18 @@
   background: var(--slate);
   left: 0;
   top: 50%;
+}
+
+.top-project-container-1 {
+  background-color: var(--bc-project-1);
+}
+
+.top-project-container-2 {
+  background-color: var(--bc-project-2);
+}
+
+.top-project-container-3 {
+  background-color: var(--bc-project-3);
 }
 
 /* ---All projects */

@@ -98,7 +98,12 @@
   --pale-pink: #efcddf;
   --pinkish: #fdecf2;
 
+  /* - background colors */
   --background-color: #c4b9c0;
+  --bc-project-1: #cebbc7;
+  --bc-project-2: #b2add2;
+  --bc-project-3: #cfcbe3;
+  --bc-project-4: #a9bcc2;
 }
 
 body {
