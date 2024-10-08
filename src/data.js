@@ -11,8 +11,7 @@ export const cards = [
   {
     id: 1,
     title: "Business Application for Supply Chain Optimization",
-    description: `Using Figma to design a digital experience and solve client data experience challenge.
-    Over the course of eight weeks I conducted Data Experience (DX) research, designed and prototyped business application aimed at optimizing clients’ supply chain network.`,
+    description: `I used Figma to design a digital solution that addressed a client’s data experience challenges, focusing on optimizing their supply chain network. Over an eight-week period, I conducted extensive Data Experience (DX) research, which informed the design and prototyping of a business application aimed at streamlining and enhancing the efficiency of their operations.`,
     tools:
       "Figma + DX Research + Data Viz Design + Product Design + UX/UI Design",
     img_desktop: (

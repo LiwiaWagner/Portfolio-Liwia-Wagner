@@ -104,6 +104,9 @@
   --bc-project-2: #b2add2;
   --bc-project-3: #cfcbe3;
   --bc-project-4: #a9bcc2;
+
+  /* - buttons colors */
+  --btn-project-1: #4d3b46;
 }
 
 body {
