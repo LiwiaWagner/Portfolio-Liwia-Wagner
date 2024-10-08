@@ -1,0 +1,17 @@
+.img-desktop {
+  display: flex;
+}
+
+.img-mobile {
+  display: none;
+}
+
+@media screen and (max-width: 430px) {
+  .img-desktop {
+    display: none;
+  }
+
+  .img-mobile {
+    display: flex;
+  }
+}

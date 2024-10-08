@@ -1,5 +1,7 @@
 /* ---Hero */
-
+.hero {
+  height: 24rem;
+}
 .hero-container {
   padding: 3rem 3rem 0 3rem;
 }
@@ -21,6 +23,10 @@
   font-weight: 400;
 }
 
+.project-container {
+  height: 3000px;
+}
+
 /* ---Top projects */
 
 .projects-title {
@@ -29,7 +35,8 @@
   font-weight: 100;
   letter-spacing: 0.2rem;
   padding: 0 0 0 4rem;
-  color: var(--slate);
+  margin: 3rem 0 0 0;
+  color: var(--black);
 }
 
 .projects-title:before {
@@ -38,7 +45,7 @@
   display: block;
   width: 3rem;
   height: 1px;
-  background: var(--boring);
+  background: var(--slate);
   left: 0;
   top: 50%;
 }
