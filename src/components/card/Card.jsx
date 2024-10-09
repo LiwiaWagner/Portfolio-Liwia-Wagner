@@ -3,7 +3,11 @@ import React from "react";
 function Card(props) {
   const card = props.card;
   return (
-    <div id="four" className="project-container top-project-container-3">
+    <div
+      id="four"
+      className="project-container"
+      style={{ backgroundColor: card.backgroundColor }}
+    >
       <article>
         <div className="card-container">
           <div className="card-container-left">
@@ -12,11 +16,12 @@ function Card(props) {
             <p className="card-tools">{card.tools}</p>
             <button
               className="btn-project"
-              style={{ backgroudColor: card.btn.color }}
+              style={{ backgroundColor: card.btn.color }}
             >
               {card.btn.text}
             </button>
           </div>
+          <div className="blank"></div>
           <div className="card-container-right">
             <img
               className="img-desktop"

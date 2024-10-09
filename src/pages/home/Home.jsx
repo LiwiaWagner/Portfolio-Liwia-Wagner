@@ -79,6 +79,9 @@ const Home = () => {
       <div>
         <h2 className="projects-title">ALL PROJECTS</h2>
       </div>
+
+      <div className="filters"></div>
+
       <section className="projects-container all-projects-container">
         {orderedCards.map((card, index) => (
           <Card key={index} card={card} />

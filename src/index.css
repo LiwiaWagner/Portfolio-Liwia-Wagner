@@ -100,16 +100,16 @@
 
   /* - background colors */
   --background-color: #c4b9c0;
-  --bc-project-1: #cebbc7;
-  --bc-project-2: #b2add2;
-  --bc-project-3: #cfcbe3;
-  --bc-project-4: #a9bcc2;
+  --bc-project-id1: #cebbc7;
+  --bc-project-id2: #b2add2;
+  --bc-project-id3: #cfcbe3;
+  --bc-project-id4: #a9bcc2;
 
   /* - buttons colors */
-  --btn-project-1: #4d3b46;
-  --btn-project-2: #3e328e;
-  --btn-project-3: #285766;
-  --btn-project-4: #6155bd;
+  --btn-project-id1: #4d3b46;
+  --btn-project-id2: #3e328e;
+  --btn-project-id3: #6155bd;
+  --btn-project-id4: #285766;
 }
 
 body {
