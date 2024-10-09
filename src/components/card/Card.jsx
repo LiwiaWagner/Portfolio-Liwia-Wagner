@@ -5,10 +5,10 @@ function Card(props) {
   return (
     <div className="card-container">
       <div className="card-container-left">
-        <p>{card.title}</p>
-        <p>{card.description}</p>
-        <p>{card.tools}</p>
-        <button className="btn-project btn-project-1">GO TO PROJECT</button>
+        <p className="card-title">{card.title}</p>
+        <p className="card-description">{card.description}</p>
+        <p className="card-tools">{card.tools}</p>
+        <button className="btn-project">{card.btn_text}</button>
       </div>
       <div className="card-container-right">
         <div className="img-desktop">{card.img_desktop}</div>

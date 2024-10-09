@@ -107,6 +107,9 @@
 
   /* - buttons colors */
   --btn-project-1: #4d3b46;
+  --btn-project-2: #3e328e;
+  --btn-project-3: #285766;
+  --btn-project-4: #6155bd;
 }
 
 body {
