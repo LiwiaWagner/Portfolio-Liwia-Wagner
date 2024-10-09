@@ -86,3 +86,12 @@
 .btn-project-2 {
   background-color: var(--btn-project-2);
 }
+
+@media screen and (max-width: 1024px) {
+  .hero-container {
+    padding: 1.25rem 1.25rem 0 1.25rem;
+  }
+}
+
+@media screen and (max-width: 413px) {
+}

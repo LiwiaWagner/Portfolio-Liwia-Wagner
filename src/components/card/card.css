@@ -13,11 +13,11 @@
 }
 
 .card-container-left {
-  width: 100%;
+  width: 40%;
 }
 
 .card-container-right {
-  width: 100%;
+  width: 60%;
 }
 
 .card-title {
@@ -54,14 +54,6 @@
   font-size: 1rem;
   font-weight: 700;
   letter-spacing: 0.12rem;
-}
-
-.btn-project-1 {
-  background-color: var(--btn-project-1);
-}
-
-.btn-project-2 {
-  background-color: var(--btn-project-2);
 }
 
 @media screen and (max-width: 430px) {
