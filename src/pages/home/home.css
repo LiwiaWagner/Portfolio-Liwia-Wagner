@@ -1,3 +1,28 @@
+.color-container-test {
+  display: flex;
+  flex-direction: row;
+  margin: 2.5rem 3rem;
+  min-height: 33rem;
+  border-radius: 1.25rem;
+  background-color: pink;
+}
+
+.text-container-test {
+  border: 2px solid black;
+  width: 40%;
+  padding: 2rem 1rem 4rem 2rem;
+}
+
+.img-container-test {
+  display: block;
+  border: 2px solid black;
+  width: 60%;
+  background-image: url("../../assets/d_card_picture_p1.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: bottom -30px center;
+}
+
 /* ---Hero */
 
 .hero-container {
