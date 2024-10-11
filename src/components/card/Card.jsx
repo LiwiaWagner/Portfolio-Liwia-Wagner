@@ -21,8 +21,24 @@ function Card(props) {
               {card.btn.text}
             </button>
           </div>
-          <div className="blank"></div>
+
           <div className="card-container-right">
+            <img
+              className="img-desktop"
+              src={card.images.desktop.src}
+              alt={card.images.desktop.alt}
+            />
+            <img
+              className="img-mobile"
+              src={card.images.mobile.src}
+              alt={card.images.mobile.alt}
+            />
+          </div>
+
+          <div
+            className="card-container-right-mobile"
+            style={{ backgroundColor: card.btn.color }}
+          >
             <img
               className="img-desktop"
               src={card.images.desktop.src}
