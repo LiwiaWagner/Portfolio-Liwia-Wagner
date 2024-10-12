@@ -43,6 +43,11 @@
 /* ---Project button */
 
 .btn-project {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
   width: auto;
   height: 2.8rem;
   padding: 0rem 1.2rem;

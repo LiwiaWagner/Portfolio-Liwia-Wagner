@@ -12,7 +12,7 @@ const getConfig = (trigger, startColor, endColor) => {
     scrollTrigger: {
       trigger: trigger,
       scrub: true,
-      markers: false,
+      markers: true,
       start: "top 80%",
       end: "top 20%",
     },
@@ -76,19 +76,16 @@ const Home = () => {
 
       <div className="carousel"></div>
 
-      <div>
-        <h2 className="projects-title">ALL PROJECTS</h2>
-      </div>
-
-      <div className="filters"></div>
-
-      <section className="project-container all-projects-container">
-        {orderedCards.map((card, index) => (
-          <Card key={index} card={card} />
-        ))}
-      </section>
-
-      <div id="view" style={{ marginTop: 1000 }}>
+      <div id="view">
+        <div>
+          <h2 className="projects-title">ALL PROJECTS</h2>
+        </div>
+        <div className="filters"></div>
+        <section className="project-container all-projects-container">
+          {orderedCards.map((card, index) => (
+            <Card key={index} card={card} />
+          ))}
+        </section>
         <div className="color-container-test">
           <div className="text-container-test">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed dapibus

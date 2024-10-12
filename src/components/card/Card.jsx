@@ -1,4 +1,6 @@
 import React from "react";
+import { Link } from "react-router-dom";
+import Button from "../button/Button.jsx";
 
 function Card(props) {
   const card = props.card;
@@ -18,6 +20,7 @@ function Card(props) {
               className="btn-project"
               style={{ backgroundColor: card.btn.color }}
             >
+              <Link>{card.btn.refLink}</Link>
               {card.btn.text}
             </button>
           </div>
