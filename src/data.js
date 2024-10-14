@@ -11,6 +11,7 @@ import desktopImgProject1 from "../src/assets/d_project_picture_p1.png";
 export const cards = [
   {
     id: 1,
+    htmlId: "one",
     order: 4,
     title:
       "Enhancing Efficiency: Business Application for Supply Chain Optimization",
@@ -27,15 +28,23 @@ export const cards = [
       desktop: {
         src: desktopImgCard1,
         alt: "Sample pictures of data visualization project.",
+        position: "-1.875rem",
+      },
+      tablet: {
+        src: desktopImgCard1,
+        alt: "Sample pictures of data visualization project.",
+        position: "-1.56rem",
       },
       mobile: {
         src: mobileImgCard1,
         alt: "Sample pictures of data visualization project.",
+        position: "-25px",
       },
     },
   },
   {
     id: 2,
+    htmlId: "two",
     order: 1,
     title:
       "Sustainable Business Travel: A Data-Driven Carbon Emission Analysis",
@@ -60,6 +69,7 @@ export const cards = [
   },
   {
     id: 3,
+    htmlId: "three",
     order: 3,
     title:
       "Visualizing Iris Species: A Comparative Analysis of Multiple Measures",
@@ -84,6 +94,7 @@ export const cards = [
   },
   {
     id: 4,
+    htmlId: "four",
     order: 2,
     title: `Cyclistic Case Study: A Capstone Project for Google BI Certification`,
     description: `The capstone project, focused on preparing Cyclistic’s customer analysis, serves as the final assignment for the Google Business Intelligence Professional Certification, demonstrating the application of advanced BI skills in a real-world business context.`,

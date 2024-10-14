@@ -4,15 +4,16 @@ import Button from "../button/Button.jsx";
 
 function Card(props) {
   const card = props.card;
+  const hasHtmlId = props.hasHtmlId;
   return (
     <div
-      id="four"
+      id={hasHtmlId ? card.htmlId : ""}
       className="project-container"
       style={{ backgroundColor: card.backgroundColor }}
     >
       <article>
         <div className="card-container">
-          <div className="card-container-left">
+          <div className="card-container-text">
             <p className="card-title">{card.title}</p>
             <p className="card-description">{card.description}</p>
             <p className="card-tools">{card.tools}</p>
@@ -20,39 +21,32 @@ function Card(props) {
               className="btn-project"
               style={{ backgroundColor: card.btn.color }}
             >
-              <Link>{card.btn.refLink}</Link>
+              {/* <Link>{card.btn.refLink}</Link> */}
               {card.btn.text}
             </button>
           </div>
-
-          <div className="card-container-right">
-            <img
-              className="img-desktop"
-              src={card.images.desktop.src}
-              alt={card.images.desktop.alt}
-            />
-            <img
-              className="img-mobile"
-              src={card.images.mobile.src}
-              alt={card.images.mobile.alt}
-            />
-          </div>
-
           <div
-            className="card-container-right-mobile"
-            style={{ backgroundColor: card.btn.color }}
-          >
-            <img
-              className="img-desktop"
-              src={card.images.desktop.src}
-              alt={card.images.desktop.alt}
-            />
-            <img
-              className="img-mobile"
-              src={card.images.mobile.src}
-              alt={card.images.mobile.alt}
-            />
-          </div>
+            className="card-container-img-desktop"
+            style={{
+              backgroundImage: `url(${card.images.desktop.src})`,
+              backgroundPosition: `bottom ${card.images.desktop.position} center`,
+            }}
+          />
+          <div
+            className="card-container-img-tablet"
+            style={{
+              backgroundImage: `url(${card.images.desktop.src})`,
+              backgroundPosition: `bottom ${card.images.desktop.position} center`,
+            }}
+          />
+          <div
+            className="card-container-img-mobile"
+            style={{
+              backgroundColor: card.btn.color,
+              backgroundImage: `url(${card.images.mobile.src})`,
+              backgroundPosition: `bottom ${card.images.mobile.position} right`,
+            }}
+          />
         </div>
       </article>
     </div>
