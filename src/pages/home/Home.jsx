@@ -78,6 +78,8 @@ const Home = () => {
 
       <div className="carousel"></div>
 
+      <div className="img-container-test"></div>
+
       <div id="view">
         <div>
           <h2 className="projects-title">ALL PROJECTS</h2>

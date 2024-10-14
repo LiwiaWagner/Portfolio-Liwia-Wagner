@@ -1,3 +1,7 @@
+.img-container-test {
+  display: none;
+}
+
 /* ---Hero */
 
 .hero-container {
@@ -110,6 +114,17 @@
 }
 
 @media screen and (max-width: 430px) {
+  .img-container-test {
+    display: block;
+    border: 2px solid black;
+    width: 100%;
+    height: 20rem;
+    background-image: url("../../assets/m_card_picture_p1.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: bottom -1.7rem right -1.25rem;
+  }
+
   /* ---Hero */
 
   .hero-container {

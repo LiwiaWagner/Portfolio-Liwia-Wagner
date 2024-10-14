@@ -29,14 +29,14 @@ function Card(props) {
             className="card-container-img-desktop"
             style={{
               backgroundImage: `url(${card.images.desktop.src})`,
-              backgroundPosition: `bottom ${card.images.desktop.position} center`,
+              backgroundPosition: `bottom ${card.images.desktop.position_bottom} center`,
             }}
           />
           <div
             className="card-container-img-tablet"
             style={{
               backgroundImage: `url(${card.images.desktop.src})`,
-              backgroundPosition: `bottom ${card.images.desktop.position} center`,
+              backgroundPosition: `bottom ${card.images.desktop.position_bottom} center`,
             }}
           />
           <div
@@ -44,7 +44,7 @@ function Card(props) {
             style={{
               backgroundColor: card.btn.color,
               backgroundImage: `url(${card.images.mobile.src})`,
-              backgroundPosition: `bottom ${card.images.mobile.position} right`,
+              backgroundPosition: `bottom ${card.images.mobile.position_bottom} right ${card.images.mobile.position_right}`,
             }}
           />
         </div>

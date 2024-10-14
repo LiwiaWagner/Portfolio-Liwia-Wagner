@@ -1,4 +1,5 @@
 import desktopImgCard1 from "../src/assets/d_card_picture_p1.png";
+import tabletImgCard1 from "../src/assets/t_card_picture_p1.png";
 import mobileImgCard1 from "../src/assets/m_card_picture_p1.png";
 import desktopImgCard2 from "../src/assets/d_card_picture_p2.png";
 import mobileImgCard2 from "../src/assets/m_card_picture_p2.png";
@@ -28,17 +29,18 @@ export const cards = [
       desktop: {
         src: desktopImgCard1,
         alt: "Sample pictures of data visualization project.",
-        position: "-1.875rem",
+        position_bottom: "-1.875rem",
       },
       tablet: {
-        src: desktopImgCard1,
+        src: tabletImgCard1,
         alt: "Sample pictures of data visualization project.",
-        position: "-1.56rem",
+        position_bottom: "-1.56rem",
       },
       mobile: {
         src: mobileImgCard1,
         alt: "Sample pictures of data visualization project.",
-        position: "-25px",
+        position_botton: "-1.7rem",
+        position_right: "-1.25rem",
       },
     },
   },
