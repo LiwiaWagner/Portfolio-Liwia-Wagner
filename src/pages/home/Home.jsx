@@ -2,10 +2,16 @@ import React, { useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
 import "./home.css";
 import "../../components/card/card.css";
 import { cards } from "./../../data";
 import Card from "../../components/card/Card";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
+import "swiper/css/scrollbar";
+import { Navigation, Pagination, Scrollbar, A11y } from "swiper/modules";
 
 const getConfig = (trigger, startColor, endColor) => {
   return {
@@ -13,7 +19,7 @@ const getConfig = (trigger, startColor, endColor) => {
       trigger: trigger,
       scrub: true,
       markers: true,
-      start: "top 95%",
+      start: "top 40%",
       end: "top 20%",
     },
     startAt: { backgroundColor: startColor, "--background-color": startColor },
@@ -22,23 +28,30 @@ const getConfig = (trigger, startColor, endColor) => {
   };
 };
 
-const violet = "#D8D6E8";
+const startColor = "#E0D5DC";
+let prevColor = startColor;
 
 const Home = () => {
-  const topCards = cards.filter((card) => [1].includes(card.id));
+  const topCards = cards.filter((card) => [1, 2, 3].includes(card.id));
   const orderedCards = [...cards].sort((a, b) => a.order - b.order);
 
   useGSAP(() => {
-    gsap
-      .timeline()
-      .set("body", {
-        backgroundColor: "#E0D5DC",
-        "--background-color": "#E0D5DC",
-      })
-      .to("body", getConfig("#one", "#E0D5DC", "#D8D6E8"))
-      .to("body", getConfig("#two", "#D8D6E8", "#E9EEF0"))
-      .to("body", getConfig("#three", "#E9EEF0", "#EFEEF8"))
-      .to("body", getConfig("#four", "#EFEEF8", "#EFEEF8"));
+    const tl = gsap.timeline();
+
+    tl.set("body", {
+      backgroundColor: startColor,
+      "--background-color": startColor,
+    });
+
+    orderedCards.forEach((card) => {
+      tl.to("body", getConfig(card.gsap.id, prevColor, card.gsap.toColor));
+      prevColor = card.gsap.toColor;
+    });
+
+    tl.set("body", {
+      backgroundColor: startColor,
+      "--background-color": startColor,
+    });
   });
 
   const location = useLocation();
@@ -48,6 +61,8 @@ const Home = () => {
       document
         .querySelector(location.hash)
         ?.scrollIntoView({ behavior: "smooth", block: "start" });
+    } else {
+      window.scrollTo({ top: 0, behavior: "smooth" });
     }
   }, [location]);
 
@@ -66,19 +81,24 @@ const Home = () => {
           </div>
         </div>
       </div>
-
       <div>
         <h2 className="projects-title">TOP PROJECTS</h2>
       </div>
-      <section className="project-container top-projects-container">
-        {topCards.map((card, index) => (
-          <Card key={index} card={card} hasHtmlId={false} />
-        ))}
+      <section className="top-projects-container">
+        <Swiper
+          modules={[Navigation, Pagination, Scrollbar, A11y]}
+          slidesPerView={1}
+          navigation
+          loop={true}
+          pagination={{ clickable: true }}
+        >
+          {topCards.map((card) => (
+            <SwiperSlide key={card.id}>
+              <Card card={card} hasHtmlId={false} />
+            </SwiperSlide>
+          ))}
+        </Swiper>
       </section>
-
-      <div className="carousel"></div>
-
-      <div className="img-container-test"></div>
 
       <div id="view">
         <div>
