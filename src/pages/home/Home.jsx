@@ -12,13 +12,14 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/scrollbar";
 import { Navigation, Pagination, Scrollbar, A11y } from "swiper/modules";
+import { SlideNextButton } from "../../components/SlideNextButton/SlideNextButton";
 
 const getConfig = (trigger, startColor, endColor) => {
   return {
     scrollTrigger: {
       trigger: trigger,
       scrub: true,
-      markers: true,
+      markers: false,
       start: "top 40%",
       end: "top 20%",
     },
@@ -28,6 +29,7 @@ const getConfig = (trigger, startColor, endColor) => {
   };
 };
 
+const tl = gsap.timeline();
 const startColor = "#E0D5DC";
 let prevColor = startColor;
 
@@ -36,8 +38,6 @@ const Home = () => {
   const orderedCards = [...cards].sort((a, b) => a.order - b.order);
 
   useGSAP(() => {
-    const tl = gsap.timeline();
-
     tl.set("body", {
       backgroundColor: startColor,
       "--background-color": startColor,
@@ -92,6 +92,8 @@ const Home = () => {
           loop={true}
           pagination={{ clickable: true }}
         >
+          <SlideNextButton />
+
           {topCards.map((card) => (
             <SwiperSlide key={card.id}>
               <Card card={card} hasHtmlId={false} />

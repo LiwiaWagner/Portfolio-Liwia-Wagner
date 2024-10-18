@@ -2,12 +2,15 @@ import desktopImgCard1 from "../src/assets/d_card_picture_p1.png";
 import tabletImgCard1 from "../src/assets/t_card_picture_p1.png";
 import mobileImgCard1 from "../src/assets/m_card_picture_p1.png";
 import desktopImgCard2 from "../src/assets/d_card_picture_p2.png";
+import tabletImgCard2 from "../src/assets/t_card_picture_p2.png";
 import mobileImgCard2 from "../src/assets/m_card_picture_p2.png";
 import desktopImgCard3 from "../src/assets/d_card_picture_p3.png";
+import tabletImgCard3 from "../src/assets/t_card_picture_p3.png";
 import mobileImgCard3 from "../src/assets/m_card_picture_p3.png";
 import desktopImgCard4 from "../src/assets/d_card_picture_p4.png";
+import tabletImgCard4 from "../src/assets/t_card_picture_p4.png";
 import mobileImgCard4 from "../src/assets/m_card_picture_p4.png";
-import desktopImgProject1 from "../src/assets/d_project_picture_p1.png";
+import desktopImgProjectNetworkEdge from "../src/assets/d_project_picture_p1.png";
 
 export const cards = [
   {
@@ -27,21 +30,21 @@ export const cards = [
     btn: {
       text: "GO TO PROJECT",
       color: "var(--btn-project-id1)",
-      aLink: "../project-network-edge/ProjectNetworkEdge",
+      aLink: "./pages/project_network_edge/ProjectNetworkEdge.jsx",
     },
     images: {
       desktop: {
         src: desktopImgCard1,
-        position_bottom: "-1.875rem",
+        positionBottom: "-1.3rem",
       },
       tablet: {
         src: tabletImgCard1,
-        position_bottom: "-1.56rem",
+        positionBottom: "-1.6rem",
       },
       mobile: {
         src: mobileImgCard1,
-        position_bottom: "-1.7rem",
-        position_right: "-1.25rem",
+        positionBottom: "-1.6rem",
+        positionRight: "-1.25rem",
       },
     },
   },
@@ -66,16 +69,16 @@ export const cards = [
     images: {
       desktop: {
         src: desktopImgCard2,
-        alt: "Sample pictures of data visualization project.",
+        positionBottom: "-2rem",
       },
       tablet: {
-        src: tabletImgCard1,
-        alt: "Sample pictures of data visualization project.",
-        position_bottom: "-1.56rem",
+        src: tabletImgCard2,
+        positionBottom: "-1.5rem",
       },
       mobile: {
         src: mobileImgCard2,
-        alt: "Sample pictures of data visualization project.",
+        positionBottom: "-2.4rem",
+        positionRight: "-1.25rem",
       },
     },
   },
@@ -100,16 +103,16 @@ export const cards = [
     images: {
       desktop: {
         src: desktopImgCard3,
-        alt: "Sample pictures of data visualization project.",
+        positionBottom: "-1.4rem",
       },
       tablet: {
-        src: tabletImgCard1,
-        alt: "Sample pictures of data visualization project.",
-        position_bottom: "-1.56rem",
+        src: tabletImgCard3,
+        positionBottom: "-1rem",
       },
       mobile: {
         src: mobileImgCard3,
-        alt: "Sample pictures of data visualization project.",
+        positionBottom: "-1rem",
+        positionRight: "-2rem",
       },
     },
   },
@@ -129,21 +132,21 @@ export const cards = [
     btn: {
       text: "GO TO PROJECT",
       color: "var(--btn-project-id4)",
-      aLink: "../project_cyclistic/ProjectCyclistic.jsx",
+      aLink: "../project_cyclistic/ProjectCyclistic",
     },
     images: {
       desktop: {
         src: desktopImgCard4,
-        alt: "Sample pictures of data visualization project.",
+        positionBottom: "-2.4rem",
       },
       tablet: {
-        src: tabletImgCard1,
-        alt: "Sample pictures of data visualization project.",
-        position_bottom: "-1.56rem",
+        src: tabletImgCard4,
+        positionBottom: "-1rem",
       },
       mobile: {
         src: mobileImgCard4,
-        alt: "Sample pictures of data visualization project.",
+        positionBottom: "-1.4rem",
+        positionRight: "-1.25rem",
       },
     },
   },
@@ -179,7 +182,7 @@ export const projects = [
     },
     tools: { title: "TOOLS & PROGRAMMING LANGUAGES", content: "Figma" },
     image: {
-      src: desktopImgProject1,
+      src: desktopImgProjectNetworkEdge,
       alt: "Sample pictures of data visualization project.",
     },
   },
