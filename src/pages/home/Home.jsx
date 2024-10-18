@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
@@ -13,6 +13,8 @@ import "swiper/css/pagination";
 import "swiper/css/scrollbar";
 import { Navigation, Pagination, Scrollbar, A11y } from "swiper/modules";
 import { SlideNextButton } from "../../components/SlideNextButton/SlideNextButton";
+import { ScrollTrigger } from "gsap/all";
+import { SlidePrevButton } from "../../components/SlidePrevButton/SlidePrevButton";
 
 const getConfig = (trigger, startColor, endColor) => {
   return {
@@ -30,14 +32,42 @@ const getConfig = (trigger, startColor, endColor) => {
 };
 
 const tl = gsap.timeline();
-const startColor = "#E0D5DC";
-let prevColor = startColor;
+let prevColor = null;
+let activeIndex = 0;
 
 const Home = () => {
+  const [startColor, setStartColor] = useState("#E0D5DC");
+  const location = useLocation();
+
   const topCards = cards.filter((card) => [1, 2, 3].includes(card.id));
   const orderedCards = [...cards].sort((a, b) => a.order - b.order);
 
+  const onNavigationPrev = () => {
+    activeIndex -= 1;
+
+    if (activeIndex < 0) {
+      activeIndex = topCards.length - 1;
+    }
+
+    const card = topCards[activeIndex];
+    setStartColor(card.gsap.toColor);
+  };
+
+  const onNavigationNext = () => {
+    activeIndex += 1;
+
+    if (activeIndex >= topCards.length) {
+      activeIndex = 0;
+    }
+
+    const card = topCards[activeIndex];
+    setStartColor(card.gsap.toColor);
+  };
+
   useGSAP(() => {
+    ScrollTrigger.getAll().forEach((e) => e.kill(true));
+    prevColor = startColor;
+
     tl.set("body", {
       backgroundColor: startColor,
       "--background-color": startColor,
@@ -52,9 +82,7 @@ const Home = () => {
       backgroundColor: startColor,
       "--background-color": startColor,
     });
-  });
-
-  const location = useLocation();
+  }, [startColor]);
 
   useEffect(() => {
     if (location.hash) {
@@ -86,6 +114,8 @@ const Home = () => {
       </div>
       <section className="top-projects-container">
         <Swiper
+          onNavigationPrev={onNavigationPrev}
+          onNavigationNext={onNavigationNext}
           modules={[Navigation, Pagination, Scrollbar, A11y]}
           slidesPerView={1}
           navigation
@@ -93,7 +123,7 @@ const Home = () => {
           pagination={{ clickable: true }}
         >
           <SlideNextButton />
-
+          <SlidePrevButton />
           {topCards.map((card) => (
             <SwiperSlide key={card.id}>
               <Card card={card} hasHtmlId={false} />
