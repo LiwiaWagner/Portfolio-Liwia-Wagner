@@ -80,7 +80,7 @@ a {
   width: 25px;
 }
 
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 900px) {
   nav {
     height: 4rem;
   }

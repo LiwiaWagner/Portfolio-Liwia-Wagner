@@ -30,7 +30,7 @@
   padding-left: 0 0 0 0.2rem;
 }
 
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 900px) {
   .footer-container {
     height: 4rem;
     margin: 2.3rem 0 0 0;

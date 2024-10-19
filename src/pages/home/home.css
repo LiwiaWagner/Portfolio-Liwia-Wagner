@@ -52,7 +52,7 @@
   margin: 3rem 0;
   display: flex;
   flex-direction: column;
-  border-radius: 0.8rem;
+  border-radius: 1rem;
 }
 
 .top-projects-container {
@@ -63,7 +63,7 @@
   margin: 0 3rem;
 }
 
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 900px) {
   /* ---Hero */
 
   .hero-container {

@@ -1,14 +1,10 @@
 import desktopImgCard1 from "../src/assets/d_card_picture_p1.png";
-import tabletImgCard1 from "../src/assets/t_card_picture_p1.png";
 import mobileImgCard1 from "../src/assets/m_card_picture_p1.png";
 import desktopImgCard2 from "../src/assets/d_card_picture_p2.png";
-import tabletImgCard2 from "../src/assets/t_card_picture_p2.png";
 import mobileImgCard2 from "../src/assets/m_card_picture_p2.png";
 import desktopImgCard3 from "../src/assets/d_card_picture_p3.png";
-import tabletImgCard3 from "../src/assets/t_card_picture_p3.png";
 import mobileImgCard3 from "../src/assets/m_card_picture_p3.png";
 import desktopImgCard4 from "../src/assets/d_card_picture_p4.png";
-import tabletImgCard4 from "../src/assets/t_card_picture_p4.png";
 import mobileImgCard4 from "../src/assets/m_card_picture_p4.png";
 import desktopImgProjectNetworkEdge from "../src/assets/d_project_picture_p1.png";
 
@@ -35,16 +31,11 @@ export const cards = [
     images: {
       desktop: {
         src: desktopImgCard1,
-        positionBottom: "-1.3rem",
-      },
-      tablet: {
-        src: tabletImgCard1,
-        positionBottom: "-1.6rem",
       },
       mobile: {
         src: mobileImgCard1,
-        positionBottom: "-1.6rem",
-        positionRight: "-1.25rem",
+        positionBottom: "-1rem",
+        positionRight: "-4rem",
       },
     },
   },
@@ -71,14 +62,10 @@ export const cards = [
         src: desktopImgCard2,
         positionBottom: "-2rem",
       },
-      tablet: {
-        src: tabletImgCard2,
-        positionBottom: "-1.5rem",
-      },
       mobile: {
         src: mobileImgCard2,
-        positionBottom: "-2.4rem",
-        positionRight: "-1.25rem",
+        positionBottom: "-1.2rem",
+        positionRight: "-1.6rem",
       },
     },
   },
@@ -105,14 +92,10 @@ export const cards = [
         src: desktopImgCard3,
         positionBottom: "-1.4rem",
       },
-      tablet: {
-        src: tabletImgCard3,
-        positionBottom: "-1rem",
-      },
       mobile: {
         src: mobileImgCard3,
-        positionBottom: "-1rem",
-        positionRight: "-2rem",
+        positionBottom: "-2.4rem",
+        positionRight: "-1rem",
       },
     },
   },
@@ -139,14 +122,10 @@ export const cards = [
         src: desktopImgCard4,
         positionBottom: "-2.4rem",
       },
-      tablet: {
-        src: tabletImgCard4,
-        positionBottom: "-1rem",
-      },
       mobile: {
         src: mobileImgCard4,
-        positionBottom: "-1.4rem",
-        positionRight: "-1.25rem",
+        positionBottom: "-1.6rem",
+        positionRight: "-1.6rem",
       },
     },
   },

@@ -37,17 +37,10 @@ function Card(props) {
             </Link>
           </div>
           <div
-            className="card-container-img-desktop"
+            className="card-container-img-desktop card-container-img-tablet"
             style={{
               backgroundImage: `url(${card.images.desktop.src})`,
-              backgroundPosition: `bottom ${card.images.desktop.positionBottom} center`,
-            }}
-          />
-          <div
-            className="card-container-img-tablet"
-            style={{
-              backgroundImage: `url(${card.images.tablet.src})`,
-              backgroundPosition: `bottom ${card.images.tablet.positionBottom} center`,
+              backgroundPosition: `center center`,
             }}
           />
           <div
