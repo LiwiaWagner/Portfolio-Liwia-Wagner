@@ -1,0 +1,32 @@
+.project-intro {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(12, 1fr);
+}
+
+.main-title {
+  grid-column: 1 / 9;
+  padding: 4rem 0 0.4rem 0;
+}
+
+.intro-left-container-type1 {
+  grid-column: 1 / 8;
+}
+
+.intro-right-container {
+  grid-column: 9 / 13;
+}
+
+.intro-sub-title {
+  padding: 1.5rem 0 0 0;
+}
+
+.intro-description {
+  padding: 1rem 0;
+}
+
+@media screen and (max-width: 900px) {
+}
+
+@media screen and (max-width: 430px) {
+}

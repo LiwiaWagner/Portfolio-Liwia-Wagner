@@ -1,7 +1,8 @@
 import React from "react";
 import { projects } from "../../data";
 import "./projectNetworkEdge.css";
-import Project from "../../components/project/Project";
+import "./../../components/project/project.css";
+// import Project from "../../components/project/Project";
 import desktopImgProjectNetworkEdge from "../../assets/d_project_picture_p1.png";
 
 export const ProjectNetworkEdge = () => {
@@ -12,13 +13,83 @@ export const ProjectNetworkEdge = () => {
   return (
     <div className="project-main-container">
       <div className="project-intro">
-        <Project project={filteredProject} />
+        {/* <Project project={filteredProject} /> */}
+
+        <h1 className="main-title">
+          Enhancing Efficiency: Business Application for Supply Chain
+          Optimization
+        </h1>
+        <div className="intro-left-container-type1">
+          <div className="intro-section">
+            <h3 className="intro-sub-title">THE PRODUCT</h3>
+            <p className="intro-description">
+              I conducted Data Experience (DX) research and took the lead in
+              designing and prototyping a business application specifically
+              aimed at optimizing clients' supply chain networks. This involved
+              thoroughly analyzing data patterns, identifying key bottlenecks,
+              and ensuring the application catered to the unique logistical
+              needs of each client. Through a combination of advanced data
+              visualization techniques and user-centered design, I created a
+              tool that improved efficiency, enhanced decision-making, and
+              streamlined operations across various stages of the supply chain.
+            </p>
+          </div>
+          <div className="intro-section">
+            <h3 className="intro-sub-title">THE PROBLEM</h3>
+            <p className="intro-description">
+              The client's reporting solution had not been updated or analyzed
+              for user experience since its launch over two years ago. As a
+              result, the design had likely fallen behind evolving user needs
+              and modern usability standards. Without regular assessments,
+              potential usability issues, inefficiencies, and areas for
+              improvement had gone unnoticed, affecting the tool's overall
+              effectiveness and user satisfaction. Additionally, the system had
+              not taken advantage of newer design trends, technologies, or
+              updated user interaction patterns during that time.
+            </p>
+          </div>
+          <div className="intro-section">
+            <h3 className="intro-sub-title">THE GOAL</h3>
+            <p className="intro-description">
+              The primary objective of the project was to gain a comprehensive
+              understanding of the user experience and subsequently redesign the
+              existing reporting solution informed by user feedback. This
+              involved conducting detailed user research, including interviews
+              and usability testing, to gather insights into how users
+              interacted with the current system. Based on this feedback, we
+              aimed to identify pain points and areas for improvement, ensuring
+              that the redesigned solution would effectively address user needs
+              and enhance overall satisfaction. The ultimate goal was to create
+              a more intuitive and efficient reporting tool that aligned with
+              users' expectations and facilitated better decision-making.
+            </p>
+          </div>
+        </div>
+        <div className="intro-left-container-type2"></div>
+        <div className="intro-right-container">
+          <div className="intro-section">
+            <h3 className="intro-sub-title">AREAS OF EXPERTISE</h3>
+            <p className="intro-description">
+              Product Design + Data Viz Design + UX/UI Design + DX Research
+            </p>
+          </div>
+          <div className="intro-section">
+            <h3 className="intro-sub-title">TOOLS & PROGRAMMING LANGUAGES</h3>
+            <p className="intro-description">Figma</p>
+          </div>{" "}
+          <div className="intro-section">
+            <h3 className="intro-sub-title">DELIVERY DATE</h3>
+            <p className="intro-description">March 2022</p>
+          </div>
+        </div>
       </div>
+
       <img
         src={desktopImgProjectNetworkEdge}
         alt="Display of project"
         className="project-img"
       />
+
       <h1 className="project-content-main-title">DESIGN PROCESS</h1>
       <div className="project-container-sub-title-grid">
         <div className="project-container-sub-title">

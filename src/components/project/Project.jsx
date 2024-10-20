@@ -17,8 +17,8 @@ function Project(props) {
           {project.tools.title}
           {project.tools.content}
         </div>
-      </div> */}
-      <div>{project.image}</div>
+      </div>
+      <div>{project.image}</div> */}
     </div>
   );
 }
