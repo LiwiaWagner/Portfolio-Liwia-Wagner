@@ -122,13 +122,13 @@ const Home = () => {
           loop={true}
           pagination={{ clickable: true }}
         >
-          <SlideNextButton />
           <SlidePrevButton />
           {topCards.map((card) => (
             <SwiperSlide key={card.id}>
               <Card card={card} hasHtmlId={false} />
             </SwiperSlide>
           ))}
+          <SlideNextButton />
         </Swiper>
       </section>
 

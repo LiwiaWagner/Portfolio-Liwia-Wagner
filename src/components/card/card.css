@@ -1,6 +1,7 @@
 .card-container {
   display: flex;
   flex-direction: row;
+  min-height: 35.8rem;
 }
 
 .card-container-text {
@@ -50,7 +51,6 @@
   width: auto;
   height: 2.4rem;
   padding: 0rem 1.4rem;
-  margin: 0 0 4rem 0;
   border-radius: 0.7rem;
   color: var(--white);
   font-size: 0.8rem;
@@ -70,6 +70,10 @@
 }
 
 @media screen and (max-width: 900px) {
+  .card-container {
+    min-height: 25rem;
+  }
+
   .card-container-text {
     width: 40%;
     margin: 1.25rem 0.8rem 0 1.25rem;

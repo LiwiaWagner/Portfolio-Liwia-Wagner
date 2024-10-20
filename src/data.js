@@ -79,7 +79,7 @@ export const cards = [
     order: 3,
     title:
       "Visualizing Iris Species: A Comparative Analysis of Multiple Measures",
-    description: `In this private project, I focused on visualizing the Iris Species dataset by utilizing scatterplot matrix and parallel coordinates charts to analyze key metrics. Although these visualizations are not typically used in business reporting, they are widely applied in statistical analysis for their ability to reveal complex patterns and relationships within the data.`,
+    description: `In this private project, I focused on visualizing the Iris Species dataset by utilizing scatterplot matrix and parallel coordinates charts to analyze key metrics. Although these visualizations are not typically used in business reporting, they are widely applied in statistical analysis for their ability to reveal complex patterns and relationships within the data. Through this approach, I was able to gain deeper insights into the distribution and correlations among the dataset's features.`,
     tools: "d3.js + Data Viz Design",
     backgroundColor: "var(--bc-project-id3)",
     btn: {
@@ -108,7 +108,8 @@ export const cards = [
     },
     order: 2,
     title: `Cyclistic Case Study: A Capstone Project for Google BI Certification`,
-    description: `The capstone project, focused on preparing Cyclistic’s customer analysis, serves as the final assignment for the Google Business Intelligence Professional Certification, demonstrating the application of advanced BI skills in a real-world business context.`,
+    description: `
+    The capstone project, focused on preparing Cyclistic’s customer analysis, serves as the final assignment for the Google Business Intelligence Professional Certification, demonstrating the application of advanced BI skills in a real-world business context. This project not only reinforces technical expertise but also highlights the ability to derive actionable insights from data to support business decisions.`,
     tools:
       "Tableau + Mapbox + SQL + Data Viz Design + Data Analysis + Data Modelling + Data Processing",
     backgroundColor: "var(--bc-project-id4)",

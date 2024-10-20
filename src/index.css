@@ -98,6 +98,7 @@
   --pale-pink: #efcddf;
   --pinkish: #fdecf2;
 
+  /* ---Project colors */
   /* - background colors */
   --background-color: #c4b9c0;
   --bc-project-id1: #cebbc7;
@@ -105,11 +106,21 @@
   --bc-project-id3: #cfcbe3;
   --bc-project-id4: #a9bcc2;
 
+  /* - background lighter colors */
+  --bc-light-project-id1: #e0d5dc;
+  --bc-light-project-id2: #d8d6e8;
+  --bc-light-project-id3: #efeef8;
+  --bc-light-project-id4: #e9eef0;
+
   /* - buttons colors */
   --btn-project-id1: #4d3b46;
   --btn-project-id2: #3e328e;
   --btn-project-id3: #6155bd;
   --btn-project-id4: #285766;
+
+  /* - font colors */
+  --font-color-project-id1: #4d3b46;
+  --font-underline-color-project-id1: #b8a1af;
 }
 
 body {
@@ -159,4 +170,72 @@ p {
   color: var(--black);
   font-size: 1.1rem;
   line-height: 1.8rem;
+}
+
+b {
+  font-weight: 700;
+}
+
+/* ---Project titles */
+/* -desktop */
+.project-main-title {
+  font-size: 3rem;
+  font-weight: 100;
+  letter-spacing: 0.2rem;
+  padding: 1rem 0 2rem 0;
+}
+
+.project-sub-title {
+  font-size: 1.6rem;
+  font-weight: 400;
+  letter-spacing: 0.2rem;
+}
+
+.project-sub-sub-title {
+  font-size: 1.2rem;
+  font-weight: 600;
+  letter-spacing: 0.2rem;
+  padding: 1rem 0 0.4rem 0;
+}
+
+/* -tablet */
+@media screen and (max-width: 900px) {
+  .project-main-title {
+    font-size: 2rem;
+    padding: 2rem 0 0 0;
+  }
+
+  .project-sub-title {
+    font-size: 1.2rem;
+    font-weight: 500;
+    letter-spacing: 0.1rem;
+  }
+
+  .project-sub-sub-title {
+    font-size: 1.1rem;
+    font-weight: 600;
+    letter-spacing: 0.1rem;
+    padding: 0.8rem 0 0.2rem 0;
+  }
+}
+
+@media screen and (max-width: 430px) {
+  .project-main-title {
+    font-size: 1.7rem;
+    letter-spacing: 0.14rem;
+    padding: 0.6rem 0 0 0;
+  }
+
+  .project-sub-title {
+    font-size: 1.1rem;
+    font-weight: 500;
+    letter-spacing: 0.06rem;
+  }
+
+  .project-sub-sub-title {
+    font-size: 0.9rem;
+    font-weight: 600;
+    letter-spacing: 0.1rem;
+    padding: 0.8rem 0 0.2rem 0;
+  }
 }

@@ -1,7 +1,3 @@
-.img-container-test {
-  display: none;
-}
-
 /* ---Hero */
 
 .hero-container {
@@ -56,6 +52,7 @@
 }
 
 .top-projects-container {
+  /* display: flex; */
   margin: 0 3rem;
 }
 
