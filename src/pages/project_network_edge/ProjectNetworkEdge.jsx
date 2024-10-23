@@ -2,7 +2,7 @@ import React from "react";
 import { projects } from "../../data";
 import "./projectNetworkEdge.css";
 import "./../../components/project/project.css";
-// import Project from "../../components/project/Project";
+import Project from "../../components/project/Project";
 import desktopImgProjectNetworkEdge from "../../assets/d_project_picture_p1.png";
 
 export const ProjectNetworkEdge = () => {
@@ -13,13 +13,13 @@ export const ProjectNetworkEdge = () => {
   return (
     <div className="project-main-container">
       <div className="project-intro">
-        {/* <Project project={filteredProject} /> */}
+        <Project project={filteredProject} />
 
-        <h1 className="main-title">
+        {/* <h1 className="main-title">
           Enhancing Efficiency: Business Application for Supply Chain
           Optimization
-        </h1>
-        <div className="intro-left-container-type1">
+        </h1> */}
+        {/* <div className="intro-left-container-type1">
           <div className="intro-section">
             <h3 className="intro-sub-title">THE PRODUCT</h3>
             <p className="intro-description">
@@ -64,9 +64,9 @@ export const ProjectNetworkEdge = () => {
               users' expectations and facilitated better decision-making.
             </p>
           </div>
-        </div>
-        <div className="intro-left-container-type2"></div>
-        <div className="intro-right-container">
+        </div> */}
+        {/* <div className="intro-left-container-type2"></div> */}
+        {/* <div className="intro-right-container">
           <div className="intro-section">
             <h3 className="intro-sub-title">AREAS OF EXPERTISE</h3>
             <p className="intro-description">
@@ -81,12 +81,12 @@ export const ProjectNetworkEdge = () => {
             <h3 className="intro-sub-title">DELIVERY DATE</h3>
             <p className="intro-description">March 2022</p>
           </div>
-        </div>
+        </div> */}
       </div>
 
       <img
         src={desktopImgProjectNetworkEdge}
-        alt="Display of project"
+        alt="Sample pictures of data visualization project."
         className="project-img"
       />
 

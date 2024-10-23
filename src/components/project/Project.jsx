@@ -10,15 +10,14 @@ function Project(props) {
         </div>
         <div className="intro-left-container-type2"></div>
         <div className="intro-right-container">
-          {project.deliveryDate.title}
-          {project.deliveryDate.content}
           {project.areasOfExpertise.title}
           {project.areasOfExpertise.content}
           {project.tools.title}
           {project.tools.content}
+          {project.deliveryDate.title}
+          {project.deliveryDate.content}
         </div>
-      </div>
-      <div>{project.image}</div> */}
+  </div>*/}
     </div>
   );
 }

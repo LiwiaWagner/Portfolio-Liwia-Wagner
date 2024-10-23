@@ -6,7 +6,6 @@
 
 .main-title {
   grid-column: 1 / 9;
-  padding: 4rem 0 0.4rem 0;
 }
 
 .intro-left-container-type1 {
@@ -17,16 +16,43 @@
   grid-column: 9 / 13;
 }
 
-.intro-sub-title {
-  padding: 1.5rem 0 0 0;
-}
-
-.intro-description {
-  padding: 1rem 0;
-}
-
 @media screen and (max-width: 900px) {
+  .project-intro {
+    gap: 1.5rem;
+    grid-template-columns: repeat(6, 1fr);
+  }
+
+  .main-title {
+    grid-column: 1 / 7;
+  }
+
+  .intro-left-container-type1 {
+    grid-column: 1 / 5;
+  }
+
+  .intro-right-container {
+    grid-column: 5 / 7;
+    padding: 0 0 0 2rem;
+  }
 }
 
 @media screen and (max-width: 430px) {
+  .project-intro {
+    gap: 0;
+    grid-template-columns: repeat(5, 1fr);
+  }
+
+  .main-title {
+    grid-column: 1 / 6;
+    margin: 2rem 0 1.5rem 0;
+  }
+
+  .intro-left-container-type1 {
+    grid-column: 1 / 6;
+  }
+
+  .intro-right-container {
+    grid-column: 1 / 6;
+    padding: 0;
+  }
 }

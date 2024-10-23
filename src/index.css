@@ -121,6 +121,8 @@
   /* - font colors */
   --font-color-project-id1: #4d3b46;
   --font-underline-color-project-id1: #b8a1af;
+  --font-color-project-id4: #256e7b;
+  --font-underline-color-project-id4: #9db6bb;
 }
 
 body {
@@ -146,6 +148,7 @@ h1 {
   font-size: 2.8rem;
   font-weight: 600;
   letter-spacing: 0.1rem;
+  padding: 4rem 0 2rem 0;
 }
 
 h2 {
@@ -154,12 +157,16 @@ h2 {
 
 h3 {
   font-size: 1.3rem;
-  font-weight: 600;
+  font-weight: 500;
   letter-spacing: 0.2rem;
+  padding: 0 0 0.6rem 0;
 }
 
 h4 {
-  font-size: 1.5rem;
+  font-size: 1.1rem;
+  font-weight: 500;
+  letter-spacing: 0.15rem;
+  padding: 0 0 1rem 0;
 }
 
 h5 {
@@ -171,6 +178,21 @@ h6 {
 }
 
 p {
+  color: var(--black);
+  font-size: 1.1rem;
+  line-height: 1.8rem;
+  padding: 0 0 2rem 0;
+}
+
+ol {
+  color: var(--black);
+  font-size: 1.1rem;
+  line-height: 1.8rem;
+  padding: 0 0 1rem 0;
+}
+
+ul,
+li {
   color: var(--black);
   font-size: 1.1rem;
   line-height: 1.8rem;
@@ -204,6 +226,26 @@ b {
 
 /* -tablet */
 @media screen and (max-width: 900px) {
+  h1 {
+    font-size: 2.4rem;
+    font-weight: 500;
+    letter-spacing: 0.1rem;
+    padding: 2rem 0 1rem 0;
+  }
+
+  h3 {
+    font-size: 1.3rem;
+    font-weight: 500;
+    letter-spacing: 0.1rem;
+    padding: 0 0 0.4rem 0;
+  }
+
+  p {
+    font-size: 1rem;
+    line-height: 1.6rem;
+    padding: 0 0 1.6rem 0;
+  }
+
   .project-main-title {
     font-size: 2rem;
     padding: 2rem 0 0 0;
@@ -224,6 +266,26 @@ b {
 }
 
 @media screen and (max-width: 430px) {
+  h1 {
+    font-size: 1.5rem;
+    font-weight: 500;
+    letter-spacing: 0.1rem;
+    padding: 2rem 0 0.5rem 0;
+  }
+
+  h3 {
+    font-size: 1.1rem;
+    font-weight: 500;
+    letter-spacing: 0.06rem;
+    padding: 0 0 0.4rem 0;
+  }
+
+  p {
+    font-size: 0.9rem;
+    line-height: 1.5rem;
+    padding: 0 0 1.5rem 0;
+  }
+
   .project-main-title {
     font-size: 1.7rem;
     letter-spacing: 0.14rem;
