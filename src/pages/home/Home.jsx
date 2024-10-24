@@ -12,9 +12,11 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/scrollbar";
 import { Navigation, Pagination, Scrollbar, A11y } from "swiper/modules";
-import { SlideNextButton } from "../../components/SlideNextButton/SlideNextButton";
 import { ScrollTrigger } from "gsap/all";
+import { SlideNextButton } from "../../components/SlideNextButton/SlideNextButton";
+import "../../components/SlideNextButton/slideNextButton.css";
 import { SlidePrevButton } from "../../components/SlidePrevButton/SlidePrevButton";
+import "../../components/SlidePrevButton/slidePrevButton.css";
 
 const getConfig = (trigger, startColor, endColor) => {
   return {
