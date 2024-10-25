@@ -1,11 +1,16 @@
-import React from "react";
-import { projects } from "../../data";
+import React, { useEffect } from "react";
+import { projects } from "../../data/data";
 import "./projectNetworkEdge.css";
 import "./../../components/project/project.css";
 import Project from "../../components/project/Project";
 import desktopImgProjectNetworkEdge from "../../assets/d_project_picture_p1.png";
 
 export const ProjectNetworkEdge = () => {
+  useEffect(() => {
+    document.body.style = "--background-color: var(--bc-light-project-id1)";
+    return () => window.scrollTo(0, 0);
+  }, []);
+
   const filteredProject = projects.filter((project) => {
     return project.id === 1;
   });

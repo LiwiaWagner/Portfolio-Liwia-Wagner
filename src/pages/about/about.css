@@ -1,9 +1,8 @@
 body {
-  background-color: #acb7c1;
+  background-color: var(--background-color-about);
 }
 
 .about-main-container {
-  background-color: #acb7c1;
   display: grid;
   gap: 1rem;
   padding: 0 3rem;

@@ -17,7 +17,7 @@ function Project(props) {
           {project.deliveryDate.title}
           {project.deliveryDate.content}
         </div>
-  </div>*/}
+      </div> */}
     </div>
   );
 }

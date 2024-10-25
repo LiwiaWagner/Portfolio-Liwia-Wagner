@@ -3,7 +3,7 @@ import "./about.css";
 
 const About = () => {
   useEffect(() => {
-    document.body.style = "--background-color: #acb7c1;";
+    document.body.style = "--background-color: var(--background-color-about)";
     return () => window.scrollTo(0, 0);
   }, []);
 

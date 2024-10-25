@@ -98,9 +98,11 @@
   --pale-pink: #efcddf;
   --pinkish: #fdecf2;
 
+  --background-color: #c4b9c0;
+  --background-color-about: #acb7c1;
+
   /* ---Project colors */
   /* - background colors */
-  --background-color: #c4b9c0;
   --bc-project-id1: #cebbc7;
   --bc-project-id2: #b2add2;
   --bc-project-id3: #cfcbe3;
@@ -184,13 +186,7 @@ p {
   padding: 0 0 2rem 0;
 }
 
-ol {
-  color: var(--black);
-  font-size: 1.1rem;
-  line-height: 1.8rem;
-  padding: 0 0 1rem 0;
-}
-
+ol,
 ul,
 li {
   color: var(--black);
@@ -198,8 +194,25 @@ li {
   line-height: 1.8rem;
 }
 
+ol {
+  padding: 0 0 1rem 0;
+  list-style: decimal-leading-zero;
+  list-style-position: inside;
+}
+
+ul {
+  list-style-type: disc;
+  /* list-style-position: outside; */
+}
+
+li {
+  padding: 0 0 0.6rem 0;
+  margin: 0 0 0 3rem;
+  list-style-position: outside;
+}
+
 b {
-  font-weight: 700;
+  font-weight: 600;
 }
 
 /* ---Project titles */

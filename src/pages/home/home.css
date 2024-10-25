@@ -5,10 +5,10 @@
 }
 
 .name {
-  font-size: 1.3rem;
+  font-size: 1.2rem;
   font-weight: 100;
-  letter-spacing: 0.14rem;
-  padding: 0 0 0.5rem 0;
+  letter-spacing: 0.1rem;
+  padding: 0 0 0.8rem 0;
 }
 
 .hero-intro {
@@ -23,14 +23,13 @@
 }
 
 /* ---Top projects */
-
 .projects-title {
   position: relative;
   font-size: 1.5rem;
   font-weight: 100;
   letter-spacing: 0.14rem;
   padding: 0 0 0 4rem;
-  margin: 2rem 3rem 0 3rem;
+  margin: 3rem 0rem 0 3rem;
   color: var(--black);
 }
 
@@ -53,16 +52,56 @@
 }
 
 .top-projects-container {
-  margin: 0 3rem;
+  margin: 0 3rem 5rem 3rem;
 }
 
+/* ---Carousel */
+.swiper-button-prev {
+  background-color: red;
+}
+
+.swiper-button-next {
+  background-color: red;
+}
+
+/* ---All projects */
 .all-projects-container {
   margin: 0 3rem;
 }
 
+/* ---Filters */
+.filter-section-title {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin: 3rem 3rem 0 3rem;
+}
+
+.filter-section-container {
+  display: flex;
+  flex-direction: row;
+  margin: 0 3rem;
+}
+
+.filter-section {
+  padding: 1rem 1.5rem 1rem 0;
+}
+
+.filter-label {
+  font-size: 0.9rem;
+  font-weight: 600;
+  padding: 0 0 0.5rem 0;
+}
+
+.filters {
+  width: 18rem;
+}
+
+.css-b62m3t-container {
+  border-radius: 10px;
+}
+
 @media screen and (max-width: 900px) {
   /* ---Hero */
-
   .hero-container {
     padding: 1.25rem 1.25rem 0 1.25rem;
   }

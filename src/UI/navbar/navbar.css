@@ -53,6 +53,7 @@ a {
 
 .nav-link {
   position: relative;
+  padding: 0;
 }
 
 .nav-link:hover {

@@ -1,22 +1,46 @@
-import React, { useEffect, useState } from "react";
-import { useLocation } from "react-router-dom";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
-import { Swiper, SwiperSlide } from "swiper/react";
+import { ScrollTrigger } from "gsap/all";
+import React, { useEffect, useState } from "react";
+import { useLocation } from "react-router-dom";
+import Select from "react-select";
 import "swiper/css";
-import "./home.css";
-import "../../components/card/card.css";
-import { cards } from "./../../data";
-import Card from "../../components/card/Card";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/scrollbar";
-import { Navigation, Pagination, Scrollbar, A11y } from "swiper/modules";
-import { ScrollTrigger } from "gsap/all";
+import { A11y, Navigation, Pagination, Scrollbar } from "swiper/modules";
+import { Swiper, SwiperSlide } from "swiper/react";
 import { SlideNextButton } from "../../components/SlideNextButton/SlideNextButton";
 import "../../components/SlideNextButton/slideNextButton.css";
 import { SlidePrevButton } from "../../components/SlidePrevButton/SlidePrevButton";
 import "../../components/SlidePrevButton/slidePrevButton.css";
+import Card from "../../components/card/Card";
+import "../../components/card/card.css";
+import { cards } from "../../data/data";
+import "./home.css";
+import { TOOLS } from "../../data/tools";
+import { EXPERTISE } from "../../data/expertise";
+import { LANGUAGES } from "../../data/languages";
+
+const options = [
+  EXPERTISE.DATAVIZDESIGN,
+  EXPERTISE.DASHBOARDDESIGN,
+  EXPERTISE.PRODUCTDESIGN,
+  EXPERTISE.UXUIDESIGN,
+  EXPERTISE.DXRESEARCH,
+  EXPERTISE.DATAANALYSIS,
+  EXPERTISE.DATAMODELLING,
+  EXPERTISE.DATAPROCESSING,
+  LANGUAGES.JAVASCRIPT,
+  LANGUAGES.HTML,
+  LANGUAGES.CSS,
+  LANGUAGES.SQL,
+  LANGUAGES.D3,
+  LANGUAGES.REACT,
+  TOOLS.FIGMA,
+  TOOLS.TABLEAU,
+  TOOLS.MAPBOX,
+];
 
 const getConfig = (trigger, startColor, endColor) => {
   return {
@@ -39,6 +63,7 @@ let activeIndex = 0;
 
 const Home = () => {
   const [startColor, setStartColor] = useState("#E0D5DC");
+  const [tools, setTools] = useState([]);
   const location = useLocation();
 
   const topCards = cards.filter((card) => [1, 2, 3].includes(card.id));
@@ -64,6 +89,10 @@ const Home = () => {
 
     const card = topCards[activeIndex];
     setStartColor(card.gsap.toColor);
+  };
+
+  const handleSelectChange = (data, m) => {
+    setTools(data.map((x) => x.value));
   };
 
   useGSAP(() => {
@@ -124,13 +153,11 @@ const Home = () => {
           loop={true}
           pagination={{ clickable: true }}
         >
-          <SlidePrevButton />
           {topCards.map((card) => (
             <SwiperSlide key={card.id}>
               <Card card={card} hasHtmlId={false} />
             </SwiperSlide>
           ))}
-          <SlideNextButton />
         </Swiper>
       </section>
 
@@ -138,7 +165,44 @@ const Home = () => {
         <div>
           <h2 className="projects-title">ALL PROJECTS</h2>
         </div>
-        <div className="filters"></div>
+
+        <h2 className="filter-section-title">Filter by</h2>
+
+        <div className="filter-section-container">
+          <div className="filter-section">
+            <h5 className="filter-label">Expertise</h5>
+            <div className="filters">
+              <Select
+                options={options}
+                isMulti={true}
+                onChange={handleSelectChange}
+              />
+            </div>
+          </div>
+
+          <div className="filter-section">
+            <h5 className="filter-label">Tool</h5>
+            <div className="filters">
+              <Select
+                options={options}
+                isMulti={true}
+                onChange={handleSelectChange}
+              />
+            </div>
+          </div>
+
+          <div className="filter-section">
+            <h5 className="filter-label">Programming Language</h5>
+            <div className="filters">
+              <Select
+                options={options}
+                isMulti={true}
+                onChange={handleSelectChange}
+              />
+            </div>
+          </div>
+        </div>
+
         <section className="project-container all-projects-container">
           {orderedCards.map((card, index) => (
             <Card key={index} card={card} hasHtmlId={true} />
