@@ -1,10 +1,35 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useRef } from "react";
 import { projects } from "../../data/data";
 import "./projectCyclistic.css";
 import "./../../components/project/project.css";
 import Project from "../../components/project/Project";
+import dashboardCyclisticImg from "../../assets/cyclistic_dashboard_img.png";
+
+const { tableau } = window;
 
 export const ProjectCyclistic = () => {
+  let viz = window.tableau.VizManager.getVizs()[0];
+  const ref = useRef(null);
+  const url =
+    "https://public.tableau.com/views/CyclisticCustomerBuyingBehaviourAnalysisGoogleBICertificationCapstoneProject/Dashboard";
+  const options = {
+    width: "1000px",
+    height: "2050px",
+    hideToolbar: true,
+    device: "desktop",
+  };
+
+  function initViz() {
+    viz = new tableau.Viz(ref.current, url, options);
+  }
+
+  useEffect(() => {
+    if (viz) {
+      viz.dispose();
+    }
+    initViz();
+  }, []);
+
   useEffect(() => {
     document.body.style = "--background-color: var(--bc-light-project-id4)";
     return () => window.scrollTo(0, 0);
@@ -330,62 +355,149 @@ export const ProjectCyclistic = () => {
         </div>
       </div>
       <p className="project-content-description">
-        With the cleaned data, the analysis concentrated on uncovering the
-        distinct usage patterns between annual members and casual riders.
-        Several key aspects were analyzed to gain a comprehensive understanding
-        of their behavior:
-      </p>
-      <ol className="project-content-list">
-        <li>
-          <b>Trip Duration:</b> This involved measuring the length of rides in
-          both minutes and hours, offering insights into how long members and
-          casual riders typically use the bikes.
-        </li>
-        <li>
-          <b>Ride Timing:</b> Trends in bike usage were analyzed across
-          different days of the week and throughout the year, helping to
-          identify patterns such as peak usage periods and seasonal
-          fluctuations.
-        </li>
-        <li>
-          <b>Trip Time Analysis:</b>
-          <ul>
-            <li>
-              Average, minimum, and maximum ride lengths were calculated to
-              understand the range of trip durations.
-            </li>
-            <li>
-              Weekly usage patterns were examined, from Monday through Sunday,
-              to determine whether there were differences in riding habits
-              between weekdays and weekends.
-            </li>
-            <li>
-              Monthly usage trends were assessed for January through April to
-              uncover any early-year seasonal effects or shifts in usage.
-            </li>
-            <li>
-              Popular hours for bike rides were identified to reveal the most
-              and least active times for bike usage throughout the day.
-            </li>
-          </ul>
-        </li>
-        <li>
-          <b>Station Popularity:</b> The analysis also included determining the
-          most and least popular start and end stations for both members and
-          casual riders, highlighting which locations saw the highest and lowest
-          demand, and providing valuable information for operational and
-          strategic planning.
-        </li>
-      </ol>
-      <p className="project-content-description">
-        By focusing on these elements, the analysis aimed to generate actionable
-        insights to enhance Cyclistic's understanding of its riders and support
-        efforts to convert casual riders into members.
+        With the cleaned data, the analysis focused on uncovering the unique
+        usage patterns between annual members and casual riders. Key aspects
+        were explored, including trip duration, ride timing, trip time analysis,
+        and station popularity, to develop a comprehensive understanding of each
+        group's behavior. By examining trip duration, we could determine how
+        long each user type typically rode, while ride timing analysis shed
+        light on popular days and times for bike usage. Trip time analysis
+        offered insights into average, minimum, and maximum ride lengths, as
+        well as peak hours. Finally, station popularity analysis identified the
+        most and least frequented stations, providing valuable information on
+        user preferences and hotspot locations. Together, these insights created
+        a detailed behavioral profile of both user types, supporting data-driven
+        decisions for membership growth strategies.
       </p>
 
-      <pre>
-        <code></code>
-      </pre>
+      <p className="project-content-description">
+        <b>Trip Duration:</b>
+        this analysis measured the length of each ride in both minutes and
+        hours, providing insights into the typical usage time for members and
+        casual riders. By comparing the average trip durations, we could
+        identify differences in how each user group interacts with the
+        service—for instance, whether casual riders tend to take longer or
+        shorter trips compared to annual members. This metric also helped reveal
+        whether there were peak ride lengths associated with each group,
+        offering valuable insights into customer preferences and potential areas
+        for service optimization.
+      </p>
+      {/* <pre>
+        <code>
+          -- calculate trip length in minutes SELECT EXTRACT(EPOCH FROM
+          (ended_at_time - started_at_time))/60 AS trip_time_minutes FROM
+          t_2020_2021_2022_divvy_tripdata; -- add trip_time_minutes field to the
+          table ALTER TABLE t_2020_2021_2022_divvy_tripdata ADD COLUMN
+          trip_time_minutes TIME; UPDATE t_2020_2021_2022_divvy_tripdata a SET
+          trip_time_minutes = (SELECT EXTRACT(EPOCH FROM (ended_at_time -
+          started_at_time))/60 FROM t_2020_2021_2022_divvy_tripdata b WHERE
+          a.ride_id = b.ride_id); -- average trip time for all users SELECT
+          AVG(trip_time_minutes) AS avg_trip_time_minutes FROM
+          t_2020_2021_2022_divvy_tripdata; -- average trip time for each group
+          member type SELECT member_casual, AVG(trip_time_minutes) AS
+          avg_member_trip_time FROM t_2020_2021_2022_divvy_tripdata GROUP BY
+          member_casual; -- max time spend on trip for each group SELECT
+          member_casual, MAX(trip_time_minutes) AS max_member_trip_time FROM
+          t_2020_2021_2022_divvy_tripdata GROUP BY member_casual; -- min time
+          spend on trip for each group SELECT member_casual,
+          MIN(trip_time_minutes) AS min_member_trip_time FROM
+          t_2020_2021_2022_divvy_tripdata GROUP BY member_casual;
+        </code>
+      </pre> */}
+
+      <p className="project-content-description">
+        <b>Trip Time Analysis:</b>
+        focused on bike usage trends across different days of the week and
+        throughout the year, identifying peak usage periods and seasonal
+        fluctuations. Weekly patterns from Monday through Sunday were examined
+        to reveal any differences in riding habits between weekdays and
+        weekends. Monthly trends for January through April were assessed to
+        uncover early-year seasonal shifts. Additionally, popular hours for bike
+        rides were identified, highlighting the most and least active times
+        throughout the day, providing a comprehensive view of user engagement
+        across various timeframes.
+      </p>
+      {/* <pre>
+        <code>
+          -- which weekdays have most trips SELECT TO_CHAR(started_at_date,
+          'DAY') AS week_day FROM t_2020_2021_2022_divvy_tripdata; ALTER TABLE
+          t_2020_2021_2022_divvy_tripdata ADD COLUMN week_day TEXT; UPDATE
+          t_2020_2021_2022_divvy_tripdata a SET week_day = (SELECT
+          TO_CHAR(started_at_date, 'DAY') FROM t_2020_2021_2022_divvy_tripdata b
+          WHERE a.ride_id = b.ride_id); SELECT week_day, COUNT(week_day) AS
+          week_day_count FROM t_2020_2021_2022_divvy_tripdata GROUP BY week_day;
+          -- per membership type SELECT week_day, COUNT(week_day) AS
+          week_day_count FROM t_2020_2021_2022_divvy_tripdata WHERE
+          member_casual = 'member' GROUP BY week_day; SELECT week_day,
+          COUNT(week_day) AS week_day_count FROM t_2020_2021_2022_divvy_tripdata
+          WHERE member_casual = 'casual' GROUP BY week_day; -- most popular
+          months SELECT EXTRACT(MONTH FROM started_at_date::date) AS month_name
+          FROM t_2020_2021_2022_divvy_tripdata; SELECT month_name,
+          COUNT(month_name) AS count_month_name FROM
+          t_2020_2021_2022_divvy_tripdata; SELECT month_name, COUNT(month_name)
+          AS count_month_name FROM t_2020_2021_2022_divvy_tripdata WHERE
+          member_casual = 'member'; SELECT month_name, COUNT(month_name) AS
+          count_month_name FROM t_2020_2021_2022_divvy_tripdata WHERE
+          member_casual = 'casual'; -- most popular hours SELECT EXTRACT(HOUR
+          FROM started_at_date) AS time_of_day, COUNT(*), member_casual FROM
+          t_2020_2021_2022_divvy_tripdata GROUP BY time_of_day, member_casual
+          ORDER BY time_of_day DESC;
+        </code>
+      </pre> */}
+
+      <p className="project-content-description">
+        <b>Station Popularity: </b> this analysis identified the most and least
+        popular start and end stations for both members and casual riders,
+        revealing which locations experienced the highest and lowest demand.
+        These insights offered valuable information for operational efficiency
+        and strategic planning, helping to optimize station placement and
+        resource allocation based on rider preferences and station usage
+        patterns.
+      </p>
+
+      {/* <pre>
+        <code>
+          -- most popular start stations for casual riders SELECT
+          start_station_name, COUNT(*) AS rank_start_station FROM
+          t_2020_2021_2022_divvy_tripdata WHERE member_casual = 'casual' GROUP
+          BY start_station_name ORDER BY rank_start_station -- most popular
+          start stations for member riders SELECT start_station_name, COUNT(*)
+          AS rank_start_station FROM t_2020_2021_2022_divvy_tripdata WHERE
+          member_casual = 'member' GROUP BY start_station_name ORDER BY
+          rank_start_station -- most popular end stations for casual riders
+          SELECT end_station_name, COUNT(*) AS rank_end_station FROM
+          t_2020_2021_2022_divvy_tripdata WHERE member_casual = 'casual' GROUP
+          BY end_station_name ORDER BY rank_end_station -- most popular end
+          stations for member riders SELECT end_station_name, COUNT(*) AS
+          rank_end_station FROM t_2020_2021_2022_divvy_tripdata WHERE
+          member_casual = 'member' GROUP BY end_station_name ORDER BY
+          rank_end_station -- most popular routes amongst casual riders SELECT
+          COUNT(*) AS frequency, start_station_name, end_station_name FROM
+          t_2020_2021_2022_divvy_tripdata WHERE member_casual = 'casual' GROUP
+          BY start_station_name, end_station_name ORDER BY frequency DESC; --
+          most popular routes amongst member riders SELECT COUNT(*) AS
+          frequency, start_station_name, end_station_name FROM
+          t_2020_2021_2022_divvy_tripdata WHERE member_casual = 'member' GROUP
+          BY start_station_name, end_station_name ORDER BY frequency DESC; --
+          least popular routes amongst casual riders SELECT COUNT(*) AS
+          frequency, start_station_name, end_station_name FROM
+          t_2020_2021_2022_divvy_tripdata WHERE member_casual = 'casual' GROUP
+          BY start_station_name, end_station_name ORDER BY frequency ASC; --
+          least popular routes amongst member riders SELECT COUNT(*) AS
+          frequency, start_station_name, end_station_name FROM
+          t_2020_2021_2022_divvy_tripdata WHERE member_casual = 'member' GROUP
+          BY start_station_name, end_station_name ORDER BY frequency ASC;
+        </code>
+      </pre> */}
+
+      <p className="project-content-description">
+        By concentrating on these elements, the analysis sought to produce
+        actionable insights that would deepen Cyclistic’s understanding of rider
+        behaviors and preferences. These findings are intended to support
+        strategic efforts to convert casual riders into long-term members,
+        ultimately helping Cyclistic grow its membership base and improve
+        customer engagement.
+      </p>
 
       <div className="project-container-sub-title-grid">
         <div className="project-container-sub-title">
@@ -393,7 +505,36 @@ export const ProjectCyclistic = () => {
           <h3 className="project-content-sub-title">SHARE</h3>
         </div>
       </div>
-      <p className="project-content-description"></p>
+      <p className="project-content-description">
+        After completing the analysis, the next crucial step is to effectively
+        share and present the findings through clear and impactful data
+        visualizations, ensuring that the audience can quickly grasp the key
+        insights we aim to communicate. Numerous methods are available for
+        presenting data analysis results visually, including traditional tools
+        like PowerPoint and Excel, as well as specialized business intelligence
+        platforms. For this project, I chose to use Tableau, a robust business
+        intelligence tool known for its ability to create interactive, dynamic,
+        and visually appealing presentations. Tableau's advanced capabilities
+        not only enhance data visualization but also allow the audience to
+        explore the data directly, helping them uncover deeper insights and
+        understand complex patterns and trends with greater ease and engagement.
+      </p>
+
+      <p className="project-content-description">
+        <b>
+          For the best interactive experience with the Tableau dashboard, please
+          open the site on a desktop. On tablets and phones, only a static
+          preview image of the dashboard is available.
+        </b>
+      </p>
+
+      <div className="tableau-dash" ref={ref}></div>
+
+      <img
+        src={dashboardCyclisticImg}
+        alt="Sample picture of the dashboard."
+        className="dashboard-img"
+      />
 
       <div className="project-container-sub-title-grid">
         <div className="project-container-sub-title">
@@ -401,7 +542,79 @@ export const ProjectCyclistic = () => {
           <h3 className="project-content-sub-title">ACT</h3>
         </div>
       </div>
-      <p className="project-content-description"></p>
+      <p className="project-content-description">
+        The final phase involves the business taking action on the analysis
+        findings and insights, using this information to implement strategic
+        changes that align with identified trends and opportunities. By
+        integrating data-driven insights into the business strategy, the
+        organization can make informed decisions that improve operational
+        efficiency, enhance customer engagement, and potentially increase
+        membership conversion rates. This phase is critical, as it translates
+        analysis into tangible actions that support growth and adaptability,
+        ensuring the business continuously evolves based on accurate,
+        evidence-backed recommendations.
+      </p>
+      <ul className="key-findings">
+        <b>Key Findings:</b>
+        <li className="key-point">
+          <b>Ride Frequency by Customer Type: </b>Casual customers predominantly
+          take rides on weekends, while members have higher usage during the
+          weekdays, indicating different patterns in how each group engages with
+          the service.
+        </li>
+        <li>
+          <b>Trip Duration:</b> On average, members tend to take shorter rides
+          compared to casual customers, suggesting that members may use the
+          service more for quick, practical trips, while casual riders might use
+          it for leisurely, extended rides.
+        </li>
+        <li>
+          <b>Seasonal Trends:</b> Both members and casual riders are more active
+          during the summer months, with ride frequency dropping in the late
+          winter and early spring. This seasonal fluctuation highlights
+          potential opportunities for targeted promotions or service adjustments
+          to boost engagement during lower-demand periods.
+        </li>
+      </ul>
+      <p className="project-content-description">
+        These insights provide a clear understanding of customer behavior,
+        laying the groundwork for strategies to increase member engagement and
+        convert casual users into loyal members.
+      </p>
+      <ul className="key-findings">
+        <b>Recommendations:</b>
+        <li className="key-point">
+          <b>Promote Membership Cost Savings:</b> Develop targeted
+          advertisements highlighting how a membership can lead to cost savings,
+          especially for customers who often take longer rides. Positioning the
+          membership as a budget-friendly option for frequent or extended rides
+          can appeal to cost-conscious casual riders, encouraging them to
+          consider joining.
+        </li>
+        <li>
+          <b>Weekend Leisure Targeting:</b> Focus marketing efforts on casual
+          customers who tend to rent bikes for leisure, specifically on
+          weekends. Tailored messaging that emphasizes the convenience and
+          benefits of a membership for weekend activities could resonate with
+          these riders, nudging them toward a commitment to Cyclistic.
+        </li>
+        <li>
+          <b>Seasonal Summer Campaign:</b> Launch a large-scale summer campaign
+          to capture the increased interest in bike rentals during the peak
+          season. Consider special promotions, discounts, or unique membership
+          perks that coincide with summer, when outdoor activities are at their
+          height, to attract both new and returning customers.
+        </li>
+      </ul>
+      <p className="project-content-description">
+        These strategic recommendations capitalize on key insights into customer
+        behavior, significantly increasing the potential to convert casual
+        riders into committed members while also maximizing engagement during
+        high-demand periods. By aligning promotional efforts with observed usage
+        patterns, Cyclistic can tailor its approach to meet the specific needs
+        and preferences of its diverse customer base, thereby fostering greater
+        loyalty, improving customer retention, and driving overall growth.
+      </p>
     </div>
   );
 };

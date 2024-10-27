@@ -50,8 +50,8 @@ export const cards = [
       },
       mobile: {
         src: mobileImgCard1,
-        positionBottom: "-1rem",
-        positionRight: "-4rem",
+        positionBottom: "-1.5rem",
+        positionRight: "-1.5rem",
       },
     },
   },
@@ -99,8 +99,8 @@ export const cards = [
       },
       mobile: {
         src: mobileImgCard2,
-        positionBottom: "-1.2rem",
-        positionRight: "-1.6rem",
+        positionBottom: "-2.5rem",
+        positionRight: "-1.2rem",
       },
     },
   },
@@ -139,7 +139,7 @@ export const cards = [
       },
       mobile: {
         src: mobileImgCard3,
-        positionBottom: "-2.4rem",
+        positionBottom: "-3.5rem",
         positionRight: "-1rem",
       },
     },
@@ -186,8 +186,8 @@ export const cards = [
       },
       mobile: {
         src: mobileImgCard4,
-        positionBottom: "-1.6rem",
-        positionRight: "-1.6rem",
+        positionBottom: "-2.2rem",
+        positionRight: "-1rem",
       },
     },
   },

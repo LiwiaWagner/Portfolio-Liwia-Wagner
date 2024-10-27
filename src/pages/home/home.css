@@ -57,11 +57,11 @@
 
 /* ---Carousel */
 .swiper-button-prev {
-  background-color: red;
+  background-color: transparent;
 }
 
 .swiper-button-next {
-  background-color: red;
+  background-color: transparent;
 }
 
 /* ---All projects */

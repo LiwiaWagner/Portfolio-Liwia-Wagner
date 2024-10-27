@@ -10,17 +10,13 @@ import "swiper/css/pagination";
 import "swiper/css/scrollbar";
 import { A11y, Navigation, Pagination, Scrollbar } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { SlideNextButton } from "../../components/SlideNextButton/SlideNextButton";
-import "../../components/SlideNextButton/slideNextButton.css";
-import { SlidePrevButton } from "../../components/SlidePrevButton/SlidePrevButton";
-import "../../components/SlidePrevButton/slidePrevButton.css";
 import Card from "../../components/card/Card";
 import "../../components/card/card.css";
 import { cards } from "../../data/data";
-import "./home.css";
-import { TOOLS } from "../../data/tools";
 import { EXPERTISE } from "../../data/expertise";
 import { LANGUAGES } from "../../data/languages";
+import { TOOLS } from "../../data/tools";
+import "./home.css";
 
 const options = [
   EXPERTISE.DATAVIZDESIGN,
