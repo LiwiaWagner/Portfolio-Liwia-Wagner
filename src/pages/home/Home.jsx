@@ -33,16 +33,18 @@ const options = [
   EXPERTISE.DATAANALYSIS,
   EXPERTISE.DATAMODELLING,
   EXPERTISE.DATAPROCESSING,
+];
+
+const options1 = [
   LANGUAGES.JAVASCRIPT,
   LANGUAGES.HTML,
   LANGUAGES.CSS,
   LANGUAGES.SQL,
   LANGUAGES.D3,
   LANGUAGES.REACT,
-  TOOLS.FIGMA,
-  TOOLS.TABLEAU,
-  TOOLS.MAPBOX,
 ];
+
+const options2 = [TOOLS.FIGMA, TOOLS.TABLEAU, TOOLS.MAPBOX];
 
 const getConfig = (trigger, startColor, endColor) => {
   return {
