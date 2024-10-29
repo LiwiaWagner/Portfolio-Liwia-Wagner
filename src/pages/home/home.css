@@ -56,12 +56,18 @@
 }
 
 /* ---Carousel */
-.swiper-button-prev {
-  background-color: transparent;
+.swiper-pagination {
+  --swiper-pagination-bottom: -16px;
 }
 
-.swiper-button-next {
-  background-color: transparent;
+.swiper-pagination-bullet {
+  background-color: var(--black);
+  opacity: 0.7;
+  transition: all 0.3s ease-in-out;
+}
+
+.swiper-pagination-bullet-active {
+  background-color: var(--black);
 }
 
 /* ---All projects */
@@ -73,7 +79,7 @@
 .filter-section-title {
   font-size: 1.2rem;
   font-weight: 600;
-  margin: 3rem 3rem 0 3rem;
+  margin: 1.5rem 3rem 0 3rem;
 }
 
 .filter-section-container {

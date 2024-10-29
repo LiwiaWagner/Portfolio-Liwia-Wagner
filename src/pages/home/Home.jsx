@@ -8,7 +8,13 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/scrollbar";
-import { A11y, Navigation, Pagination, Scrollbar } from "swiper/modules";
+import {
+  A11y,
+  EffectCoverflow,
+  Navigation,
+  Pagination,
+  Scrollbar,
+} from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 import Card from "../../components/card/Card";
 import "../../components/card/card.css";
@@ -139,15 +145,38 @@ const Home = () => {
       <div>
         <h2 className="projects-title">TOP PROJECTS</h2>
       </div>
+
       <section className="top-projects-container">
         <Swiper
-          onNavigationPrev={onNavigationPrev}
-          onNavigationNext={onNavigationNext}
-          modules={[Navigation, Pagination, Scrollbar, A11y]}
+          // onNavigationPrev={onNavigationPrev}
+          // onNavigationNext={onNavigationNext}
+          // modules={[Navigation, Pagination, Scrollbar, A11y]}
+          // slidesPerView={1}
+          // navigation
+          // loop={true}
+          // pagination={{ clickable: true }}
+          effect="coverflow"
+          grabCursor={true}
+          centeredSlides={true}
+          initialSlide={2}
+          speed={600}
+          preventClicks={true}
           slidesPerView={1}
-          navigation
-          loop={true}
-          pagination={{ clickable: true }}
+          coverflowEffect={{
+            rotate: 0,
+            stretch: 80,
+            depth: 350,
+            modifier: 1,
+            slideShadows: true,
+          }}
+          on={{
+            click(event) {
+              Swiper.slideTo(this.clickedIndex);
+            },
+          }}
+          pagination={{
+            el: ".swiper-pagination",
+          }}
         >
           {topCards.map((card) => (
             <SwiperSlide key={card.id}>
