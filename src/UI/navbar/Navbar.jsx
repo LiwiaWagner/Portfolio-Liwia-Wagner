@@ -14,7 +14,7 @@ const Navbar = () => {
   }, [location]);
 
   return (
-    <nav>
+    <nav className="nav-main-container">
       <div
         className={`nav-container ${isNavShowing ? "show-nav" : "hide-nav"}`}
       >

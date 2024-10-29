@@ -1,4 +1,4 @@
-nav {
+.nav-main-container {
   place-items: center;
   height: 5rem;
   position: sticky;
@@ -8,6 +8,7 @@ nav {
   background: rgba(255, 255, 255, 0);
   backdrop-filter: blur(10px);
   z-index: 99;
+  border-bottom: 1px rgba(153, 153, 153, 0.2) solid;
 }
 
 .nav-container {
@@ -30,7 +31,7 @@ nav {
 .logo {
   color: var(--black);
   font-size: 1.3rem;
-  font-weight: 400;
+  font-weight: 500;
   line-height: 1.5rem;
   letter-spacing: 0rem;
 }
@@ -41,7 +42,7 @@ nav {
   font-size: 1rem;
   color: var(--black);
   font-style: normal;
-  font-weight: 100;
+  font-weight: 300;
   line-height: normal;
   letter-spacing: 0.3rem;
   gap: 2.5rem;
@@ -59,15 +60,39 @@ a {
   list-style-type: none;
 }
 
-.nav-link:hover {
-  font-weight: 500;
+/* .nav-link:hover {
+  font-weight: 100;
   transition: all 0.25s ease;
   color: var(--black);
+} */
+
+.nav-link:before {
+  content: "";
+  position: absolute;
+  bottom: -10px;
+  height: 4px;
+  width: 100%;
+  background: var(--black);
+  transform: scaleX(0);
+  transition: transform 0.2s linear;
+}
+
+.nav-link:before:hover {
+  transform: scaleX(1);
 }
 
 .nav-link .active {
-  font-weight: 500;
+  font-weight: 300;
   color: var(--black);
+}
+
+.nav-link .active:before {
+  content: "";
+  position: absolute;
+  bottom: -1.6rem;
+  height: 1.5px;
+  width: 100%;
+  background: var(--black);
 }
 
 .nav-link a:visited {
