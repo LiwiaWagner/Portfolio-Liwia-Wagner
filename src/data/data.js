@@ -26,6 +26,8 @@ export const cards = [
       "Figma + DX Research + Data Viz Design + Product Design + UX/UI Design",
     toolsValues: [TOOLS.FIGMA.value],
     toolsLabels: [TOOLS.FIGMA.label],
+    languagesValues: [],
+    languagesLabels: [],
     expertiseValues: [
       EXPERTISE.DXRESEARCH.value,
       EXPERTISE.DATAVIZDESIGN.value,
@@ -115,9 +117,21 @@ export const cards = [
     title:
       "Visualizing Iris Species: A Comparative Analysis of Multiple Measures",
     description: `In this private project, I focused on visualizing the Iris Species dataset by utilizing scatterplot matrix and parallel coordinates charts to analyze key metrics. Although these visualizations are not typically used in business reporting, they are widely applied in statistical analysis for their ability to reveal complex patterns and relationships within the data. Through this approach, I was able to gain deeper insights into the distribution and correlations among the dataset's features.`,
-    tools: "d3.js + Data Viz Design + Data Analysis",
-    languagesValues: [LANGUAGES.D3.value],
-    languagesLabels: [LANGUAGES.D3.label],
+    tools: "HTML/CSS + JavaScript + d3.js + Data Viz Design + Data Analysis",
+    toolsValues: [],
+    toolsLabels: [],
+    languagesValues: [
+      LANGUAGES.D3.value,
+      LANGUAGES.HTML.value,
+      LANGUAGES.CSS.value,
+      LANGUAGES.JAVASCRIPT.value,
+    ],
+    languagesLabels: [
+      LANGUAGES.D3.label,
+      LANGUAGES.HTML.label,
+      LANGUAGES.CSS.label,
+      LANGUAGES.JAVASCRIPT.label,
+    ],
     expertiseValues: [
       EXPERTISE.DATAVIZDESIGN.value,
       EXPERTISE.DATAANALYSIS.value,
@@ -296,6 +310,6 @@ export const projects = [
       title: "TOOLS & PROGRAMMING LANGUAGES",
       content: "Tableau + Mapbox + SQL",
     },
-    deliveryDate: { title: "DELIVERY DATE", content: "May 2023" },
+    deliveryDate: { title: "DELIVERY DATE", content: "August 2023" },
   },
 ];

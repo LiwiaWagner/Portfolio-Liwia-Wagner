@@ -4,8 +4,6 @@
   position: sticky;
   top: 0;
   left: 0;
-  background-color: var(--background-color);
-  background: rgba(255, 255, 255, 0);
   backdrop-filter: blur(10px);
   z-index: 99;
   border-bottom: 1px rgba(153, 153, 153, 0.2) solid;

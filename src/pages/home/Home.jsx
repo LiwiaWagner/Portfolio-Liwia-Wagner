@@ -5,16 +5,9 @@ import React, { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
 import Select from "react-select";
 import "swiper/css";
-import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/scrollbar";
-import {
-  A11y,
-  EffectCoverflow,
-  Navigation,
-  Pagination,
-  Scrollbar,
-} from "swiper/modules";
+import { A11y, EffectCoverflow, Pagination, Scrollbar } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 import Card from "../../components/card/Card";
 import "../../components/card/card.css";
@@ -24,7 +17,7 @@ import { LANGUAGES } from "../../data/languages";
 import { TOOLS } from "../../data/tools";
 import "./home.css";
 
-const options = [
+const optionsExpertise = [
   EXPERTISE.DATAVIZDESIGN,
   EXPERTISE.DASHBOARDDESIGN,
   EXPERTISE.PRODUCTDESIGN,
@@ -35,7 +28,7 @@ const options = [
   EXPERTISE.DATAPROCESSING,
 ];
 
-const options1 = [
+const optionsLanguages = [
   LANGUAGES.JAVASCRIPT,
   LANGUAGES.HTML,
   LANGUAGES.CSS,
@@ -44,7 +37,7 @@ const options1 = [
   LANGUAGES.REACT,
 ];
 
-const options2 = [TOOLS.FIGMA, TOOLS.TABLEAU, TOOLS.MAPBOX];
+const optionsTools = [TOOLS.FIGMA, TOOLS.TABLEAU, TOOLS.MAPBOX];
 
 const getConfig = (trigger, startColor, endColor) => {
   return {
@@ -61,42 +54,49 @@ const getConfig = (trigger, startColor, endColor) => {
   };
 };
 
+const getCardById = (id) => {
+  return cards.find((card) => card.id === id);
+};
+
 const tl = gsap.timeline();
 let prevColor = null;
-let activeIndex = 0;
 
 const Home = () => {
   const [startColor, setStartColor] = useState("#E0D5DC");
+  const [expertise, setExpertise] = useState([]);
+  const [languages, setLanguages] = useState([]);
   const [tools, setTools] = useState([]);
   const location = useLocation();
 
-  const topCards = cards.filter((card) => [1, 2, 3].includes(card.id));
-  const orderedCards = [...cards].sort((a, b) => a.order - b.order);
+  const topCards = [getCardById(2), getCardById(1), getCardById(3)];
+  const orderedCards = [...cards]
+    .sort((a, b) => a.order - b.order)
+    .filter((card) =>
+      expertise.length > 0
+        ? card.expertiseValues.some((value) => expertise.includes(value))
+        : true
+    )
+    .filter((card) =>
+      languages.length > 0
+        ? card.languagesValues.some((value) => languages.includes(value))
+        : true
+    )
+    .filter((card) =>
+      tools.length > 0
+        ? card.toolsValues.some((value) => tools.includes(value))
+        : true
+    );
 
-  const onNavigationPrev = () => {
-    activeIndex -= 1;
-
-    if (activeIndex < 0) {
-      activeIndex = topCards.length - 1;
-    }
-
-    const card = topCards[activeIndex];
-    setStartColor(card.gsap.toColor);
+  const handleSelectChangeExpertise = (data) => {
+    setExpertise(data.map((d) => d.value));
   };
 
-  const onNavigationNext = () => {
-    activeIndex += 1;
-
-    if (activeIndex >= topCards.length) {
-      activeIndex = 0;
-    }
-
-    const card = topCards[activeIndex];
-    setStartColor(card.gsap.toColor);
+  const handleSelectChangeLanguages = (data) => {
+    setLanguages(data.map((d) => d.value));
   };
 
-  const handleSelectChange = (data, m) => {
-    setTools(data.map((x) => x.value));
+  const handleSelectChangeTool = (data) => {
+    setTools(data.map((d) => d.value));
   };
 
   useGSAP(() => {
@@ -150,34 +150,22 @@ const Home = () => {
 
       <section className="top-projects-container">
         <Swiper
-          // onNavigationPrev={onNavigationPrev}
-          // onNavigationNext={onNavigationNext}
-          // modules={[Navigation, Pagination, Scrollbar, A11y]}
-          // slidesPerView={1}
-          // navigation
-          // loop={true}
-          // pagination={{ clickable: true }}
+          modules={[Pagination, Scrollbar, A11y, EffectCoverflow]}
+          slidesPerView={"auto"}
+          pagination={{ clickable: true }}
           effect="coverflow"
           grabCursor={true}
           centeredSlides={true}
-          initialSlide={2}
+          initialSlide={1}
           speed={600}
           preventClicks={true}
-          slidesPerView={1}
           coverflowEffect={{
-            rotate: 0,
             stretch: 80,
-            depth: 350,
-            modifier: 1,
-            slideShadows: true,
+            slideShadows: false,
           }}
-          on={{
-            click(event) {
-              Swiper.slideTo(this.clickedIndex);
-            },
-          }}
-          pagination={{
-            el: ".swiper-pagination",
+          onSlideChange={(e) => {
+            const card = topCards[e.activeIndex];
+            setStartColor(card.gsap.toColor);
           }}
         >
           {topCards.map((card) => (
@@ -200,20 +188,9 @@ const Home = () => {
             <h5 className="filter-label">Expertise</h5>
             <div className="filters">
               <Select
-                options={options}
+                options={optionsExpertise}
                 isMulti={true}
-                onChange={handleSelectChange}
-              />
-            </div>
-          </div>
-
-          <div className="filter-section">
-            <h5 className="filter-label">Tool</h5>
-            <div className="filters">
-              <Select
-                options={options}
-                isMulti={true}
-                onChange={handleSelectChange}
+                onChange={handleSelectChangeExpertise}
               />
             </div>
           </div>
@@ -222,9 +199,20 @@ const Home = () => {
             <h5 className="filter-label">Programming Language</h5>
             <div className="filters">
               <Select
-                options={options}
+                options={optionsLanguages}
                 isMulti={true}
-                onChange={handleSelectChange}
+                onChange={handleSelectChangeLanguages}
+              />
+            </div>
+          </div>
+
+          <div className="filter-section">
+            <h5 className="filter-label">Tool</h5>
+            <div className="filters">
+              <Select
+                options={optionsTools}
+                isMulti={true}
+                onChange={handleSelectChangeTool}
               />
             </div>
           </div>
