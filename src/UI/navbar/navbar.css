@@ -38,7 +38,6 @@
   display: flex;
   align-items: center;
   font-size: 1rem;
-  color: var(--black);
   font-style: normal;
   font-weight: 300;
   line-height: normal;
@@ -49,6 +48,7 @@
 
 a {
   text-decoration: none;
+  text-align: center;
 }
 
 .nav-link {
@@ -58,17 +58,11 @@ a {
   list-style-type: none;
 }
 
-/* .nav-link:hover {
-  font-weight: 100;
-  transition: all 0.25s ease;
-  color: var(--black);
-} */
-
 .nav-link:before {
   content: "";
   position: absolute;
   bottom: -10px;
-  height: 4px;
+  height: 6px;
   width: 100%;
   background: var(--black);
   transform: scaleX(0);
@@ -80,7 +74,7 @@ a {
 }
 
 .nav-link .active {
-  font-weight: 300;
+  font-weight: 500;
   color: var(--black);
 }
 

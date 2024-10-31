@@ -122,16 +122,6 @@ img {
   letter-spacing: 0.04rem;
 }
 
-/* a:hover {
-  font-weight: 700;
-  transition: all 0.25s ease;
-  color: var(--black);
-} */
-
-a:visited {
-  color: var(--black);
-}
-
 @media screen and (max-width: 900px) {
   .about-main-container {
     gap: 1.5rem;

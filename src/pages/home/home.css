@@ -47,7 +47,6 @@
 .project-container {
   max-width: 100%;
   height: auto;
-  border-radius: 1rem;
 }
 
 .top-projects-container {
@@ -144,10 +143,6 @@
     min-height: 20rem;
   }
 
-  .top-projects-container {
-    margin: 0 1.25rem;
-  }
-
   .all-projects-container {
     margin: 0 1.25rem;
   }
@@ -205,10 +200,6 @@
     margin: 1rem 0;
     min-height: 20rem;
     border-radius: 0.6rem;
-  }
-
-  .top-projects-container {
-    margin: 0 1.25rem;
   }
 
   .all-projects-container {

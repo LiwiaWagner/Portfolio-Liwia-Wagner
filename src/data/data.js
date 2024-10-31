@@ -116,7 +116,7 @@ export const cards = [
     order: 3,
     title:
       "Visualizing Iris Species: A Comparative Analysis of Multiple Measures",
-    description: `In this private project, I focused on visualizing the Iris Species dataset by utilizing scatterplot matrix and parallel coordinates charts to analyze key metrics. Although these visualizations are not typically used in business reporting, they are widely applied in statistical analysis for their ability to reveal complex patterns and relationships within the data. Through this approach, I was able to gain deeper insights into the distribution and correlations among the dataset's features.`,
+    description: `In this private project, I focused on visualizing the Iris Species dataset by utilizing scatterplot matrix and parallel coordinates charts to analyze key metrics. Although these visualizations are not typically used in business reporting, they are widely applied in statistical analysis for their ability to reveal complex patterns and relationships within the data.`,
     tools: "HTML/CSS + JavaScript + d3.js + Data Viz Design + Data Analysis",
     toolsValues: [],
     toolsLabels: [],
