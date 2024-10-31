@@ -16,6 +16,7 @@ import { EXPERTISE } from "../../data/expertise";
 import { LANGUAGES } from "../../data/languages";
 import { TOOLS } from "../../data/tools";
 import "./home.css";
+import { useScrollToHash } from "../../hooks/useScrollToHash";
 
 const optionsExpertise = [
   EXPERTISE.DATAVIZDESIGN,
@@ -62,11 +63,12 @@ const tl = gsap.timeline();
 let prevColor = null;
 
 const Home = () => {
+  useScrollToHash();
+  
   const [startColor, setStartColor] = useState("#E0D5DC");
   const [expertise, setExpertise] = useState([]);
   const [languages, setLanguages] = useState([]);
   const [tools, setTools] = useState([]);
-  const location = useLocation();
 
   const topCards = [getCardById(2), getCardById(1), getCardById(3)];
   const orderedCards = [...cards]
@@ -118,16 +120,6 @@ const Home = () => {
       "--background-color": startColor,
     });
   }, [startColor]);
-
-  useEffect(() => {
-    if (location.hash) {
-      document
-        .querySelector(location.hash)
-        ?.scrollIntoView({ behavior: "smooth", block: "start" });
-    } else {
-      window.scrollTo({ top: 0, behavior: "smooth" });
-    }
-  }, [location]);
 
   return (
     <>
