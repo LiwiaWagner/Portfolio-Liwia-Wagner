@@ -6,6 +6,7 @@ function Card(props) {
   const card = props.card;
   const hasHtmlId = props.hasHtmlId;
   const hasALink = Boolean(card.btn.aLink);
+  const imgPosition = props.imgPosition || "right";
 
   return (
     <div
@@ -14,7 +15,11 @@ function Card(props) {
       style={{ backgroundColor: card.backgroundColor }}
     >
       <article>
-        <div className="card-container">
+        <div
+          className={`card-container ${
+            imgPosition === "right" ? "" : "card-container-img-left"
+          }`}
+        >
           <div className="card-container-text">
             <p className="card-title">{card.title}</p>
             <p className="card-description">{card.description}</p>

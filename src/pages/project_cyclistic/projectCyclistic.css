@@ -1,7 +1,3 @@
-body {
-  background-color: var(--bc-light-project-id4);
-}
-
 .project-main-container {
   display: grid;
   gap: 1rem;

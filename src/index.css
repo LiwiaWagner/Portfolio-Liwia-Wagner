@@ -133,6 +133,7 @@ body {
   position: relative;
   max-width: 1920px;
   margin-inline: auto;
+  background-color: var(--background-color);
 }
 
 *,

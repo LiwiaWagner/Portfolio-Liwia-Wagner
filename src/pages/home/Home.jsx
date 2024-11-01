@@ -64,7 +64,7 @@ let prevColor = null;
 
 const Home = () => {
   useScrollToHash();
-  
+
   const [startColor, setStartColor] = useState("#E0D5DC");
   const [expertise, setExpertise] = useState([]);
   const [languages, setLanguages] = useState([]);
@@ -73,21 +73,30 @@ const Home = () => {
   const topCards = [getCardById(2), getCardById(1), getCardById(3)];
   const orderedCards = [...cards]
     .sort((a, b) => a.order - b.order)
-    .filter((card) =>
-      expertise.length > 0
-        ? card.expertiseValues.some((value) => expertise.includes(value))
-        : true
-    )
-    .filter((card) =>
-      languages.length > 0
-        ? card.languagesValues.some((value) => languages.includes(value))
-        : true
-    )
-    .filter((card) =>
-      tools.length > 0
-        ? card.toolsValues.some((value) => tools.includes(value))
-        : true
-    );
+    .filter((card) => {
+      const isFiltersEmpty =
+        expertise.length === 0 && languages.length === 0 && tools.length === 0;
+      const hasSomeExpertise = card.expertiseValues.some((value) =>
+        expertise.includes(value)
+      );
+      const hasSomeLanguage = card.languagesValues.some((value) =>
+        languages.includes(value)
+      );
+      const hasSomeTool = card.toolsValues.some((value) =>
+        tools.includes(value)
+      );
+
+      if (
+        isFiltersEmpty ||
+        hasSomeExpertise ||
+        hasSomeLanguage ||
+        hasSomeTool
+      ) {
+        return true;
+      }
+
+      return false;
+    });
 
   const handleSelectChangeExpertise = (data) => {
     setExpertise(data.map((d) => d.value));
@@ -119,7 +128,7 @@ const Home = () => {
       backgroundColor: startColor,
       "--background-color": startColor,
     });
-  }, [startColor]);
+  }, [startColor, expertise, languages, tools]);
 
   return (
     <>
@@ -212,7 +221,12 @@ const Home = () => {
 
         <section className="project-container all-projects-container">
           {orderedCards.map((card, index) => (
-            <Card key={index} card={card} hasHtmlId={true} />
+            <Card
+              key={card.id}
+              card={card}
+              hasHtmlId={true}
+              imgPosition={index % 2 === 0 ? "right" : "left"}
+            />
           ))}
         </section>
       </div>
