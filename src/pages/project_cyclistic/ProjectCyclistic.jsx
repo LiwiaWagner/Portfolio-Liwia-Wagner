@@ -4,8 +4,357 @@ import "./projectCyclistic.css";
 import "./../../components/project/project.css";
 import Project from "../../components/project/Project";
 import dashboardCyclisticImg from "../../assets/cyclistic_dashboard_img.png";
+import SyntaxHighlighter from "react-syntax-highlighter";
+import {
+  atomOneDark,
+  nord,
+} from "react-syntax-highlighter/dist/esm/styles/hljs";
 
 const { tableau } = window;
+const sqlCreateTable = `CREATE TABLE t_2020_2021_2022_divvy_tripdata AS 
+SELECT * FROM (
+          SELECT * FROM t_2020_Q1_divvy_tripdata
+          UNION ALL
+          SELECT * FROM t_2020_04_divvy_tripdata
+          UNION ALL
+          SELECT * FROM t_2020_05_divvy_tripdata
+          UNION ALL
+          SELECT * FROM t_2020_06_divvy_tripdata
+          UNION ALL
+          SELECT * FROM t_2020_07_divvy_tripdata
+          UNION ALL
+          SELECT * FROM t_2020_08_divvy_tripdata
+          UNION ALL
+          SELECT * FROM t_2020_09_divvy_tripdata
+          UNION ALL
+          SELECT * FROM t_2020_10_divvy_tripdata
+          UNION ALL
+          SELECT * FROM t_2020_11_divvy_tripdata
+          UNION ALL
+          SELECT * FROM t_2020_12_divvy_tripdata
+          UNION ALL
+          SELECT * FROM t_2021_01_divvy_tripdata
+          UNION ALL
+          SELECT * FROM t_2021_02_divvy_tripdata
+          UNION ALL
+          SELECT * FROM t_2021_03_divvy_tripdata
+          UNION ALL
+          SELECT * FROM t_2021_04_divvy_tripdata
+          UNION ALL
+          SELECT * FROM t_2021_05_divvy_tripdata
+          UNION ALL
+          SELECT * FROM t_2021_06_divvy_tripdata
+          UNION ALL
+          SELECT * FROM t_2021_07_divvy_tripdata
+          UNION ALL
+          SELECT * FROM t_2021_08_divvy_tripdata
+          UNION ALL
+          SELECT * FROM t_2021_09_divvy_tripdata
+          UNION ALL
+          SELECT * FROM t_2021_10_divvy_tripdata
+          UNION ALL
+          SELECT * FROM t_2021_11_divvy_tripdata
+          UNION ALL
+          SELECT * FROM t_2021_12_divvy_tripdata
+          UNION ALL
+          SELECT * FROM t_2022_01_divvy_tripdata
+          UNION ALL
+          SELECT * FROM t_2022_02_divvy_tripdata
+          UNION ALL
+          SELECT * FROM t_2022_03_divvy_tripdata
+          UNION ALL
+          SELECT * FROM t_2022_04_divvy_tripdata
+          UNION ALL
+          SELECT * FROM t_2022_05_divvy_tripdata
+          UNION ALL
+          SELECT * FROM t_2022_06_divvy_tripdata
+          UNION ALL
+          SELECT * FROM t_2022_07_divvy_tripdata
+          UNION ALL
+          SELECT * FROM t_2022_08_divvy_tripdata
+          UNION ALL
+          SELECT * FROM t_2022_09_divvy_tripdata
+          UNION ALL
+          SELECT * FROM t_2022_10_divvy_tripdata
+          UNION ALL
+          SELECT * FROM t_2022_11_divvy_tripdata
+          UNION ALL
+          SELECT * FROM t_2022_12_divvy_tripdata
+);`;
+const sqlDateCheck = `SELECT 
+          EXTRACT('YEAR' FROM started_at_date) AS year_test,
+          EXTRACT('MONTH' FROM started_at_date) AS month_test 
+FROM t_2020_2021_2022_divvy_tripdata
+GROUP BY 
+          EXTRACT('YEAR' FROM started_at_date),
+          EXTRACT('MONTH' FROM started_at_date);`;
+const sqlIdCheck = `-- checking length of ride IDs
+SELECT LENGTH(ride_id) 
+FROM t_2020_2021_2022_divvy_tripdata;
+
+-- checking the total number of rows
+SELECT COUNT(*) 
+FROM t_2020_2021_2022_divvy_tripdata; --14'804'382 rows
+
+-- checking if ride IDs have any duplicate values
+SELECT COUNT(DISTINCT(ride_id)) 
+FROM t_2020_2021_2022_divvy_tripdata; --14'804'096`;
+const sqlNullCheck = `SELECT 
+          COUNT(*) - COUNT(ride_id) AS ride_id_nc, --0
+          COUNT(*) - COUNT(rideable_type) AS rideable_type_nc, --0
+          COUNT(*) - COUNT(started_at_date) AS started_at_date_nc, --0
+          COUNT(*) - COUNT(started_at_time) AS started_at_hour_nc, --0
+          COUNT(*) - COUNT(ended_at_date) AS ended_at_date_nc, --0
+          COUNT(*) - COUNT(ended_at_time) AS ended_at_hour_nc, --0
+          COUNT(*) - COUNT(start_station_name) AS start_station_name_nc, --1'618'518
+          COUNT(*) - COUNT(start_station_id) AS start_station_id_nc, --1'619'141
+          COUNT(*) - COUNT(end_station_name) AS end_station_name_nc, --1'742'780
+          COUNT(*) - COUNT(end_station_id) AS end_station_id_nc, --1'743'241
+          COUNT(*) - COUNT(start_lat) AS start_lat_nc, --0
+          COUNT(*) - COUNT(start_lng) AS start_lng_nc, --0
+          COUNT(*) - COUNT(end_lat) AS end_lat_nc, --14'884
+          COUNT(*) - COUNT(end_lng) AS end_lng_nc --14'884
+          COUNT(*) - COUNT(member_casual) AS member_casual_nc --0
+FROM t_2020_2021_2022_divvy_tripdata;`;
+const sqlStationCheck = `-- checking how many stations are there 
+SELECT DISTINCT(end_station_name) AS end_station 
+FROM t_2020_2021_2022_divvy_tripdata; --1730
+
+SELECT DISTINCT(start_station_name) AS start_station 
+FROM t_2020_2021_2022_divvy_tripdata; --1712
+
+-- confirming that member type has only two values, casual and member
+SELECT DISTINCT (member_casual) 
+FROM t_2020_2021_2022_divvy_tripdata;`;
+const sqlRemoveNull = `DELETE FROM t_2020_2021_2022_divvy_tripdata 
+WHERE start_station_name IS NULL;
+
+DELETE FROM t_2020_2021_2022_divvy_tripdata 
+WHERE end_station_name IS NULL;
+
+DELETE FROM t_2020_2021_2022_divvy_tripdata 
+WHERE start_station_id IS NULL;
+
+DELETE FROM t_2020_2021_2022_divvy_tripdata 
+WHERE end_station_id IS NULL;
+
+DELETE FROM t_2020_2021_2022_divvy_tripdata 
+WHERE end_lat IS NULL;
+
+DELETE FROM t_2020_2021_2022_divvy_tripdata 
+WHERE end_lng IS NULL;`;
+const sqlDayMonth = `SELECT 
+          ride_id,
+          rideable_type,
+          start_station_name, 
+          end_station_name, 
+          start_lat, 
+          start_lng,end_lat, 
+          end_lng, 
+          member_casual AS member_type,
+          started_at,  
+          CASE     
+              WHEN EXTRACT (DAYOFWEEK FROM started_at) = 1 THEN 'SUN'    
+              WHEN EXTRACT (DAYOFWEEK FROM started_at) = 2 THEN 'MON'    
+              WHEN EXTRACT (DAYOFWEEK FROM started_at) = 3 THEN 'TUE'    
+              WHEN EXTRACT (DAYOFWEEK FROM started_at) = 4 THEN 'WED'    
+              WHEN EXTRACT (DAYOFWEEK FROM started_at) = 5 THEN 'THU'    
+              WHEN EXTRACT (DAYOFWEEK FROM started_at) = 6 THEN 'FRI'  
+          ELSE 'SAT'  
+          END AS day_of_week,  
+          CASE
+              WHEN EXTRACT (MONTH FROM started_at) = 1 THEN 'JAN'    
+              WHEN EXTRACT (MONTH FROM started_at) = 2 THEN 'FEB'    
+              WHEN EXTRACT (MONTH FROM started_at) = 3 THEN 'MAR'    
+              WHEN EXTRACT (MONTH FROM started_at) = 4 THEN 'APR'  
+              WHEN EXTRACT (MONTH FROM started_at) = 5 THEN 'MAY'    
+              WHEN EXTRACT (MONTH FROM started_at) = 6 THEN 'JUN'    
+              WHEN EXTRACT (MONTH FROM started_at) = 7 THEN 'JUL'    
+              WHEN EXTRACT (MONTH FROM started_at) = 8 THEN 'AUG'  
+              WHEN EXTRACT (MONTH FROM started_at) = 9 THEN 'SEP'    
+              WHEN EXTRACT (MONTH FROM started_at) = 10 THEN 'OCT'    
+              WHEN EXTRACT (MONTH FROM started_at) = 11 THEN 'NOV'    
+              WHEN EXTRACT (MONTH FROM started_at) = 12 THEN 'DEC'  
+          ELSE 'UNKOWN'  
+          END AS month,  
+          EXTRACT (DAY FROM started_at) AS day,  
+          EXTRACT (YEAR FROM started_at) AS year,  
+          TIMESTAMP_DIFF (ended_at, started_at, minute) AS ride_length_m,  
+          FORMAT_TIMESTAMP("%I:%M %p", started_at) AS time
+FROM t_2020_2021_2022_divvy_tripdata 
+WHERE TIMESTAMP_DIFF (ended_at, started_at, minute) > 1 
+AND TIMESTAMP_DIFF (ended_at, started_at, hour) < 24`;
+const sqlTimeAnalysis = `-- calculate trip length in minutes
+SELECT EXTRACT(EPOCH FROM (ended_at_time - started_at_time))/60 
+AS trip_time_minutes 
+FROM t_2020_2021_2022_divvy_tripdata;
+
+-- add trip_time_minutes field to the table
+ALTER TABLE t_2020_2021_2022_divvy_tripdata
+ADD COLUMN trip_time_minutes TIME;
+
+UPDATE t_2020_2021_2022_divvy_tripdata a
+SET trip_time_minutes
+= (SELECT EXTRACT(EPOCH FROM (ended_at_time - started_at_time))/60 
+FROM t_2020_2021_2022_divvy_tripdata b
+WHERE a.ride_id = b.ride_id);
+			 
+-- average trip time for all users
+SELECT AVG(trip_time_minutes) AS avg_trip_time_minutes 
+FROM t_2020_2021_2022_divvy_tripdata;
+
+-- average trip time for each group member type
+SELECT member_casual, AVG(trip_time_minutes) AS avg_member_trip_time
+FROM t_2020_2021_2022_divvy_tripdata
+GROUP BY member_casual;
+
+-- max time spend on trip for each group
+SELECT member_casual, MAX(trip_time_minutes) AS max_member_trip_time
+FROM t_2020_2021_2022_divvy_tripdata
+GROUP BY member_casual;
+
+-- min time spend on trip for each group
+SELECT member_casual, MIN(trip_time_minutes) AS min_member_trip_time
+FROM t_2020_2021_2022_divvy_tripdata
+GROUP BY member_casual;`;
+const sqlTripAnalysis = `-- which weekdays have most trips
+SELECT
+          TO_CHAR(started_at_date, 'DAY') AS week_day
+FROM t_2020_2021_2022_divvy_tripdata;
+
+ALTER TABLE t_2020_2021_2022_divvy_tripdata
+ADD COLUMN week_day TEXT;
+
+UPDATE t_2020_2021_2022_divvy_tripdata a
+SET week_day = (SELECT TO_CHAR(started_at_date, 'DAY')
+FROM t_2020_2021_2022_divvy_tripdata b
+WHERE a.ride_id = b.ride_id);
+
+SELECT 
+          week_day, 
+          COUNT(week_day) AS week_day_count
+FROM t_2020_2021_2022_divvy_tripdata
+GROUP BY week_day;
+
+-- per membership type
+SELECT 
+          week_day, 
+          COUNT(week_day) AS week_day_count
+FROM t_2020_2021_2022_divvy_tripdata
+WHERE member_casual = 'member'
+GROUP BY week_day;
+
+SELECT 
+          week_day, 
+          COUNT(week_day) AS week_day_count
+FROM t_2020_2021_2022_divvy_tripdata
+WHERE member_casual = 'casual'
+GROUP BY week_day;
+
+-- most popular months
+SELECT EXTRACT(MONTH FROM started_at_date::date) AS month_name
+FROM t_2020_2021_2022_divvy_tripdata;
+
+SELECT 
+          month_name, 
+          COUNT(month_name) AS count_month_name
+FROM t_2020_2021_2022_divvy_tripdata;
+
+SELECT 
+          month_name, 
+          COUNT(month_name) AS count_month_name
+FROM t_2020_2021_2022_divvy_tripdata
+WHERE member_casual = 'member';
+
+SELECT 
+          month_name, 
+          COUNT(month_name) AS count_month_name
+FROM t_2020_2021_2022_divvy_tripdata
+WHERE member_casual = 'casual';
+
+-- most popular hours
+SELECT 
+          EXTRACT(HOUR FROM started_at_date) AS time_of_day, 
+          COUNT(*), 
+          member_casual
+FROM t_2020_2021_2022_divvy_tripdata
+GROUP BY time_of_day, member_casual
+ORDER BY time_of_day DESC;`;
+const sqlStationAnalysis = `-- most popular start stations for casual riders
+SELECT 
+          start_station_name, 
+          COUNT(*) AS rank_start_station 
+FROM t_2020_2021_2022_divvy_tripdata
+WHERE member_casual = 'casual'
+GROUP BY start_station_name
+ORDER BY rank_start_station
+
+-- most popular start stations for member riders
+SELECT 
+          start_station_name, 
+          COUNT(*) AS rank_start_station 
+FROM t_2020_2021_2022_divvy_tripdata
+WHERE member_casual = 'member'
+GROUP BY start_station_name
+ORDER BY rank_start_station
+
+-- most popular end stations for casual riders
+SELECT 
+          end_station_name, 
+          COUNT(*) AS rank_end_station 
+FROM t_2020_2021_2022_divvy_tripdata
+WHERE member_casual = 'casual'
+GROUP BY end_station_name
+ORDER BY rank_end_station
+
+-- most popular end stations for member riders
+SELECT 
+          end_station_name, 
+          COUNT(*) AS rank_end_station 
+FROM t_2020_2021_2022_divvy_tripdata
+WHERE member_casual = 'member'
+GROUP BY end_station_name
+ORDER BY rank_end_station
+
+--  most popular routes amongst casual riders
+SELECT 
+          COUNT(*) AS frequency, 
+          start_station_name, 
+          end_station_name
+FROM t_2020_2021_2022_divvy_tripdata
+WHERE member_casual = 'casual'
+GROUP BY start_station_name, end_station_name
+ORDER BY frequency DESC;
+
+--  most popular routes amongst member riders
+SELECT 
+          COUNT(*) AS frequency, 
+          start_station_name, 
+          end_station_name
+FROM t_2020_2021_2022_divvy_tripdata
+WHERE member_casual = 'member'
+GROUP BY start_station_name, end_station_name
+ORDER BY frequency DESC;
+
+--  least popular routes amongst casual riders
+SELECT 
+          COUNT(*) AS frequency, 
+          start_station_name, 
+          end_station_name
+FROM t_2020_2021_2022_divvy_tripdata
+WHERE member_casual = 'casual'
+GROUP BY start_station_name, end_station_name
+ORDER BY frequency ASC;
+
+--  least popular routes amongst member riders
+SELECT 
+          COUNT(*) AS frequency,
+          start_station_name, 
+          end_station_name
+FROM t_2020_2021_2022_divvy_tripdata
+WHERE member_casual = 'member'
+GROUP BY start_station_name, end_station_name
+ORDER BY frequency ASC;`;
 
 export const ProjectCyclistic = () => {
   let viz = window.tableau.VizManager.getVizs()[0];
@@ -35,8 +384,8 @@ export const ProjectCyclistic = () => {
     return () => window.scrollTo(0, 0);
   }, []);
 
-  const filteredProject = projects.filter((project) => {
-    return project.id === 1;
+  const filteredProject = projects.find((project) => {
+    return project.id === 4;
   });
 
   return (
@@ -75,7 +424,6 @@ export const ProjectCyclistic = () => {
             </p>
           </div>
         </div>
-        {/* <div className="intro-left-container-type2"></div> */}
         <div className="intro-right-container">
           <div className="intro-section">
             <h3 className="intro-sub-title">AREAS OF EXPERTISE</h3>
@@ -116,7 +464,7 @@ export const ProjectCyclistic = () => {
         </div>
       </div>
       <div className="project-content-container">
-        <p className="project-content-description">
+        <p className="project-content-description project-content-description-first">
           In this phase, it is crucial to identify the key questions that will
           shape and drive the analysis. Since Cyclistic's primary objective is
           to increase its membership base, the emphasis is placed on gaining a
@@ -135,7 +483,7 @@ export const ProjectCyclistic = () => {
           <h3 className="project-content-sub-title">PREPARE</h3>
         </div>
       </div>
-      <p className="project-content-description">
+      <p className="project-content-description project-content-description-first">
         The data used for this analysis was gathered from datasets spanning the
         years 2020, 2021, and 2022, all of which were provided in .csv format.
         To facilitate a seamless and comprehensive analysis, SQL was employed to
@@ -147,45 +495,17 @@ export const ProjectCyclistic = () => {
         meaningful conclusions.
       </p>
 
-      {/* <pre>
-        <code>
-          CREATE TABLE t_2020_2021_2022_divvy_tripdata AS SELECT * FROM ( SELECT
-          * FROM t_2020_Q1_divvy_tripdata UNION ALL SELECT * FROM
-          t_2020_04_divvy_tripdata UNION ALL SELECT * FROM
-          t_2020_05_divvy_tripdata UNION ALL SELECT * FROM
-          t_2020_06_divvy_tripdata UNION ALL SELECT * FROM
-          t_2020_07_divvy_tripdata UNION ALL SELECT * FROM
-          t_2020_08_divvy_tripdata UNION ALL SELECT * FROM
-          t_2020_09_divvy_tripdata UNION ALL SELECT * FROM
-          t_2020_10_divvy_tripdata UNION ALL SELECT * FROM
-          t_2020_11_divvy_tripdata UNION ALL SELECT * FROM
-          t_2020_12_divvy_tripdata UNION ALL SELECT * FROM
-          t_2021_01_divvy_tripdata UNION ALL SELECT * FROM
-          t_2021_02_divvy_tripdata UNION ALL SELECT * FROM
-          t_2021_03_divvy_tripdata UNION ALL SELECT * FROM
-          t_2021_04_divvy_tripdata UNION ALL SELECT * FROM
-          t_2021_05_divvy_tripdata UNION ALL SELECT * FROM
-          t_2021_06_divvy_tripdata UNION ALL SELECT * FROM
-          t_2021_07_divvy_tripdata UNION ALL SELECT * FROM
-          t_2021_08_divvy_tripdata UNION ALL SELECT * FROM
-          t_2021_09_divvy_tripdata UNION ALL SELECT * FROM
-          t_2021_10_divvy_tripdata UNION ALL SELECT * FROM
-          t_2021_11_divvy_tripdata UNION ALL SELECT * FROM
-          t_2021_12_divvy_tripdata UNION ALL SELECT * FROM
-          t_2022_01_divvy_tripdata UNION ALL SELECT * FROM
-          t_2022_02_divvy_tripdata UNION ALL SELECT * FROM
-          t_2022_03_divvy_tripdata UNION ALL SELECT * FROM
-          t_2022_04_divvy_tripdata UNION ALL SELECT * FROM
-          t_2022_05_divvy_tripdata UNION ALL SELECT * FROM
-          t_2022_06_divvy_tripdata UNION ALL SELECT * FROM
-          t_2022_07_divvy_tripdata UNION ALL SELECT * FROM
-          t_2022_08_divvy_tripdata UNION ALL SELECT * FROM
-          t_2022_09_divvy_tripdata UNION ALL SELECT * FROM
-          t_2022_10_divvy_tripdata UNION ALL SELECT * FROM
-          t_2022_11_divvy_tripdata UNION ALL SELECT * FROM
-          t_2022_12_divvy_tripdata );
-        </code>
-      </pre> */}
+      <div className="code-highlight-block">
+        <SyntaxHighlighter
+          language="sql"
+          style={nord}
+          showLineNumbers={true}
+          className="code-highlight"
+        >
+          {sqlCreateTable}
+        </SyntaxHighlighter>
+      </div>
+
       <p className="project-content-description">
         After combining the data, I conducted a quick validation to confirm that
         the dataset accurately reflected records for all intended years and
@@ -195,14 +515,18 @@ export const ProjectCyclistic = () => {
         at this stage, I could confidently proceed, knowing that the data
         provided a full and reliable timeline for subsequent analysis.
       </p>
-      {/* <pre>
-        <code>
-          SELECT EXTRACT('YEAR' FROM started_at_date) AS year_test,
-          EXTRACT('MONTH' FROM started_at_date) AS month_test FROM
-          t_2020_2021_2022_divvy_tripdata GROUP BY EXTRACT('YEAR' FROM
-          started_at_date), EXTRACT('MONTH' FROM started_at_date);
-        </code>
-      </pre> */}
+
+      <div className="code-highlight-block">
+        <SyntaxHighlighter
+          language="sql"
+          style={nord}
+          showLineNumbers={true}
+          className="code-highlight"
+        >
+          {sqlDateCheck}
+        </SyntaxHighlighter>
+      </div>
+
       <p className="project-content-description">
         In the next phase of data preparation, I began by checking the length of
         the ride_id field to identify any irregularities or potential issues,
@@ -215,16 +539,17 @@ export const ProjectCyclistic = () => {
         was essential to maintain data integrity before moving forward with
         further cleaning and analysis.
       </p>
-      {/* <pre>
-        <code>
-          -- checking length of ride IDs SELECT LENGTH(ride_id) FROM
-          t_2020_2021_2022_divvy_tripdata; -- checking the total number of rows
-          SELECT COUNT(*) FROM t_2020_2021_2022_divvy_tripdata; --14'804'382
-          rows -- checking if ride IDs have any duplicate values SELECT
-          COUNT(DISTINCT(ride_id)) FROM t_2020_2021_2022_divvy_tripdata;
-          --14'804'096
-        </code>
-      </pre> */}
+
+      <div className="code-highlight-block">
+        <SyntaxHighlighter
+          language="sql"
+          style={nord}
+          showLineNumbers={true}
+          className="code-highlight"
+        >
+          {sqlIdCheck}
+        </SyntaxHighlighter>
+      </div>
 
       <p className="project-content-description">
         Next, I examined the dataset to identify the number of NULL values in
@@ -235,26 +560,17 @@ export const ProjectCyclistic = () => {
         ensuring that the data was as complete and reliable as possible for
         accurate analysis.
       </p>
-      {/* <pre>
-        <code>
-          SELECT COUNT(*) - COUNT(ride_id) AS ride_id_count, --0 COUNT(*) -
-          COUNT(rideable_type) AS rideable_type_count, --0 COUNT(*) -
-          COUNT(started_at_date) AS started_at_date_count, --0 COUNT(*) -
-          COUNT(started_at_time) AS started_at_hour_count, --0 COUNT(*) -
-          COUNT(ended_at_date) AS ended_at_date_count, --0 COUNT(*) -
-          COUNT(ended_at_time) AS ended_at_hour_count, --0 COUNT(*) -
-          COUNT(start_station_name) AS start_station_name_count, --1'618'518
-          COUNT(*) - COUNT(start_station_id) AS start_station_id_count,
-          --1'619'141 COUNT(*) - COUNT(end_station_name) AS
-          end_station_name_count, --1'742'780 COUNT(*) - COUNT(end_station_id)
-          AS end_station_id_count, --1'743'241 COUNT(*) - COUNT(start_lat) AS
-          start_lat_count, --0 COUNT(*) - COUNT(start_lng) AS start_lng_count,
-          --0 COUNT(*) - COUNT(end_lat) AS end_lat_count, --14'884 COUNT(*) -
-          COUNT(end_lng) AS end_lng_count, --14'884 COUNT(*) -
-          COUNT(member_casual) AS member_casual_count --0 FROM
-          t_2020_2021_2022_divvy_tripdata;
-        </code>
-      </pre> */}
+
+      <div className="code-highlight-block">
+        <SyntaxHighlighter
+          language="sql"
+          style={nord}
+          showLineNumbers={true}
+          className="code-highlight"
+        >
+          {sqlNullCheck}
+        </SyntaxHighlighter>
+      </div>
 
       <p className="project-content-description">
         In the final phase of data preparation, I conducted checks on the number
@@ -267,17 +583,17 @@ export const ProjectCyclistic = () => {
         validation steps were essential for ensuring data completeness and
         consistency, setting a solid foundation for accurate analysis.
       </p>
-      {/* <pre>
-        <code>
-          -- checking how many stations are there SELECT
-          DISTINCT(end_station_name) AS end_station FROM
-          t_2020_2021_2022_divvy_tripdata; --1730 SELECT
-          DISTINCT(start_station_name) AS start_station FROM
-          t_2020_2021_2022_divvy_tripdata; --1712 -- confirming that member type
-          has only two values, casual and member SELECT DISTINCT (member_casual)
-          FROM t_2020_2021_2022_divvy_tripdata;
-        </code>
-      </pre> */}
+
+      <div className="code-highlight-block">
+        <SyntaxHighlighter
+          language="sql"
+          style={nord}
+          showLineNumbers={true}
+          className="code-highlight"
+        >
+          {sqlStationCheck}
+        </SyntaxHighlighter>
+      </div>
 
       <div className="project-container-sub-title-grid">
         <div className="project-container-sub-title">
@@ -285,7 +601,7 @@ export const ProjectCyclistic = () => {
           <h3 className="project-content-sub-title">CLEAN</h3>
         </div>
       </div>
-      <p className="project-content-description">
+      <p className="project-content-description project-content-description-first">
         In this cleaning phase, the data was meticulously prepared to ensure
         both accuracy and suitability for in-depth analysis. Having already
         verified that the ride_id field was free of duplicates, I concentrated
@@ -297,18 +613,16 @@ export const ProjectCyclistic = () => {
         user behavior and bike usage patterns in the next phases.
       </p>
 
-      {/* <pre>
-        <code>
-          -- removing NULL values DELETE FROM t_2020_2021_2022_divvy_tripdata
-          WHERE start_station_name IS NULL; DELETE FROM
-          t_2020_2021_2022_divvy_tripdata WHERE end_station_name IS NULL; DELETE
-          FROM t_2020_2021_2022_divvy_tripdata WHERE start_station_id IS NULL;
-          DELETE FROM t_2020_2021_2022_divvy_tripdata WHERE end_station_id IS
-          NULL; DELETE FROM t_2020_2021_2022_divvy_tripdata WHERE end_lat IS
-          NULL; DELETE FROM t_2020_2021_2022_divvy_tripdata WHERE end_lng IS
-          NULL;
-        </code>
-      </pre> */}
+      <div className="code-highlight-block">
+        <SyntaxHighlighter
+          language="sql"
+          style={nord}
+          showLineNumbers={true}
+          className="code-highlight"
+        >
+          {sqlRemoveNull}
+        </SyntaxHighlighter>
+      </div>
 
       <p className="project-content-description">
         Next, I organized the data by categorizing it into weeks and months.
@@ -321,32 +635,17 @@ export const ProjectCyclistic = () => {
         identifying weekly and monthly usage behaviors, which will inform
         targeted strategies for growth.
       </p>
-      {/* <pre>
-        <code>
-        SELECT  ride_id,rideable_type,start_station_name, end_station_name, start_lat, start_lng,end_lat, 
-        end_lng, member_casual AS member_type,started_at,  
-        CASE     
-		WHEN EXTRACT (DAYOFWEEK FROM started_at) = 1 THEN 'SUN'    
-        WHEN EXTRACT (DAYOFWEEK FROM started_at) = 2 THEN 'MON'    
-        WHEN EXTRACT (DAYOFWEEK FROM started_at) = 3 THEN 'TUE'    
-        WHEN EXTRACT (DAYOFWEEK FROM started_at) = 4 THEN 'WED'    
-        WHEN EXTRACT (DAYOFWEEK FROM started_at) = 5 THEN 'THU'    
-        WHEN EXTRACT (DAYOFWEEK FROM started_at) = 6 THEN 'FRI'  
-        ELSE 'SAT' END AS day_of_week,  
-		CASE   
-         WHEN EXTRACT (MONTH FROM started_at) = 1 THEN 'JAN'    
-         WHEN EXTRACT (MONTH FROM started_at) = 2 THEN 'FEB'    
-         WHEN EXTRACT (MONTH FROM started_at) = 3 THEN 'MAR'    
-         WHEN EXTRACT (MONTH FROM started_at) = 4 THEN 'APR'  
-         ELSE 'UNKOWN'  END AS month,  EXTRACT (DAY FROM started_at) AS day,  
-         EXTRACT (YEAR FROM started_at) AS year,  
-         TIMESTAMP_DIFF (ended_at, started_at, minute) AS ride_length_m,  
-         FORMAT_TIMESTAMP("%I:%M %p", started_at) AS time
-         FROM  t_2020_2021_2022_divvy_tripdata
-         WHERE TIMESTAMP_DIFF (ended_at, started_at, minute) > 1 
-         AND TIMESTAMP_DIFF (ended_at, started_at, hour) < 24
-        </code>
-      </pre> */}
+
+      <div className="code-highlight-block">
+        <SyntaxHighlighter
+          language="sql"
+          style={nord}
+          showLineNumbers={true}
+          className="code-highlight"
+        >
+          {sqlDayMonth}
+        </SyntaxHighlighter>
+      </div>
 
       <div className="project-container-sub-title-grid">
         <div className="project-container-sub-title">
@@ -354,7 +653,7 @@ export const ProjectCyclistic = () => {
           <h3 className="project-content-sub-title">ANALYZE</h3>
         </div>
       </div>
-      <p className="project-content-description">
+      <p className="project-content-description project-content-description-first">
         With the cleaned data, the analysis focused on uncovering the unique
         usage patterns between annual members and casual riders. Key aspects
         were explored, including trip duration, ride timing, trip time analysis,
@@ -382,28 +681,17 @@ export const ProjectCyclistic = () => {
         offering valuable insights into customer preferences and potential areas
         for service optimization.
       </p>
-      {/* <pre>
-        <code>
-          -- calculate trip length in minutes SELECT EXTRACT(EPOCH FROM
-          (ended_at_time - started_at_time))/60 AS trip_time_minutes FROM
-          t_2020_2021_2022_divvy_tripdata; -- add trip_time_minutes field to the
-          table ALTER TABLE t_2020_2021_2022_divvy_tripdata ADD COLUMN
-          trip_time_minutes TIME; UPDATE t_2020_2021_2022_divvy_tripdata a SET
-          trip_time_minutes = (SELECT EXTRACT(EPOCH FROM (ended_at_time -
-          started_at_time))/60 FROM t_2020_2021_2022_divvy_tripdata b WHERE
-          a.ride_id = b.ride_id); -- average trip time for all users SELECT
-          AVG(trip_time_minutes) AS avg_trip_time_minutes FROM
-          t_2020_2021_2022_divvy_tripdata; -- average trip time for each group
-          member type SELECT member_casual, AVG(trip_time_minutes) AS
-          avg_member_trip_time FROM t_2020_2021_2022_divvy_tripdata GROUP BY
-          member_casual; -- max time spend on trip for each group SELECT
-          member_casual, MAX(trip_time_minutes) AS max_member_trip_time FROM
-          t_2020_2021_2022_divvy_tripdata GROUP BY member_casual; -- min time
-          spend on trip for each group SELECT member_casual,
-          MIN(trip_time_minutes) AS min_member_trip_time FROM
-          t_2020_2021_2022_divvy_tripdata GROUP BY member_casual;
-        </code>
-      </pre> */}
+
+      <div className="code-highlight-block">
+        <SyntaxHighlighter
+          language="sql"
+          style={nord}
+          showLineNumbers={true}
+          className="code-highlight"
+        >
+          {sqlTimeAnalysis}
+        </SyntaxHighlighter>
+      </div>
 
       <p className="project-content-description">
         <b>Trip Time Analysis:</b>
@@ -417,33 +705,17 @@ export const ProjectCyclistic = () => {
         throughout the day, providing a comprehensive view of user engagement
         across various timeframes.
       </p>
-      {/* <pre>
-        <code>
-          -- which weekdays have most trips SELECT TO_CHAR(started_at_date,
-          'DAY') AS week_day FROM t_2020_2021_2022_divvy_tripdata; ALTER TABLE
-          t_2020_2021_2022_divvy_tripdata ADD COLUMN week_day TEXT; UPDATE
-          t_2020_2021_2022_divvy_tripdata a SET week_day = (SELECT
-          TO_CHAR(started_at_date, 'DAY') FROM t_2020_2021_2022_divvy_tripdata b
-          WHERE a.ride_id = b.ride_id); SELECT week_day, COUNT(week_day) AS
-          week_day_count FROM t_2020_2021_2022_divvy_tripdata GROUP BY week_day;
-          -- per membership type SELECT week_day, COUNT(week_day) AS
-          week_day_count FROM t_2020_2021_2022_divvy_tripdata WHERE
-          member_casual = 'member' GROUP BY week_day; SELECT week_day,
-          COUNT(week_day) AS week_day_count FROM t_2020_2021_2022_divvy_tripdata
-          WHERE member_casual = 'casual' GROUP BY week_day; -- most popular
-          months SELECT EXTRACT(MONTH FROM started_at_date::date) AS month_name
-          FROM t_2020_2021_2022_divvy_tripdata; SELECT month_name,
-          COUNT(month_name) AS count_month_name FROM
-          t_2020_2021_2022_divvy_tripdata; SELECT month_name, COUNT(month_name)
-          AS count_month_name FROM t_2020_2021_2022_divvy_tripdata WHERE
-          member_casual = 'member'; SELECT month_name, COUNT(month_name) AS
-          count_month_name FROM t_2020_2021_2022_divvy_tripdata WHERE
-          member_casual = 'casual'; -- most popular hours SELECT EXTRACT(HOUR
-          FROM started_at_date) AS time_of_day, COUNT(*), member_casual FROM
-          t_2020_2021_2022_divvy_tripdata GROUP BY time_of_day, member_casual
-          ORDER BY time_of_day DESC;
-        </code>
-      </pre> */}
+
+      <div className="code-highlight-block">
+        <SyntaxHighlighter
+          language="sql"
+          style={nord}
+          showLineNumbers={true}
+          className="code-highlight"
+        >
+          {sqlTripAnalysis}
+        </SyntaxHighlighter>
+      </div>
 
       <p className="project-content-description">
         <b>Station Popularity: </b> this analysis identified the most and least
@@ -455,40 +727,16 @@ export const ProjectCyclistic = () => {
         patterns.
       </p>
 
-      {/* <pre>
-        <code>
-          -- most popular start stations for casual riders SELECT
-          start_station_name, COUNT(*) AS rank_start_station FROM
-          t_2020_2021_2022_divvy_tripdata WHERE member_casual = 'casual' GROUP
-          BY start_station_name ORDER BY rank_start_station -- most popular
-          start stations for member riders SELECT start_station_name, COUNT(*)
-          AS rank_start_station FROM t_2020_2021_2022_divvy_tripdata WHERE
-          member_casual = 'member' GROUP BY start_station_name ORDER BY
-          rank_start_station -- most popular end stations for casual riders
-          SELECT end_station_name, COUNT(*) AS rank_end_station FROM
-          t_2020_2021_2022_divvy_tripdata WHERE member_casual = 'casual' GROUP
-          BY end_station_name ORDER BY rank_end_station -- most popular end
-          stations for member riders SELECT end_station_name, COUNT(*) AS
-          rank_end_station FROM t_2020_2021_2022_divvy_tripdata WHERE
-          member_casual = 'member' GROUP BY end_station_name ORDER BY
-          rank_end_station -- most popular routes amongst casual riders SELECT
-          COUNT(*) AS frequency, start_station_name, end_station_name FROM
-          t_2020_2021_2022_divvy_tripdata WHERE member_casual = 'casual' GROUP
-          BY start_station_name, end_station_name ORDER BY frequency DESC; --
-          most popular routes amongst member riders SELECT COUNT(*) AS
-          frequency, start_station_name, end_station_name FROM
-          t_2020_2021_2022_divvy_tripdata WHERE member_casual = 'member' GROUP
-          BY start_station_name, end_station_name ORDER BY frequency DESC; --
-          least popular routes amongst casual riders SELECT COUNT(*) AS
-          frequency, start_station_name, end_station_name FROM
-          t_2020_2021_2022_divvy_tripdata WHERE member_casual = 'casual' GROUP
-          BY start_station_name, end_station_name ORDER BY frequency ASC; --
-          least popular routes amongst member riders SELECT COUNT(*) AS
-          frequency, start_station_name, end_station_name FROM
-          t_2020_2021_2022_divvy_tripdata WHERE member_casual = 'member' GROUP
-          BY start_station_name, end_station_name ORDER BY frequency ASC;
-        </code>
-      </pre> */}
+      <div className="code-highlight-block">
+        <SyntaxHighlighter
+          language="sql"
+          style={nord}
+          showLineNumbers={true}
+          className="code-highlight"
+        >
+          {sqlStationAnalysis}
+        </SyntaxHighlighter>
+      </div>
 
       <p className="project-content-description">
         By concentrating on these elements, the analysis sought to produce
@@ -505,7 +753,7 @@ export const ProjectCyclistic = () => {
           <h3 className="project-content-sub-title">SHARE</h3>
         </div>
       </div>
-      <p className="project-content-description">
+      <p className="project-content-description project-content-description-first">
         After completing the analysis, the next crucial step is to effectively
         share and present the findings through clear and impactful data
         visualizations, ensuring that the audience can quickly grasp the key
@@ -542,7 +790,7 @@ export const ProjectCyclistic = () => {
           <h3 className="project-content-sub-title">ACT</h3>
         </div>
       </div>
-      <p className="project-content-description">
+      <p className="project-content-description project-content-description-first">
         The final phase involves the business taking action on the analysis
         findings and insights, using this information to implement strategic
         changes that align with identified trends and opportunities. By

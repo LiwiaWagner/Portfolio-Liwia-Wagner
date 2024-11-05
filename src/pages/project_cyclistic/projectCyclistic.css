@@ -58,6 +58,22 @@
   grid-column: 4 / 10;
 }
 
+.code-highlight-block {
+  grid-column: 4 / 10;
+}
+
+.code-highlight {
+  border-radius: 0.5rem;
+}
+
+.project-content-description {
+  padding: 2rem 0 0 0;
+}
+
+.project-content-description-first {
+  padding: 0;
+}
+
 .project-content-description,
 .project-content-sub-sub-title {
   grid-column: 4 / 10;

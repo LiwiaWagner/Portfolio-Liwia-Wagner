@@ -212,10 +212,10 @@ export const projects = [
     id: 1,
     title: `Enhancing Efficiency: Business Application for Supply Chain
     Optimization`,
-    introTypes: [
+    introType: [
       {
-        title11: "THE PRODUCT",
-        paragraph11: `I conducted Data Experience (DX) research and took the lead in
+        title: "THE PRODUCT",
+        paragraph: `I conducted Data Experience (DX) research and took the lead in
         designing and prototyping a business application specifically
         aimed at optimizing clients' supply chain networks. This involved
         thoroughly analyzing data patterns, identifying key bottlenecks,
@@ -226,8 +226,8 @@ export const projects = [
         streamlined operations across various stages of the supply chain.`,
       },
       {
-        title12: "THE PROBLEM",
-        paragraph12: `The client's reporting solution had not been updated or analyzed
+        title: "THE PROBLEM",
+        paragraph: `The client's reporting solution had not been updated or analyzed
         for user experience since its launch over two years ago. As a
         result, the design had likely fallen behind evolving user needs
         and modern usability standards. Without regular assessments,
@@ -238,8 +238,8 @@ export const projects = [
         updated user interaction patterns during that time.`,
       },
       {
-        title13: "THE GOAL",
-        paragraph13: `The primary objective of the project was to gain a comprehensive
+        title: "THE GOAL",
+        paragraph: `The primary objective of the project was to gain a comprehensive
         understanding of the user experience and subsequently redesign the
         existing reporting solution informed by user feedback. This
         involved conducting detailed user research, including interviews
@@ -263,7 +263,7 @@ export const projects = [
     id: 2,
     title:
       "Sustainable Business Travel: A Data-Driven Carbon Emission Analysis",
-    introType1: {
+    introType: {
       title: "THE PRODUCT",
       paragraph: "",
     },
@@ -287,17 +287,20 @@ export const projects = [
   {
     id: 4,
     title: `Cyclistic Case Study: A Capstone Project for Google BI Certification`,
-    introTypes: [
+    introType: [
       {
-        paragraph21:
+        title: "",
+        paragraph:
           "The capstone project of preparing Cyclistic’s customer analysis serves as the final assignment for the Google Business Intelligence Professional Certification. In this case, I assume the role of a Junior Data Analyst at the fictional bike-share company, Cyclistic. In 2016, Cyclistic launched a successful bike-share offering with a fleet of 5,824 bicycles tracked and locked into a network of 692 stations across Chicago.",
       },
       {
-        paragraph22:
+        title: "",
+        paragraph:
           "The bikes can be unlocked from one station and returned to any other station in the system at any time. Riders with an annual subscription are called members, while riders using single-ride or full-day passes are considered casual riders.",
       },
       {
-        paragraph23:
+        title: "",
+        paragraph:
           "The director of marketing aims to maximize the number of annual memberships, as they are more profitable than single-ride or full-day passes. This strategy is believed to be key to future growth. The primary goal of the analysis is to understand the behaviors of Cyclistic’s two main user groups: members and casual riders.",
       },
     ],
