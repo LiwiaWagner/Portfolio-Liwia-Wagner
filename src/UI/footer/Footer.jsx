@@ -1,11 +1,10 @@
 import React from "react";
-import "./footer.css";
-import { FaXTwitter } from "react-icons/fa6";
-import { SiObservable } from "react-icons/si";
 import { BsGithub } from "react-icons/bs";
-import { SiTableau } from "react-icons/si";
 import { FaLinkedinIn } from "react-icons/fa";
+import { FaXTwitter } from "react-icons/fa6";
 import { LiaCopyrightSolid } from "react-icons/lia";
+import { SiObservable, SiTableau } from "react-icons/si";
+import "./footer.css";
 
 const Footer = () => {
   return (

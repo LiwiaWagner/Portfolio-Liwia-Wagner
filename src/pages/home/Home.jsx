@@ -11,7 +11,7 @@ import { A11y, EffectCoverflow, Pagination, Scrollbar } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 import Card from "../../components/card/Card";
 import "../../components/card/card.css";
-import { cards } from "../../data/data";
+import { cards } from "../../data/cards";
 import { EXPERTISE } from "../../data/expertise";
 import { LANGUAGES } from "../../data/languages";
 import { TOOLS } from "../../data/tools";

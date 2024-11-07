@@ -1,14 +1,11 @@
 import React, { useEffect, useRef } from "react";
-import { projects } from "../../data/data";
-import "./projectCyclistic.css";
-import "./../../components/project/project.css";
-import Project from "../../components/project/Project";
-import dashboardCyclisticImg from "../../assets/cyclistic_dashboard_img.png";
 import SyntaxHighlighter from "react-syntax-highlighter";
-import {
-  atomOneDark,
-  nord,
-} from "react-syntax-highlighter/dist/esm/styles/hljs";
+import { nord } from "react-syntax-highlighter/dist/esm/styles/hljs";
+import dashboardCyclisticImg from "../../assets/cyclistic_dashboard_img.png";
+import ProjectIntro from "../../components/projectIntro/ProjectIntro";
+import { projectIntros } from "../../data/projectIntros";
+import "./../../components/projectIntro/projectIntro.css";
+import "./projectCyclistic.css";
 
 const { tableau } = window;
 const sqlCreateTable = `CREATE TABLE t_2020_2021_2022_divvy_tripdata AS 
@@ -384,14 +381,14 @@ export const ProjectCyclistic = () => {
     return () => window.scrollTo(0, 0);
   }, []);
 
-  const filteredProject = projects.find((project) => {
+  const filteredProject = projectIntros.find((project) => {
     return project.id === 4;
   });
 
   return (
     <div className="project-main-container">
       <div className="project-intro">
-        <Project project={filteredProject} />
+        <ProjectIntro project={filteredProject} />
 
         <h1 className="main-title">
           Cyclistic Case Study: A Capstone Project for Google BI Certification

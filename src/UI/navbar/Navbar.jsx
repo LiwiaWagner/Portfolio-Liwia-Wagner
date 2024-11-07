@@ -1,7 +1,6 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect, useState } from "react";
+import { MdClose, MdMenu } from "react-icons/md";
 import { Link, NavLink, useLocation } from "react-router-dom";
-import { MdMenu } from "react-icons/md";
-import { MdClose } from "react-icons/md";
 import "./navbar.css";
 
 const Navbar = () => {
