@@ -5,6 +5,7 @@ import dashboardCyclisticImg from "../../assets/cyclistic_dashboard_img.png";
 import ProjectIntro from "../../components/projectIntro/ProjectIntro";
 import { projectIntros } from "../../data/projectIntros";
 import "./../../components/projectIntro/projectIntro.css";
+import "../../pages/projectPage.css";
 import "./projectCyclistic.css";
 
 const { tableau } = window;
@@ -381,14 +382,14 @@ export const ProjectCyclistic = () => {
     return () => window.scrollTo(0, 0);
   }, []);
 
-  const filteredProject = projectIntros.find((project) => {
-    return project.id === 4;
-  });
+  // const filteredProject = projectIntros.find((project) => {
+  //   return project.id === 4;
+  // });
 
   return (
     <div className="project-main-container">
       <div className="project-intro">
-        <ProjectIntro project={filteredProject} />
+        {/* <ProjectIntro project={filteredProject} /> */}
 
         <h1 className="main-title">
           Cyclistic Case Study: A Capstone Project for Google BI Certification

@@ -2,6 +2,8 @@ import React, { useEffect } from "react";
 import desktopImgProjectNetworkEdge from "../../assets/d_project_picture_p1.png";
 import ProjectIntro from "../../components/projectIntro/ProjectIntro";
 import { projectIntros } from "../../data/projectIntros";
+import "./../../components/projectIntro/projectIntro.css";
+import "../../pages/projectPage.css";
 import "./projectNetworkEdge.css";
 
 export const ProjectNetworkEdge = () => {
@@ -10,13 +12,13 @@ export const ProjectNetworkEdge = () => {
     return () => window.scrollTo(0, 0);
   }, []);
 
-  const filteredProject = projectIntros.find((project) => {
-    return project.id === 1;
-  });
+  // const filteredProject = projectIntros.find((project) => {
+  //   return project.id === 1;
+  // });
 
   return (
     <div className="project-main-container">
-      <ProjectIntro project={filteredProject} />
+      {/* <ProjectIntro project={filteredProject} /> */}
 
       <img
         src={desktopImgProjectNetworkEdge}
