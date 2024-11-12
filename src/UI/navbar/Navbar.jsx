@@ -5,12 +5,20 @@ import "./navbar.css";
 
 const Navbar = () => {
   const [isNavShowing, setIsNavShowing] = useState(false);
-
+  const [underlineStyle, setUnderlineStyle] = useState({ left: 0, width: 0 });
   const location = useLocation();
 
   useEffect(() => {
     setIsNavShowing(false);
   }, [location]);
+
+  const handleHover = (e) => {
+    const { offsetLeft, offsetWidth } = e.target.closest("li");
+    setUnderlineStyle({
+      left: offsetLeft,
+      width: offsetWidth,
+    });
+  };
 
   return (
     <nav className="nav-main-container">
@@ -22,7 +30,7 @@ const Navbar = () => {
         </Link>
         <div className="nav-right-container">
           <ul>
-            <li className="nav-link">
+            <li className="nav-link" onMouseEnter={handleHover}>
               <NavLink
                 to="/"
                 className={({ isActive }) =>
@@ -32,7 +40,7 @@ const Navbar = () => {
                 HOME
               </NavLink>
             </li>
-            <li className="nav-link">
+            <li className="nav-link" onMouseEnter={handleHover}>
               <NavLink
                 to="/#view"
                 className={({ isActive }) =>
@@ -42,7 +50,7 @@ const Navbar = () => {
                 PORTFOLIO
               </NavLink>
             </li>
-            <li className="nav-link">
+            <li className="nav-link" onMouseEnter={handleHover}>
               <NavLink
                 to="/about"
                 className={({ isActive }) => (isActive ? "active" : "")}
@@ -50,7 +58,7 @@ const Navbar = () => {
                 ABOUT
               </NavLink>
             </li>
-            <li className="nav-link">
+            <li className="nav-link" onMouseEnter={handleHover}>
               <a
                 href={require("../../assets/cv_liwia_wagner.pdf")}
                 target="_blank"
@@ -60,6 +68,7 @@ const Navbar = () => {
               </a>
             </li>
           </ul>
+          <span className="under-line" style={underlineStyle}></span>
         </div>
 
         <button

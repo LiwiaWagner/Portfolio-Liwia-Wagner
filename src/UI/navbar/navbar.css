@@ -17,10 +17,6 @@
   height: 100%;
 }
 
-.nav-container.show-nav {
-  justify-content: flex-end;
-}
-
 .nav-left-container {
   width: max-content;
   text-decoration: none;
@@ -34,57 +30,54 @@
   letter-spacing: 0rem;
 }
 
+.nav-right-container {
+  position: relative;
+}
+
 .nav-right-container ul {
   display: flex;
   align-items: center;
   font-size: 1rem;
-  font-style: normal;
   font-weight: 300;
   line-height: normal;
   letter-spacing: 0.3rem;
   gap: 2.5rem;
   list-style: none;
+  padding: 0;
 }
 
-a {
+.nav-link a {
   text-decoration: none;
-  text-align: center;
+  padding: 0 0 0.3rem 0;
 }
 
 .nav-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   position: relative;
-  padding: 0;
-  margin: 0;
+  text-decoration: none;
   list-style-type: none;
 }
 
-.nav-link:before {
-  content: "";
+/* This is the key update: underline only when the link is active */
+.under-line {
   position: absolute;
-  bottom: -10px;
-  height: 6px;
-  width: 100%;
+  bottom: -1.15rem;
+  height: 2px;
   background: var(--black);
-  transform: scaleX(0);
-  transition: transform 0.2s linear;
+  transition: left 0.3s ease, width 0.3s ease;
+  pointer-events: none;
+  width: 0; /* Start width at 0 */
 }
 
-.nav-link:hover:before {
-  transform: scaleX(1);
+.nav-link a.active + .under-line {
+  width: 100%; /* Underline will stretch to full width only for the active link */
 }
 
 .nav-link .active {
   font-weight: 500;
   color: var(--black);
-}
-
-.nav-link .active:before {
-  content: "";
-  position: absolute;
-  bottom: -1.6rem;
-  height: 1.5px;
-  width: 100%;
-  background: var(--black);
 }
 
 .nav-link a:visited {
@@ -93,6 +86,13 @@ a {
 
 .nav-link a:focus {
   color: var(--black);
+}
+
+.nav-link a:focus,
+.nav-link a:active {
+  outline: none;
+  background-color: transparent;
+  color: inherit;
 }
 
 .nav-toggle-btn {
