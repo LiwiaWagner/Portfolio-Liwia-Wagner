@@ -1,15 +1,13 @@
-import { projectIntros } from "../../data/projectIntros";
-
 function ProjectIntro(props) {
-  const projectIntros = props.projectIntro;
+  const projectIntro = props.projectIntro;
 
   return (
     <div className="project-intro">
-      <h1 className="main-title">{projectIntros.title}</h1>
+      <h1 className="main-title">{projectIntro.title}</h1>
 
       <div className="intro-left-container-type1">
         <div className="intro-section">
-          {projectIntros.introType.map((intro, index) => {
+          {projectIntro.introType.map((intro, index) => {
             return (
               <div key={index}>
                 <h3 className="intro-sub-title">{intro.title}</h3>
@@ -23,22 +21,20 @@ function ProjectIntro(props) {
       <div className="intro-right-container">
         <div className="intro-section">
           <h3 className="intro-sub-title">
-            {projectIntros.areasOfExpertise.title}
+            {projectIntro.areasOfExpertise.title}
           </h3>
           <p className="intro-description">
-            {projectIntros.areasOfExpertise.content}
+            {projectIntro.areasOfExpertise.content}
           </p>
         </div>
         <div className="intro-section">
-          <h3 className="intro-sub-title"> {projectIntros.tools.title}</h3>
-          <p className="intro-description"> {projectIntros.tools.content}</p>
+          <h3 className="intro-sub-title"> {projectIntro.tools.title}</h3>
+          <p className="intro-description"> {projectIntro.tools.content}</p>
         </div>
         <div className="intro-section">
-          <h3 className="intro-sub-title">
-            {projectIntros.deliveryDate.title}
-          </h3>
+          <h3 className="intro-sub-title">{projectIntro.deliveryDate.title}</h3>
           <p className="intro-description">
-            {projectIntros.deliveryDate.content}
+            {projectIntro.deliveryDate.content}
           </p>
         </div>
       </div>

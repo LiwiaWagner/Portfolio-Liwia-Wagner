@@ -11,81 +11,81 @@ import "./projectCyclistic.css";
 const { tableau } = window;
 const sqlCreateTable = `CREATE TABLE t_2020_2021_2022_divvy_tripdata AS 
 SELECT * FROM (
-          SELECT * FROM t_2020_Q1_divvy_tripdata
-          UNION ALL
-          SELECT * FROM t_2020_04_divvy_tripdata
-          UNION ALL
-          SELECT * FROM t_2020_05_divvy_tripdata
-          UNION ALL
-          SELECT * FROM t_2020_06_divvy_tripdata
-          UNION ALL
-          SELECT * FROM t_2020_07_divvy_tripdata
-          UNION ALL
-          SELECT * FROM t_2020_08_divvy_tripdata
-          UNION ALL
-          SELECT * FROM t_2020_09_divvy_tripdata
-          UNION ALL
-          SELECT * FROM t_2020_10_divvy_tripdata
-          UNION ALL
-          SELECT * FROM t_2020_11_divvy_tripdata
-          UNION ALL
-          SELECT * FROM t_2020_12_divvy_tripdata
-          UNION ALL
-          SELECT * FROM t_2021_01_divvy_tripdata
-          UNION ALL
-          SELECT * FROM t_2021_02_divvy_tripdata
-          UNION ALL
-          SELECT * FROM t_2021_03_divvy_tripdata
-          UNION ALL
-          SELECT * FROM t_2021_04_divvy_tripdata
-          UNION ALL
-          SELECT * FROM t_2021_05_divvy_tripdata
-          UNION ALL
-          SELECT * FROM t_2021_06_divvy_tripdata
-          UNION ALL
-          SELECT * FROM t_2021_07_divvy_tripdata
-          UNION ALL
-          SELECT * FROM t_2021_08_divvy_tripdata
-          UNION ALL
-          SELECT * FROM t_2021_09_divvy_tripdata
-          UNION ALL
-          SELECT * FROM t_2021_10_divvy_tripdata
-          UNION ALL
-          SELECT * FROM t_2021_11_divvy_tripdata
-          UNION ALL
-          SELECT * FROM t_2021_12_divvy_tripdata
-          UNION ALL
-          SELECT * FROM t_2022_01_divvy_tripdata
-          UNION ALL
-          SELECT * FROM t_2022_02_divvy_tripdata
-          UNION ALL
-          SELECT * FROM t_2022_03_divvy_tripdata
-          UNION ALL
-          SELECT * FROM t_2022_04_divvy_tripdata
-          UNION ALL
-          SELECT * FROM t_2022_05_divvy_tripdata
-          UNION ALL
-          SELECT * FROM t_2022_06_divvy_tripdata
-          UNION ALL
-          SELECT * FROM t_2022_07_divvy_tripdata
-          UNION ALL
-          SELECT * FROM t_2022_08_divvy_tripdata
-          UNION ALL
-          SELECT * FROM t_2022_09_divvy_tripdata
-          UNION ALL
-          SELECT * FROM t_2022_10_divvy_tripdata
-          UNION ALL
-          SELECT * FROM t_2022_11_divvy_tripdata
-          UNION ALL
-          SELECT * FROM t_2022_12_divvy_tripdata
+  SELECT * FROM t_2020_Q1_divvy_tripdata
+  UNION ALL
+  SELECT * FROM t_2020_04_divvy_tripdata
+  UNION ALL
+  SELECT * FROM t_2020_05_divvy_tripdata
+  UNION ALL
+  SELECT * FROM t_2020_06_divvy_tripdata
+  UNION ALL
+  SELECT * FROM t_2020_07_divvy_tripdata
+  UNION ALL
+  SELECT * FROM t_2020_08_divvy_tripdata
+  UNION ALL
+  SELECT * FROM t_2020_09_divvy_tripdata
+  UNION ALL
+  SELECT * FROM t_2020_10_divvy_tripdata
+  UNION ALL
+  SELECT * FROM t_2020_11_divvy_tripdata
+  UNION ALL
+  SELECT * FROM t_2020_12_divvy_tripdata
+  UNION ALL
+  SELECT * FROM t_2021_01_divvy_tripdata
+  UNION ALL
+  SELECT * FROM t_2021_02_divvy_tripdata
+  UNION ALL
+  SELECT * FROM t_2021_03_divvy_tripdata
+  UNION ALL
+  SELECT * FROM t_2021_04_divvy_tripdata
+  UNION ALL
+  SELECT * FROM t_2021_05_divvy_tripdata
+  UNION ALL
+  SELECT * FROM t_2021_06_divvy_tripdata
+  UNION ALL
+  SELECT * FROM t_2021_07_divvy_tripdata
+  UNION ALL
+  SELECT * FROM t_2021_08_divvy_tripdata
+  UNION ALL
+  SELECT * FROM t_2021_09_divvy_tripdata
+  UNION ALL
+  SELECT * FROM t_2021_10_divvy_tripdata
+  UNION ALL
+  SELECT * FROM t_2021_11_divvy_tripdata
+  UNION ALL
+  SELECT * FROM t_2021_12_divvy_tripdata
+  UNION ALL
+  SELECT * FROM t_2022_01_divvy_tripdata
+  UNION ALL
+  SELECT * FROM t_2022_02_divvy_tripdata
+  UNION ALL
+  SELECT * FROM t_2022_03_divvy_tripdata
+  UNION ALL
+  SELECT * FROM t_2022_04_divvy_tripdata
+  UNION ALL
+  SELECT * FROM t_2022_05_divvy_tripdata
+  UNION ALL
+  SELECT * FROM t_2022_06_divvy_tripdata
+  UNION ALL
+  SELECT * FROM t_2022_07_divvy_tripdata
+  UNION ALL
+  SELECT * FROM t_2022_08_divvy_tripdata
+  UNION ALL
+  SELECT * FROM t_2022_09_divvy_tripdata
+  UNION ALL
+  SELECT * FROM t_2022_10_divvy_tripdata
+  UNION ALL
+  SELECT * FROM t_2022_11_divvy_tripdata
+  UNION ALL
+  SELECT * FROM t_2022_12_divvy_tripdata
 );`;
 const sqlDateCheck = `SELECT 
-          EXTRACT('YEAR' FROM started_at_date) AS year_test,
-          EXTRACT('MONTH' FROM started_at_date) AS month_test 
+  EXTRACT('YEAR' FROM started_at_date) AS year_test,
+  EXTRACT('MONTH' FROM started_at_date) AS month_test 
 FROM t_2020_2021_2022_divvy_tripdata
 GROUP BY 
-          EXTRACT('YEAR' FROM started_at_date),
-          EXTRACT('MONTH' FROM started_at_date);`;
+  EXTRACT('YEAR' FROM started_at_date),
+  EXTRACT('MONTH' FROM started_at_date);`;
 const sqlIdCheck = `-- checking length of ride IDs
 SELECT LENGTH(ride_id) 
 FROM t_2020_2021_2022_divvy_tripdata;
@@ -98,21 +98,21 @@ FROM t_2020_2021_2022_divvy_tripdata; --14'804'382 rows
 SELECT COUNT(DISTINCT(ride_id)) 
 FROM t_2020_2021_2022_divvy_tripdata; --14'804'096`;
 const sqlNullCheck = `SELECT 
-          COUNT(*) - COUNT(ride_id) AS ride_id_nc, --0
-          COUNT(*) - COUNT(rideable_type) AS rideable_type_nc, --0
-          COUNT(*) - COUNT(started_at_date) AS started_at_date_nc, --0
-          COUNT(*) - COUNT(started_at_time) AS started_at_hour_nc, --0
-          COUNT(*) - COUNT(ended_at_date) AS ended_at_date_nc, --0
-          COUNT(*) - COUNT(ended_at_time) AS ended_at_hour_nc, --0
-          COUNT(*) - COUNT(start_station_name) AS start_station_name_nc, --1'618'518
-          COUNT(*) - COUNT(start_station_id) AS start_station_id_nc, --1'619'141
-          COUNT(*) - COUNT(end_station_name) AS end_station_name_nc, --1'742'780
-          COUNT(*) - COUNT(end_station_id) AS end_station_id_nc, --1'743'241
-          COUNT(*) - COUNT(start_lat) AS start_lat_nc, --0
-          COUNT(*) - COUNT(start_lng) AS start_lng_nc, --0
-          COUNT(*) - COUNT(end_lat) AS end_lat_nc, --14'884
-          COUNT(*) - COUNT(end_lng) AS end_lng_nc --14'884
-          COUNT(*) - COUNT(member_casual) AS member_casual_nc --0
+  COUNT(*) - COUNT(ride_id) AS ride_id_nc, --0
+  COUNT(*) - COUNT(rideable_type) AS rideable_type_nc, --0
+  COUNT(*) - COUNT(started_at_date) AS started_at_date_nc, --0
+  COUNT(*) - COUNT(started_at_time) AS started_at_hour_nc, --0
+  COUNT(*) - COUNT(ended_at_date) AS ended_at_date_nc, --0
+  COUNT(*) - COUNT(ended_at_time) AS ended_at_hour_nc, --0
+  COUNT(*) - COUNT(start_station_name) AS start_station_name_nc, --1'618'518
+  COUNT(*) - COUNT(start_station_id) AS start_station_id_nc, --1'619'141
+  COUNT(*) - COUNT(end_station_name) AS end_station_name_nc, --1'742'780
+  COUNT(*) - COUNT(end_station_id) AS end_station_id_nc, --1'743'241
+  COUNT(*) - COUNT(start_lat) AS start_lat_nc, --0
+  COUNT(*) - COUNT(start_lng) AS start_lng_nc, --0
+  COUNT(*) - COUNT(end_lat) AS end_lat_nc, --14'884
+  COUNT(*) - COUNT(end_lng) AS end_lng_nc --14'884
+  COUNT(*) - COUNT(member_casual) AS member_casual_nc --0
 FROM t_2020_2021_2022_divvy_tripdata;`;
 const sqlStationCheck = `-- checking how many stations are there 
 SELECT DISTINCT(end_station_name) AS end_station 
@@ -142,43 +142,43 @@ WHERE end_lat IS NULL;
 DELETE FROM t_2020_2021_2022_divvy_tripdata 
 WHERE end_lng IS NULL;`;
 const sqlDayMonth = `SELECT 
-          ride_id,
-          rideable_type,
-          start_station_name, 
-          end_station_name, 
-          start_lat, 
-          start_lng,end_lat, 
-          end_lng, 
-          member_casual AS member_type,
-          started_at,  
-          CASE     
-              WHEN EXTRACT (DAYOFWEEK FROM started_at) = 1 THEN 'SUN'    
-              WHEN EXTRACT (DAYOFWEEK FROM started_at) = 2 THEN 'MON'    
-              WHEN EXTRACT (DAYOFWEEK FROM started_at) = 3 THEN 'TUE'    
-              WHEN EXTRACT (DAYOFWEEK FROM started_at) = 4 THEN 'WED'    
-              WHEN EXTRACT (DAYOFWEEK FROM started_at) = 5 THEN 'THU'    
-              WHEN EXTRACT (DAYOFWEEK FROM started_at) = 6 THEN 'FRI'  
-          ELSE 'SAT'  
-          END AS day_of_week,  
-          CASE
-              WHEN EXTRACT (MONTH FROM started_at) = 1 THEN 'JAN'    
-              WHEN EXTRACT (MONTH FROM started_at) = 2 THEN 'FEB'    
-              WHEN EXTRACT (MONTH FROM started_at) = 3 THEN 'MAR'    
-              WHEN EXTRACT (MONTH FROM started_at) = 4 THEN 'APR'  
-              WHEN EXTRACT (MONTH FROM started_at) = 5 THEN 'MAY'    
-              WHEN EXTRACT (MONTH FROM started_at) = 6 THEN 'JUN'    
-              WHEN EXTRACT (MONTH FROM started_at) = 7 THEN 'JUL'    
-              WHEN EXTRACT (MONTH FROM started_at) = 8 THEN 'AUG'  
-              WHEN EXTRACT (MONTH FROM started_at) = 9 THEN 'SEP'    
-              WHEN EXTRACT (MONTH FROM started_at) = 10 THEN 'OCT'    
-              WHEN EXTRACT (MONTH FROM started_at) = 11 THEN 'NOV'    
-              WHEN EXTRACT (MONTH FROM started_at) = 12 THEN 'DEC'  
-          ELSE 'UNKOWN'  
-          END AS month,  
-          EXTRACT (DAY FROM started_at) AS day,  
-          EXTRACT (YEAR FROM started_at) AS year,  
-          TIMESTAMP_DIFF (ended_at, started_at, minute) AS ride_length_m,  
-          FORMAT_TIMESTAMP("%I:%M %p", started_at) AS time
+  ride_id,
+  rideable_type,
+  start_station_name, 
+  end_station_name, 
+  start_lat, 
+  start_lng,end_lat, 
+  end_lng, 
+  member_casual AS member_type,
+  started_at,  
+  CASE     
+    WHEN EXTRACT (DAYOFWEEK FROM started_at) = 1 THEN 'SUN'    
+    WHEN EXTRACT (DAYOFWEEK FROM started_at) = 2 THEN 'MON'    
+    WHEN EXTRACT (DAYOFWEEK FROM started_at) = 3 THEN 'TUE'    
+    WHEN EXTRACT (DAYOFWEEK FROM started_at) = 4 THEN 'WED'    
+    WHEN EXTRACT (DAYOFWEEK FROM started_at) = 5 THEN 'THU'    
+    WHEN EXTRACT (DAYOFWEEK FROM started_at) = 6 THEN 'FRI'  
+  ELSE 'SAT'  
+  END AS day_of_week,  
+  CASE
+    WHEN EXTRACT (MONTH FROM started_at) = 1 THEN 'JAN'    
+    WHEN EXTRACT (MONTH FROM started_at) = 2 THEN 'FEB'    
+    WHEN EXTRACT (MONTH FROM started_at) = 3 THEN 'MAR'    
+    WHEN EXTRACT (MONTH FROM started_at) = 4 THEN 'APR'  
+    WHEN EXTRACT (MONTH FROM started_at) = 5 THEN 'MAY'    
+    WHEN EXTRACT (MONTH FROM started_at) = 6 THEN 'JUN'    
+    WHEN EXTRACT (MONTH FROM started_at) = 7 THEN 'JUL'    
+    WHEN EXTRACT (MONTH FROM started_at) = 8 THEN 'AUG'  
+    WHEN EXTRACT (MONTH FROM started_at) = 9 THEN 'SEP'    
+    WHEN EXTRACT (MONTH FROM started_at) = 10 THEN 'OCT'    
+    WHEN EXTRACT (MONTH FROM started_at) = 11 THEN 'NOV'    
+    WHEN EXTRACT (MONTH FROM started_at) = 12 THEN 'DEC'  
+  ELSE 'UNKOWN'  
+  END AS month,  
+  EXTRACT (DAY FROM started_at) AS day,  
+  EXTRACT (YEAR FROM started_at) AS year,  
+  TIMESTAMP_DIFF (ended_at, started_at, minute) AS ride_length_m,  
+  FORMAT_TIMESTAMP("%I:%M %p", started_at) AS time
 FROM t_2020_2021_2022_divvy_tripdata 
 WHERE TIMESTAMP_DIFF (ended_at, started_at, minute) > 1 
 AND TIMESTAMP_DIFF (ended_at, started_at, hour) < 24`;
@@ -216,8 +216,7 @@ SELECT member_casual, MIN(trip_time_minutes) AS min_member_trip_time
 FROM t_2020_2021_2022_divvy_tripdata
 GROUP BY member_casual;`;
 const sqlTripAnalysis = `-- which weekdays have most trips
-SELECT
-          TO_CHAR(started_at_date, 'DAY') AS week_day
+SELECT TO_CHAR(started_at_date, 'DAY') AS week_day
 FROM t_2020_2021_2022_divvy_tripdata;
 
 ALTER TABLE t_2020_2021_2022_divvy_tripdata
@@ -229,22 +228,22 @@ FROM t_2020_2021_2022_divvy_tripdata b
 WHERE a.ride_id = b.ride_id);
 
 SELECT 
-          week_day, 
-          COUNT(week_day) AS week_day_count
+  week_day, 
+  COUNT(week_day) AS week_day_count
 FROM t_2020_2021_2022_divvy_tripdata
 GROUP BY week_day;
 
 -- per membership type
 SELECT 
-          week_day, 
-          COUNT(week_day) AS week_day_count
+  week_day, 
+  COUNT(week_day) AS week_day_count
 FROM t_2020_2021_2022_divvy_tripdata
 WHERE member_casual = 'member'
 GROUP BY week_day;
 
 SELECT 
-          week_day, 
-          COUNT(week_day) AS week_day_count
+  week_day, 
+  COUNT(week_day) AS week_day_count
 FROM t_2020_2021_2022_divvy_tripdata
 WHERE member_casual = 'casual'
 GROUP BY week_day;
@@ -254,34 +253,34 @@ SELECT EXTRACT(MONTH FROM started_at_date::date) AS month_name
 FROM t_2020_2021_2022_divvy_tripdata;
 
 SELECT 
-          month_name, 
-          COUNT(month_name) AS count_month_name
+  month_name, 
+  COUNT(month_name) AS count_month_name
 FROM t_2020_2021_2022_divvy_tripdata;
 
 SELECT 
-          month_name, 
-          COUNT(month_name) AS count_month_name
+  month_name, 
+  COUNT(month_name) AS count_month_name
 FROM t_2020_2021_2022_divvy_tripdata
 WHERE member_casual = 'member';
 
 SELECT 
-          month_name, 
-          COUNT(month_name) AS count_month_name
+  month_name, 
+  COUNT(month_name) AS count_month_name
 FROM t_2020_2021_2022_divvy_tripdata
 WHERE member_casual = 'casual';
 
 -- most popular hours
 SELECT 
-          EXTRACT(HOUR FROM started_at_date) AS time_of_day, 
-          COUNT(*), 
-          member_casual
+  EXTRACT(HOUR FROM started_at_date) AS time_of_day, 
+  COUNT(*), 
+  member_casual
 FROM t_2020_2021_2022_divvy_tripdata
 GROUP BY time_of_day, member_casual
 ORDER BY time_of_day DESC;`;
 const sqlStationAnalysis = `-- most popular start stations for casual riders
 SELECT 
-          start_station_name, 
-          COUNT(*) AS rank_start_station 
+  start_station_name, 
+  COUNT(*) AS rank_start_station 
 FROM t_2020_2021_2022_divvy_tripdata
 WHERE member_casual = 'casual'
 GROUP BY start_station_name
@@ -289,8 +288,8 @@ ORDER BY rank_start_station
 
 -- most popular start stations for member riders
 SELECT 
-          start_station_name, 
-          COUNT(*) AS rank_start_station 
+  start_station_name, 
+  COUNT(*) AS rank_start_station 
 FROM t_2020_2021_2022_divvy_tripdata
 WHERE member_casual = 'member'
 GROUP BY start_station_name
@@ -298,8 +297,8 @@ ORDER BY rank_start_station
 
 -- most popular end stations for casual riders
 SELECT 
-          end_station_name, 
-          COUNT(*) AS rank_end_station 
+  end_station_name, 
+  COUNT(*) AS rank_end_station 
 FROM t_2020_2021_2022_divvy_tripdata
 WHERE member_casual = 'casual'
 GROUP BY end_station_name
@@ -307,8 +306,8 @@ ORDER BY rank_end_station
 
 -- most popular end stations for member riders
 SELECT 
-          end_station_name, 
-          COUNT(*) AS rank_end_station 
+  end_station_name, 
+  COUNT(*) AS rank_end_station 
 FROM t_2020_2021_2022_divvy_tripdata
 WHERE member_casual = 'member'
 GROUP BY end_station_name
@@ -316,9 +315,9 @@ ORDER BY rank_end_station
 
 --  most popular routes amongst casual riders
 SELECT 
-          COUNT(*) AS frequency, 
-          start_station_name, 
-          end_station_name
+  COUNT(*) AS frequency, 
+  start_station_name, 
+  end_station_name
 FROM t_2020_2021_2022_divvy_tripdata
 WHERE member_casual = 'casual'
 GROUP BY start_station_name, end_station_name
@@ -326,9 +325,9 @@ ORDER BY frequency DESC;
 
 --  most popular routes amongst member riders
 SELECT 
-          COUNT(*) AS frequency, 
-          start_station_name, 
-          end_station_name
+  COUNT(*) AS frequency, 
+  start_station_name, 
+  end_station_name
 FROM t_2020_2021_2022_divvy_tripdata
 WHERE member_casual = 'member'
 GROUP BY start_station_name, end_station_name
@@ -336,9 +335,9 @@ ORDER BY frequency DESC;
 
 --  least popular routes amongst casual riders
 SELECT 
-          COUNT(*) AS frequency, 
-          start_station_name, 
-          end_station_name
+  COUNT(*) AS frequency, 
+  start_station_name, 
+  end_station_name
 FROM t_2020_2021_2022_divvy_tripdata
 WHERE member_casual = 'casual'
 GROUP BY start_station_name, end_station_name
@@ -346,9 +345,9 @@ ORDER BY frequency ASC;
 
 --  least popular routes amongst member riders
 SELECT 
-          COUNT(*) AS frequency,
-          start_station_name, 
-          end_station_name
+  COUNT(*) AS frequency,
+  start_station_name, 
+  end_station_name
 FROM t_2020_2021_2022_divvy_tripdata
 WHERE member_casual = 'member'
 GROUP BY start_station_name, end_station_name
@@ -382,14 +381,14 @@ export const ProjectCyclistic = () => {
     return () => window.scrollTo(0, 0);
   }, []);
 
-  // const filteredProject = projectIntros.find((project) => {
-  //   return project.id === 4;
-  // });
+  const filteredProject = projectIntros.find((project) => {
+    return project.id === 4;
+  });
 
   return (
-    <div className="project-main-container">
+    <div className="project-main-container project-cyclistic-intro">
       <div className="project-intro">
-        {/* <ProjectIntro project={filteredProject} /> */}
+        <ProjectIntro projectIntro={filteredProject} />
 
         <h1 className="main-title">
           Cyclistic Case Study: A Capstone Project for Google BI Certification

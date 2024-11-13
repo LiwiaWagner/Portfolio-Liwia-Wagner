@@ -12,13 +12,13 @@ export const ProjectNetworkEdge = () => {
     return () => window.scrollTo(0, 0);
   }, []);
 
-  // const filteredProject = projectIntros.find((project) => {
-  //   return project.id === 1;
-  // });
+  const filteredProject = projectIntros.find((project) => {
+    return project.id === 1;
+  });
 
   return (
-    <div className="project-main-container">
-      {/* <ProjectIntro project={filteredProject} /> */}
+    <div className="project-main-container project-network-edge-intro">
+      <ProjectIntro projectIntro={filteredProject} />
 
       <img
         src={desktopImgProjectNetworkEdge}

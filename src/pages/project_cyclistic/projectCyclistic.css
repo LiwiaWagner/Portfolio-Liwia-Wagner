@@ -1,24 +1,24 @@
-.intro-sub-title {
+.project-cyclistic-intro .intro-sub-title {
   color: var(--font-color-project-id4);
 }
 
 /* ---Project content */
-.project-content-main-title {
+.project-cyclistic-intro .project-content-main-title {
   color: var(--font-color-project-id4);
 }
 
-.project-container-sub-title {
+.project-cyclistic-intro .project-container-sub-title {
   border-bottom: 1.5px solid var(--font-underline-color-project-id4);
 }
 
-.project-content-number {
+.project-cyclistic-intro .project-content-number {
   color: var(--font-color-project-id4);
 }
 
-.project-content-sub-title {
+.project-cyclistic-intro .project-content-sub-title {
   color: var(--font-color-project-id4);
 }
 
-.project-content-sub-sub-title {
+.project-cyclistic-intro .project-content-sub-sub-title {
   color: var(--font-color-project-id4);
 }

@@ -55,6 +55,14 @@
   font-style: normal;
 }
 
+.code-highlight code {
+  font-family: "Source Code Pro", monospace;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-size: 0.8rem;
+  font-style: normal;
+}
+
 .code-highlight {
   border-radius: 0.5rem;
 }

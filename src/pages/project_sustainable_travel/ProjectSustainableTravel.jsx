@@ -523,14 +523,14 @@ export const ProjectSustainableTravel = () => {
     return () => window.scrollTo(0, 0);
   }, []);
 
-  // const filteredProject = projectIntros.find((project) => {
-  //   return project.id === 2;
-  // });
+  const filteredProject = projectIntros.find((project) => {
+    return project.id === 2;
+  });
 
   return (
-    <div className="project-main-container">
+    <div className="project-main-container project-sustainable-travel-intro">
       <div className="project-intro">
-        {/* <ProjectIntro project={filteredProject} /> */}
+        <ProjectIntro projectIntro={filteredProject} />
       </div>
       <h1 className="project-content-main-title">
         SIX-STEP PROCESS OF PROCESSING DATA

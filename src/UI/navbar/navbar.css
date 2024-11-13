@@ -48,6 +48,7 @@
 
 .nav-link a {
   text-decoration: none;
+  margin-right: -0.3rem;
 }
 
 .nav-link {
@@ -75,6 +76,15 @@
   outline: none;
   background-color: transparent;
   color: inherit;
+}
+
+.nav-link .active::after {
+  content: "";
+  width: 100%;
+  border: 1px solid black;
+  position: absolute;
+  bottom: -1.6rem;
+  left: 0;
 }
 
 .nav-link .active + .under-line {
@@ -218,5 +228,9 @@
   .nav-right-container ul {
     box-shadow: none;
     padding: 0 0 0 0;
+  }
+
+  .nav-link .active::after {
+    display: none;
   }
 }

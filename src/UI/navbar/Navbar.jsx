@@ -21,7 +21,12 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="nav-main-container">
+    <nav
+      className="nav-main-container"
+      onMouseLeave={() => {
+        setUnderlineStyle({ ...underlineStyle, width: 0 });
+      }}
+    >
       <div
         className={`nav-container ${isNavShowing ? "show-nav" : "hide-nav"}`}
       >

@@ -92,7 +92,7 @@ export const cards = [
     btn: {
       text: "GO TO PROJECT",
       color: "var(--btn-project-id2)",
-      aLink: "../project_sustainable_travel/ProjectSustainableTravel.jsx",
+      aLink: "/project-sustainable-business-travel",
     },
     images: {
       desktop: {

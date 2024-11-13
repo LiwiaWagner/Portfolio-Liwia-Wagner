@@ -134,6 +134,7 @@ body {
   max-width: 1920px;
   margin-inline: auto;
   background-color: var(--background-color);
+  font-family: "Manrope", sans-serif;
 }
 
 *,
@@ -144,7 +145,6 @@ body {
   border: 0;
   outline: 0;
   box-sizing: border-box;
-  font-family: "Manrope", sans-serif;
 }
 
 h1 {
