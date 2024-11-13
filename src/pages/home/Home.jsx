@@ -1,8 +1,7 @@
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/all";
-import React, { useEffect, useState } from "react";
-import { useLocation } from "react-router-dom";
+import React, { useState } from "react";
 import Select from "react-select";
 import "swiper/css";
 import "swiper/css/pagination";
@@ -15,8 +14,10 @@ import { cards } from "../../data/cards";
 import { EXPERTISE } from "../../data/expertise";
 import { LANGUAGES } from "../../data/languages";
 import { TOOLS } from "../../data/tools";
-import "./home.css";
 import { useScrollToHash } from "../../hooks/useScrollToHash";
+import "./carousel.css";
+import "./filters.css";
+import "./home.css";
 
 const optionsExpertise = [
   EXPERTISE.DATAVIZDESIGN,

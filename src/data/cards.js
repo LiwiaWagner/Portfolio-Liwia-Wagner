@@ -67,7 +67,7 @@ export const cards = [
     order: 1,
     title:
       "Sustainable Business Travel: A Data-Driven Carbon Emission Analysis",
-    description: `I created a database and data model to track carbon emissions from business air travel, using SQL to prepare, clean, and analyze the data. I then designed a Tableau dashboard that enables companies to analyze emissions, identify key contributors, and gain actionable insights for developing targeted carbon reduction strategies and fostering more sustainable operations.`,
+    description: `I developed a database and data model to monitor and analyze carbon emissions from corporate air travel. Using SQL, I prepared, cleaned, and organized the data for analysis. I then designed and developed an interactive Tableau dashboard, empowering companies to visualize emissions data, pinpoint major contributors, and uncover actionable insights.`,
     tools:
       "SQL + Tableau + Data Modelling + Data Processing + Data Analysis + Data Viz Design + Dashboard Design",
     toolsValues: [TOOLS.TABLEAU.value],

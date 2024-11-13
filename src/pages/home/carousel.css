@@ -1,0 +1,26 @@
+.swiper-pagination-bullet-active {
+  background-color: var(--black);
+}
+
+.swiper {
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+}
+
+.swiper-slide {
+  width: 80% !important;
+}
+
+@media screen and (max-width: 900px) {
+  .swiper {
+    padding-top: 2rem;
+    padding-bottom: 3rem;
+  }
+}
+
+@media screen and (max-width: 430px) {
+  .swiper {
+    padding-top: 1rem;
+    padding-bottom: 2rem;
+  }
+}

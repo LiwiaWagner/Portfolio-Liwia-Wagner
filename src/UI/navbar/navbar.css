@@ -48,7 +48,6 @@
 
 .nav-link a {
   text-decoration: none;
-  padding: 0 0 0.3rem 0;
 }
 
 .nav-link {
@@ -58,26 +57,28 @@
   position: relative;
   text-decoration: none;
   list-style-type: none;
+  padding: 0;
 }
 
-/* This is the key update: underline only when the link is active */
 .under-line {
   position: absolute;
-  bottom: -1.15rem;
+  bottom: -1.6rem;
   height: 2px;
   background: var(--black);
   transition: left 0.3s ease, width 0.3s ease;
   pointer-events: none;
-  width: 0; /* Start width at 0 */
-}
-
-.nav-link a.active + .under-line {
-  width: 100%; /* Underline will stretch to full width only for the active link */
+  width: 0;
 }
 
 .nav-link .active {
-  font-weight: 500;
-  color: var(--black);
+  font-weight: 600;
+  outline: none;
+  background-color: transparent;
+  color: inherit;
+}
+
+.nav-link .active + .under-line {
+  width: 100%;
 }
 
 .nav-link a:visited {
@@ -90,6 +91,7 @@
 
 .nav-link a:focus,
 .nav-link a:active {
+  background: var(--black);
   outline: none;
   background-color: transparent;
   color: inherit;
