@@ -47,6 +47,10 @@
   grid-column: 4 / 10;
 }
 
+.code-container {
+  grid-column: 4 / 10;
+}
+
 .code-highlight-block {
   grid-column: 4 / 10;
   font-family: "Source Code Pro", monospace;
@@ -64,11 +68,23 @@
 }
 
 .code-highlight {
-  border-radius: 0.5rem;
+  border-radius: 0.7rem;
+}
+
+.code-highlight pre {
+  padding: 3rem;
 }
 
 .project-content-description {
   padding: 0 0 2rem 0;
+}
+
+.project-content-description-code {
+  padding: 2rem 0 0 0;
+}
+
+.project-content-description-first {
+  padding: 0 0 0 0;
 }
 
 .project-content-description,
@@ -76,10 +92,19 @@
   grid-column: 4 / 10;
 }
 
+.dashboard-res-note {
+  font-size: 0.9rem;
+  font-weight: 200;
+  line-height: 1.4rem;
+  font-style: italic;
+  padding: 0;
+}
+
 .tableau-dash {
   grid-column: 1 / 13;
   display: flex;
   justify-content: center;
+  padding: 0 0 3rem 0;
 }
 
 .dashboard-img {
@@ -112,7 +137,7 @@
   /* ---Project content */
   .project-content-main-title {
     grid-column: 1 / 7;
-    font-size: 2rem;
+    font-size: 2.4rem;
     padding: 2rem 0 0 0;
   }
 
@@ -138,10 +163,33 @@
     grid-column: 3 / 7;
   }
 
+  .code-container {
+    grid-column: 3 / 7;
+  }
+
+  .code-highlight-block {
+    grid-column: 3 / 7;
+  }
+
+  .code-highlight code {
+    font-size: 0.7rem;
+  }
+
+  .project-content-description {
+    padding: 0 0 1rem 0;
+  }
+
+  .project-content-description-code {
+    padding: 1.5rem 0 0 0;
+  }
+
+  .project-content-description-first {
+    padding: 0 0 0 0;
+  }
+
   .project-content-description,
   .project-content-sub-sub-title {
     grid-column: 3 / 7;
-    padding: 0 0 1rem 0;
   }
 
   .project-content-sub-sub-title {
@@ -153,6 +201,12 @@
 
   .tableau-dash {
     display: none;
+  }
+
+  .dashboard-res-note {
+    font-size: 0.9rem;
+    line-height: 1.2rem;
+    padding: 0;
   }
 
   .dashboard-img {
@@ -214,10 +268,33 @@
     grid-column: 1 / 6;
   }
 
+  .code-container {
+    grid-column: 1 / 6;
+  }
+
+  .code-highlight-block {
+    grid-column: 1 / 6;
+  }
+
+  .code-highlight code {
+    font-size: 0.5rem;
+  }
+
+  .project-content-description {
+    padding: 0 0 1rem 0;
+  }
+
+  .project-content-description-code {
+    padding: 1.5rem 0 0 0;
+  }
+
+  .project-content-description-first {
+    padding: 0 0 0 0;
+  }
+
   .project-content-description,
   .project-content-sub-sub-title {
     grid-column: 1 / 6;
-    padding: 0 0 1rem 0;
   }
 
   .project-content-description {
@@ -230,6 +307,12 @@
     font-weight: 600;
     letter-spacing: 0.1rem;
     padding: 0.8rem 0 0.2rem 0;
+  }
+
+  .dashboard-res-note {
+    font-size: 0.7rem;
+    line-height: 1rem;
+    padding: 0;
   }
 
   .dashboard-img {

@@ -389,54 +389,6 @@ export const ProjectCyclistic = () => {
     <div className="project-main-container project-cyclistic-intro">
       <div className="project-intro">
         <ProjectIntro projectIntro={filteredProject} />
-
-        <h1 className="main-title">
-          Cyclistic Case Study: A Capstone Project for Google BI Certification
-        </h1>
-
-        <div className="intro-left-container-type1">
-          <div className="intro-section">
-            <p className="intro-description">
-              The capstone project of preparing Cyclistic’s customer analysis
-              serves as the final assignment for the Google Business
-              Intelligence Professional Certification. In this case, I assume
-              the role of a Junior Data Analyst at the fictional bike-share
-              company, Cyclistic. In 2016, Cyclistic launched a successful
-              bike-share offering with a fleet of 5,824 bicycles tracked and
-              locked into a network of 692 stations across Chicago.
-            </p>
-            <p className="intro-description">
-              The bikes can be unlocked from one station and returned to any
-              other station in the system at any time. Riders with an annual
-              subscription are called members, while riders using single-ride or
-              full-day passes are considered casual riders.
-            </p>
-            <p className="intro-description">
-              The director of marketing aims to maximize the number of annual
-              memberships, as they are more profitable than single-ride or
-              full-day passes. This strategy is believed to be key to future
-              growth. The primary goal of the analysis is to understand the
-              behaviors of Cyclistic’s two main user groups: members and casual
-              riders.
-            </p>
-          </div>
-        </div>
-        <div className="intro-right-container">
-          <div className="intro-section">
-            <h3 className="intro-sub-title">AREAS OF EXPERTISE</h3>
-            <p className="intro-description">
-              Data Analysis + Data Viz Design + Data Modelling + Data Processing
-            </p>
-          </div>
-          <div className="intro-section">
-            <h3 className="intro-sub-title">TOOLS & PROGRAMMING LANGUAGES</h3>
-            <p className="intro-description">Tableau + Mapbox + SQL</p>
-          </div>{" "}
-          <div className="intro-section">
-            <h3 className="intro-sub-title">DELIVERY DATE</h3>
-            <p className="intro-description">May 2023</p>
-          </div>
-        </div>
       </div>
 
       <h1 className="project-content-main-title">
@@ -461,7 +413,7 @@ export const ProjectCyclistic = () => {
         </div>
       </div>
       <div className="project-content-container">
-        <p className="project-content-description project-content-description-first">
+        <p className="project-content-description">
           In this phase, it is crucial to identify the key questions that will
           shape and drive the analysis. Since Cyclistic's primary objective is
           to increase its membership base, the emphasis is placed on gaining a
@@ -480,7 +432,7 @@ export const ProjectCyclistic = () => {
           <h3 className="project-content-sub-title">PREPARE</h3>
         </div>
       </div>
-      <p className="project-content-description project-content-description-first">
+      <p className="project-content-description project-content-description-first project-content-description-code">
         The data used for this analysis was gathered from datasets spanning the
         years 2020, 2021, and 2022, all of which were provided in .csv format.
         To facilitate a seamless and comprehensive analysis, SQL was employed to
@@ -492,18 +444,20 @@ export const ProjectCyclistic = () => {
         meaningful conclusions.
       </p>
 
-      <div className="code-highlight-block">
-        <SyntaxHighlighter
-          language="sql"
-          style={nord}
-          showLineNumbers={true}
-          className="code-highlight"
-        >
-          {sqlCreateTable}
-        </SyntaxHighlighter>
+      <div className="code-container">
+        <div className="code-highlight-block">
+          <SyntaxHighlighter
+            language="sql"
+            style={nord}
+            showLineNumbers={true}
+            className="code-highlight"
+          >
+            {sqlCreateTable}
+          </SyntaxHighlighter>
+        </div>
       </div>
 
-      <p className="project-content-description">
+      <p className="project-content-description project-content-description-code">
         After combining the data, I conducted a quick validation to confirm that
         the dataset accurately reflected records for all intended years and
         months. This involved checking for the presence of each year and month
@@ -524,7 +478,7 @@ export const ProjectCyclistic = () => {
         </SyntaxHighlighter>
       </div>
 
-      <p className="project-content-description">
+      <p className="project-content-description project-content-description-code">
         In the next phase of data preparation, I began by checking the length of
         the ride_id field to identify any irregularities or potential issues,
         such as unusually short or long identifiers, which could indicate data
@@ -548,7 +502,7 @@ export const ProjectCyclistic = () => {
         </SyntaxHighlighter>
       </div>
 
-      <p className="project-content-description">
+      <p className="project-content-description project-content-description-code">
         Next, I examined the dataset to identify the number of NULL values in
         each field, assessing their frequency across all rows. This step helped
         pinpoint fields with missing information, allowing me to address any
@@ -569,7 +523,7 @@ export const ProjectCyclistic = () => {
         </SyntaxHighlighter>
       </div>
 
-      <p className="project-content-description">
+      <p className="project-content-description project-content-description-code">
         In the final phase of data preparation, I conducted checks on the number
         of unique start and end stations to verify that they matched the
         expected totals provided by the business. This comparison ensured that
@@ -598,7 +552,7 @@ export const ProjectCyclistic = () => {
           <h3 className="project-content-sub-title">CLEAN</h3>
         </div>
       </div>
-      <p className="project-content-description project-content-description-first">
+      <p className="project-content-description project-content-description-first project-content-description-code">
         In this cleaning phase, the data was meticulously prepared to ensure
         both accuracy and suitability for in-depth analysis. Having already
         verified that the ride_id field was free of duplicates, I concentrated
@@ -621,7 +575,7 @@ export const ProjectCyclistic = () => {
         </SyntaxHighlighter>
       </div>
 
-      <p className="project-content-description">
+      <p className="project-content-description project-content-description-code">
         Next, I organized the data by categorizing it into weeks and months.
         This involved creating additional fields to represent the day of the
         week and month of each ride, enabling a more detailed analysis of usage
@@ -666,7 +620,7 @@ export const ProjectCyclistic = () => {
         decisions for membership growth strategies.
       </p>
 
-      <p className="project-content-description">
+      <p className="project-content-description project-content-description-code">
         <b>Trip Duration:</b>
         this analysis measured the length of each ride in both minutes and
         hours, providing insights into the typical usage time for members and
@@ -690,7 +644,7 @@ export const ProjectCyclistic = () => {
         </SyntaxHighlighter>
       </div>
 
-      <p className="project-content-description">
+      <p className="project-content-description project-content-description-code">
         <b>Trip Time Analysis:</b>
         focused on bike usage trends across different days of the week and
         throughout the year, identifying peak usage periods and seasonal
@@ -714,7 +668,7 @@ export const ProjectCyclistic = () => {
         </SyntaxHighlighter>
       </div>
 
-      <p className="project-content-description">
+      <p className="project-content-description project-content-description-code">
         <b>Station Popularity: </b> this analysis identified the most and least
         popular start and end stations for both members and casual riders,
         revealing which locations experienced the highest and lowest demand.
@@ -765,12 +719,10 @@ export const ProjectCyclistic = () => {
         understand complex patterns and trends with greater ease and engagement.
       </p>
 
-      <p className="project-content-description">
-        <b>
-          For the best interactive experience with the Tableau dashboard, please
-          open the site on a desktop. On tablets and phones, only a static
-          preview image of the dashboard is available.
-        </b>
+      <p className="project-content-description dashboard-res-note">
+        For the best interactive experience with the Tableau dashboard, please
+        open the site on a desktop. On tablets and phones, only a static preview
+        image of the dashboard is available.
       </p>
 
       <div className="tableau-dash" ref={ref}></div>
