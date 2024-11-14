@@ -5,12 +5,29 @@
 /* ---Project picture */
 .project-network-edge-intro .project-img {
   grid-column: 3 / 11;
-  padding: 4rem 0;
+}
+
+.project-img {
+  grid-column: 3 / 11;
+  padding: 2rem 0 3rem 0;
 }
 
 /* ---Project content */
 .project-network-edge-intro .project-content-main-title {
   color: var(--font-color-project-id1);
+}
+
+.project-ne-container-sub-title {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  align-items: first baseline;
+  padding: 0;
+  border-bottom: 1.5px solid var(--font-underline-color-project-id1);
+}
+
+.project-ne-content-description {
+  padding: 0 0 1.8rem 0;
 }
 
 .project-network-edge-intro .project-container-sub-title {
@@ -27,4 +44,28 @@
 
 .project-network-edge-intro .project-content-sub-sub-title {
   color: var(--font-color-project-id1);
+}
+
+@media screen and (max-width: 900px) {
+  .project-network-edge-intro .project-img {
+    grid-column: 1 / 7;
+  }
+
+  .project-img {
+    padding: 2rem 3rem;
+  }
+}
+
+@media screen and (max-width: 430px) {
+  .project-network-edge-intro .project-img {
+    grid-column: 1 / 6;
+  }
+
+  .project-img {
+    padding: 0.5rem 0;
+  }
+
+  .project-ne-content-description {
+    padding: 0 0 0.8rem 0;
+  }
 }

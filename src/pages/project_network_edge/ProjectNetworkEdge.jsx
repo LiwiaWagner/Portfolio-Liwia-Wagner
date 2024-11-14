@@ -28,13 +28,13 @@ export const ProjectNetworkEdge = () => {
 
       <h1 className="project-content-main-title">DESIGN PROCESS</h1>
       <div className="project-container-sub-title-grid">
-        <div className="project-container-sub-title">
+        <div className="project-ne-container-sub-title">
           <div className="project-content-number">01</div>
           <h3 className="project-content-sub-title">POST LAUNCH RESEARCH</h3>
         </div>
       </div>
       <div className="project-content-container">
-        <p className="project-content-description">
+        <p className="project-ne-content-description">
           I conducted six in-depth interviews with business users. Research
           questions were framed around{" "}
           <b>Data Experience (DX) Design Pillars</b> i.e. purpose, information
@@ -42,7 +42,7 @@ export const ProjectNetworkEdge = () => {
           context.
         </p>
         <h4 className="project-content-sub-sub-title">PURPOSE</h4>
-        <p className="project-content-description">
+        <p className="project-ne-content-description">
           Are you able to answer your key business questions or complete
           analytical tasks with the current design? Are the outcomes actionable
           or related to a specific decision or job task?
@@ -50,7 +50,7 @@ export const ProjectNetworkEdge = () => {
         <h4 className="project-content-sub-sub-title">
           INFORMATION ARCHITECTURE
         </h4>
-        <p className="project-content-description">
+        <p className="project-ne-content-description">
           Information flow: what steps do you need to take to answer the key
           questions or complete analytical tasks? Does navigation provide you
           the flexibility to move between different levels of overview, and
@@ -60,7 +60,7 @@ export const ProjectNetworkEdge = () => {
           elements?
         </p>
         <h4 className="project-content-sub-sub-title">DATA PRESENTATION</h4>
-        <p className="project-content-description">
+        <p className="project-nee-content-description">
           What are the strengths and weaknesses of visual encoding in answering
           the key questions? Is any unnecessary visual detail included that
           competes for attention without adding significant value? How are new
@@ -68,7 +68,7 @@ export const ProjectNetworkEdge = () => {
           representation?
         </p>
         <h4 className="project-content-sub-sub-title">VISUAL HIERARCHY</h4>
-        <p className="project-content-description">
+        <p className="project-ne-content-description">
           Is the relative importance of each text element visually clear? Which
           sections, charts, or other elements of the viz draw your attention
           most and least? Do these correspond to the elements of the viz that
@@ -76,14 +76,14 @@ export const ProjectNetworkEdge = () => {
           could be de-emphasized to reduce visual clutter?
         </p>
         <h4 className="project-content-sub-sub-title">INTERACTIVITY</h4>
-        <p className="project-content-description">
+        <p className="project-ne-content-description">
           Can you easily discover and understand what interactive functionality
           and options are available? What are the strengths and weaknesses of
           the available interactive features? Are selections or other actions
           easy for you to reverse?
         </p>
         <h4 className="project-content-sub-sub-title">CONTEXT</h4>
-        <p className="project-content-description">
+        <p className="project-ne-content-description">
           Is there meaningful context provided for accurate comparisons? For
           understanding scale & magnitude? For understanding complex KPIs or
           underlying business logic?
