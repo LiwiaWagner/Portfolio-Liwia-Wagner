@@ -110,7 +110,7 @@
 
   /* - background lighter colors */
   --bc-light-project-id1: #e0d5dc;
-  --bc-light-project-id2: #d8d6e8;
+  --bc-light-project-id2: #e3e1f7;
   --bc-light-project-id3: #efeef8;
   --bc-light-project-id4: #e9eef0;
 
@@ -123,6 +123,8 @@
   /* - font colors */
   --font-color-project-id1: #4d3b46;
   --font-underline-color-project-id1: #b8a1af;
+  --font-color-project-id2: #332a62;
+  --font-underline-color-project-id2: #a6a3c0;
   --font-color-project-id4: #256e7b;
   --font-underline-color-project-id4: #9db6bb;
 }
