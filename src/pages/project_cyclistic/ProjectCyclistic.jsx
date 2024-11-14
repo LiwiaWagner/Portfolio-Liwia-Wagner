@@ -751,8 +751,8 @@ export const ProjectCyclistic = () => {
         ensuring the business continuously evolves based on accurate,
         evidence-backed recommendations.
       </p>
+      <h6 className="list-title">KEY FINDINGS:</h6>
       <ul className="key-findings">
-        <b>Key Findings:</b>
         <li className="key-point">
           <b>Ride Frequency by Customer Type: </b>Casual customers predominantly
           take rides on weekends, while members have higher usage during the
@@ -778,8 +778,8 @@ export const ProjectCyclistic = () => {
         laying the groundwork for strategies to increase member engagement and
         convert casual users into loyal members.
       </p>
+      <h6 className="list-title">RECOMMENDATIONS:</h6>
       <ul className="key-findings">
-        <b>Recommendations:</b>
         <li className="key-point">
           <b>Promote Membership Cost Savings:</b> Develop targeted
           advertisements highlighting how a membership can lead to cost savings,
