@@ -26,7 +26,7 @@ export const ProjectNetworkEdge = () => {
         className="project-img"
       />
 
-      <h1 className="project-content-main-title">DESIGN PROCESS</h1>
+      <h1 className="project-content-main-title">Design Process</h1>
       <div className="project-container-sub-title-grid">
         <div className="project-ne-container-sub-title">
           <div className="project-content-number">01</div>

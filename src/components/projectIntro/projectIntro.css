@@ -6,6 +6,7 @@
 
 .main-title {
   grid-column: 1 / 8;
+  font-family: "Spline Sans Mono", monospace;
 }
 
 .intro-left-container-type1 {
@@ -45,7 +46,6 @@
   .main-title {
     grid-column: 1 / 6;
     margin: 2rem 0 1.5rem 0;
-    font-size: 1.8rem;
   }
 
   .intro-left-container-type1 {

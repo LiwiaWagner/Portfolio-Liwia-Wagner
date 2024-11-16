@@ -23,8 +23,9 @@
 }
 
 .logo {
+  font-family: "Spline Sans Mono", monospace;
   color: var(--black);
-  font-size: 1.3rem;
+  font-size: 1.2rem;
   font-weight: 500;
   line-height: 1.5rem;
   letter-spacing: 0rem;
@@ -127,6 +128,10 @@
     backdrop-filter: blur(10px);
   }
 
+  .logo {
+    font-size: 1rem;
+  }
+
   .nav-toggle-btn {
     display: inline-block;
     justify-content: flex-end;
@@ -199,7 +204,7 @@
   }
 
   .logo {
-    font-size: 1.1rem;
+    font-size: 1rem;
   }
 
   .nav-container {

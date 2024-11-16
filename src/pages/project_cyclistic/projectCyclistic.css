@@ -1,3 +1,7 @@
+.project-cyclistic-intro .main-title {
+  color: var(--font-color-project-id4);
+}
+
 .project-cyclistic-intro .intro-sub-title {
   color: var(--font-color-project-id4);
 }
@@ -24,12 +28,12 @@
 }
 
 @media screen and (max-width: 900px) {
-  .project-cyclistic-intro .project-sustainable-travel-intro {
+  .project-cyclistic-intro {
     grid-column: 1 / 7;
   }
 
   .project-cyclistic-intro .project-content-main-title {
-    grid-column: 1 / 5;
+    grid-column: 1 / 7;
   }
 
   .project-cyclistic-intro .dashboard-img {
@@ -44,6 +48,14 @@
 }
 
 @media screen and (max-width: 430px) {
+  .project-cyclistic-intro {
+    grid-column: 1 / 6;
+  }
+
+  .project-cyclistic-intro .project-content-main-title {
+    grid-column: 1 / 6;
+  }
+
   .project-cyclistic-intro .project-img {
     grid-column: 1 / 6;
   }

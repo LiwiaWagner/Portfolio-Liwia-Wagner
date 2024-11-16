@@ -604,7 +604,7 @@ export const ProjectSustainableTravel = () => {
         <ProjectIntro projectIntro={filteredProject} />
       </div>
       <h1 className="project-content-main-title">
-        SIX-STEP PROCESS OF PROCESSING DATA
+        Six-Step Process of Processing Data
       </h1>
       <p className="project-content-intro-description">
         The data underwent thorough cleaning and detailed analysis using SQL and

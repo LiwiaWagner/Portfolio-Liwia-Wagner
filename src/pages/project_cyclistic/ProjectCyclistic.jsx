@@ -392,7 +392,7 @@ export const ProjectCyclistic = () => {
       </div>
 
       <h1 className="project-content-main-title">
-        GOOGLE’S SIX-STEP PROCESS OF PROCESSING DATA
+        Google’s Six-Step Process of Processing Data
       </h1>
       <p className="project-content-intro-description">
         The data was thoroughly cleaned and meticulously analyzed using SQL and
