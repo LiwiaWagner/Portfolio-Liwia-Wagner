@@ -22,3 +22,49 @@
 .project-cyclistic-intro .project-content-sub-sub-title {
   color: var(--font-color-project-id4);
 }
+
+@media screen and (max-width: 900px) {
+  .project-cyclistic-intro .project-sustainable-travel-intro {
+    grid-column: 1 / 7;
+  }
+
+  .project-cyclistic-intro .project-content-main-title {
+    grid-column: 1 / 5;
+  }
+
+  .project-cyclistic-intro .dashboard-img {
+    grid-column: 3 / 7;
+    width: 100%;
+    height: auto;
+  }
+
+  .project-cyclistic-intro .project-img {
+    padding: 2rem 3rem;
+  }
+}
+
+@media screen and (max-width: 430px) {
+  .project-cyclistic-intro .project-img {
+    grid-column: 1 / 6;
+  }
+
+  .project-cyclistic-intro .project-img {
+    padding: 0.5rem 0;
+  }
+
+  .project-cyclistic-intro .dashboard-img {
+    grid-column: 1 / 6;
+  }
+
+  .project-cyclistic-intro .project-content-description {
+    padding: 0 0 0 0;
+  }
+
+  .project-cyclistic-intro .project-content-description-code {
+    padding: 1.5rem 0 0 0;
+  }
+
+  .project-cyclistic-intro .project-content-description-first {
+    padding: 0 0 0 0;
+  }
+}

@@ -28,3 +28,49 @@
 .project-sustainable-travel-intro .project-content-sub-sub-title {
   color: var(--font-color-project-id2);
 }
+
+@media screen and (max-width: 900px) {
+  .project-sustainable-travel-intro {
+    grid-column: 1 / 7;
+  }
+
+  .project-content-main-title {
+    grid-column: 1 / 5;
+  }
+
+  .dashboard-img {
+    grid-column: 3 / 7;
+    width: 100%;
+    height: auto;
+  }
+
+  .project-img {
+    padding: 2rem 3rem;
+  }
+}
+
+@media screen and (max-width: 430px) {
+  .project-sustainable-travel-intro .project-img {
+    grid-column: 1 / 6;
+  }
+
+  .project-sustainable-travel-intro .project-img {
+    padding: 0.5rem 0;
+  }
+
+  .project-sustainable-travel-intro .dashboard-img {
+    grid-column: 1 / 6;
+  }
+
+  .project-sustainable-travel-intro .project-content-description {
+    padding: 0 0 0 0;
+  }
+
+  .project-sustainable-travel-intro .project-content-description-code {
+    padding: 1.5rem 0 0 0;
+  }
+
+  .project-sustainable-travel-intro .project-content-description-first {
+    padding: 0 0 0 0;
+  }
+}

@@ -1,7 +1,11 @@
 import React, { useEffect, useRef } from "react";
 import SyntaxHighlighter from "react-syntax-highlighter";
 import { nord } from "react-syntax-highlighter/dist/esm/styles/hljs";
-import dashboardCyclisticImg from "../../assets/cyclistic_dashboard_img.png";
+import dashboardSustainableTravelImg1 from "../../assets/sustainable_travel_dash_img_1.png";
+import dashboardSustainableTravelImg2 from "../../assets/sustainable_travel_dash_img_2.png";
+import dashboardSustainableTravelImg3 from "../../assets/sustainable_travel_dash_img_3.png";
+import dashboardSustainableTravelImg4 from "../../assets/sustainable_travel_dash_img_4.png";
+import dashboardSustainableTravelImg5 from "../../assets/sustainable_travel_dash_img_5.png";
 import ProjectIntro from "../../components/projectIntro/ProjectIntro";
 import "../../components/projectIntro/projectIntro.css";
 import { projectIntros } from "../../data/projectIntros";
@@ -14,9 +18,10 @@ CREATE DATABASE sustainable_travel
 WITH encoding = 'UTF-8';
 
 COMMENT ON DATABASE sustainable_travel IS 
-'This database contains data on carbon emissions from business travel 
-in 2023 and 2024, segmented by business unit, sub-business unit, 
-city, country, flight type, travel purpose, and employee.'
+'This database contains data on carbon emissions from 
+business travel in 2023 and 2024, segmented by business 
+unit, sub-business unit, city, country, flight type, 
+travel purpose, and employee.'
 
 -- creating database tables
 CREATE TABLE t_travel_data_egencia (
@@ -91,8 +96,8 @@ WITH cte_travel_data AS (
       ELSE 'Short-haul'
     END AS type_of_flight,
     travel_start_date,
-    CAST(EXTRACT(YEAR FROM travel_start_date) AS character varying) 
-      AS travel_year,
+    CAST(EXTRACT(YEAR FROM travel_start_date) 
+    AS character varying) AS travel_year,
     co2_emission,
     distance_km
   FROM mv_travel_data_egencia
@@ -115,8 +120,8 @@ WITH cte_travel_data AS (
       ELSE 'Short-haul'
     END AS type_of_flight,
     travel_start_date,
-    CAST(EXTRACT(YEAR FROM travel_start_date) AS character varying) 
-      AS travel_year,
+    CAST(EXTRACT(YEAR FROM travel_start_date) 
+    AS character varying) AS travel_year,
     co2_emission,
     distance_km
   FROM mv_travel_data_netsuite
@@ -129,8 +134,9 @@ cte_cities AS (
     c.city_long AS arrival_city_long,
     d.city_lat AS departure_city_lat,  
     d.city_long AS departure_city_long,
-    -- Window functions to avoid Level of Detail calculations on Tableau side,
-    -- as they have negative impact on the response time 
+    -- Added window functions to avoid Level of Detail 
+    -- calculations on Tableau side, as they have negative
+    -- negative impact on the response time 
     SUM(t.co2_emission) OVER(PARTITION BY t.sub_business_unit, t.travel_year) 
       AS sum_co2_subbu,
     SUM(t.co2_emission) OVER(PARTITION BY t.business_unit, t.travel_year) 
@@ -161,7 +167,8 @@ cte_budget_subbu AS (
 ),
 
 cte_distinct_budgets AS (
-  -- Select distinct co2_budget_subbu values to prevent duplicate summing
+  -- Select distinct co2_budget_subbu values 
+  -- to prevent duplicate summing
   SELECT DISTINCT 
     business_unit, 
     travel_year, 
@@ -171,7 +178,8 @@ cte_distinct_budgets AS (
 ),
 
 cte_budget_bu AS (
-  -- Calculate the business_unit level total budget for each travel_year
+  -- Calculate the business_unit level total budget 
+  -- for each travel_year
   SELECT 
     business_unit,
     travel_year,
@@ -181,7 +189,8 @@ cte_budget_bu AS (
 ),
 
 cte_budget_year AS (
-  -- Calculate the year level total budget for each travel_year
+  -- Calculate the year level total budget 
+  -- for each travel_year
   SELECT 
     travel_year,
     SUM(co2_budget_bu) AS co2_budget_year
@@ -201,8 +210,8 @@ JOIN cte_budget_year y
   ON bu.travel_year = y.travel_year;
 
 COMMIT;`;
-const sqlTriggers = `-- creating or replacing the function to refresh the materialized 
--- view after each data modification 
+const sqlTriggers = `-- creating or replacing the function to refresh
+-- the materialized view after each data modification 
 CREATE OR REPLACE FUNCTION refresh_materialized_view()
   RETURNS TRIGGER AS 
 $$ 
@@ -240,25 +249,29 @@ AFTER INSERT OR UPDATE OR DELETE ON t_carbon_budget
 FOR EACH STATEMENT
 EXECUTE FUNCTION refresh_materialized_view()
 WITH DEFERRABLE INITIALLY DEFERRED;`;
-const sqlTriggersCheck = `-- checking if the trigger for travel_data_egencia table has been created
+const sqlTriggersCheck = `-- checking if the trigger for travel_data_egencia 
+-- table has been created
 SELECT tgname
 FROM pg_trigger
 WHERE tgrelid = 't_travel_data_egencia'::regclass
   AND tgname = 't_travel_data_egencia_refresh';
   
--- checking if the trigger for travel_data_netsuite table has been created
+-- checking if the trigger for travel_data_netsuite 
+-- table has been created
 SELECT tgname
 FROM pg_trigger
 WHERE tgrelid = 't_travel_data_netsuite'::regclass
   AND tgname = 't_travel_data_netsuite_refresh';
 
--- checking if the trigger for cities table has been created
+-- checking if the trigger for cities table 
+-- has been created
 SELECT tgname
 FROM pg_trigger
 WHERE tgrelid = 't_cities'::regclass
   AND tgname = 't_cities_refresh';
   
--- checking if the trigger for carbon_budget table has been created
+-- checking if the trigger for carbon_budget 
+-- table has been created
 SELECT tangle
 FROM pg_trigger
 WHERE tgrelid = 't_carbon_budget'::regclass
@@ -277,7 +290,8 @@ SELECT
   MAX(LENGTH(row_id)) 
 FROM mv_sustainable_travel;
 
--- checking the total number of row_ids to confirm if there is one row per row_id
+-- checking the total number of row_ids to confirm if 
+-- there is one row per row_id
 SELECT COUNT(row_id) FROM mv_sustainable_travel; 
 
 -- checking if ride IDs have any duplicate values
@@ -310,11 +324,17 @@ const sqlNullCheck = `SELECT
   COUNT(*) - COUNT(co2_budget_bu) AS co2_budget_bu_nc, --0
   COUNT(*) - COUNT(co2_budget_year) AS co2_budget_year_nc --0
 FROM mv_sustainable_travel;`;
-const sqlBuCheck = `SELECT COUNT(DISTINCT(business_unit)) FROM mv_sustainable_travel;	
-SELECT DISTINCT(business_unit) FROM mv_sustainable_travel;
+const sqlBuCheck = `SELECT COUNT(DISTINCT(business_unit)) 
+FROM mv_sustainable_travel;	
 
-SELECT COUNT(DISTINCT(sub_business_unit)) FROM mv_sustainable_travel;
-SELECT DISTINCT(sub_business_unit) FROM mv_sustainable_travel;`;
+SELECT DISTINCT(business_unit) 
+FROM mv_sustainable_travel;
+
+SELECT COUNT(DISTINCT(sub_business_unit)) 
+FROM mv_sustainable_travel;
+
+SELECT DISTINCT(sub_business_unit) 
+FROM mv_sustainable_travel;`;
 const sqlRemoveNull = `SELECT * FROM mv_sustainable_travel
 WHERE arrival_city_lat IS NULL
   OR arrival_city_long IS NULL;
@@ -552,7 +572,7 @@ export const ProjectSustainableTravel = () => {
   const url =
     "https://public.tableau.com/views/SustainableTravelDashboard/ExecutiveSummary";
   const options = {
-    width: "1560px",
+    width: "1430px",
     height: "840px",
     hideToolbar: true,
     device: "desktop",
@@ -1079,7 +1099,27 @@ export const ProjectSustainableTravel = () => {
       </p>
       <div className="tableau-dash" ref={ref}></div>
       <img
-        src={dashboardCyclisticImg}
+        src={dashboardSustainableTravelImg1}
+        alt="Sample picture of the dashboard."
+        className="dashboard-img"
+      />
+      <img
+        src={dashboardSustainableTravelImg2}
+        alt="Sample picture of the dashboard."
+        className="dashboard-img"
+      />
+      <img
+        src={dashboardSustainableTravelImg3}
+        alt="Sample picture of the dashboard."
+        className="dashboard-img"
+      />
+      <img
+        src={dashboardSustainableTravelImg4}
+        alt="Sample picture of the dashboard."
+        className="dashboard-img"
+      />
+      <img
+        src={dashboardSustainableTravelImg5}
         alt="Sample picture of the dashboard."
         className="dashboard-img"
       />
