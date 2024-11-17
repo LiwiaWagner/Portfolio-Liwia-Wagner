@@ -82,11 +82,12 @@
 @media screen and (max-width: 900px) {
   .card-container {
     min-height: 25rem;
+    padding: 0;
   }
 
   .card-container-text {
-    width: 40%;
-    margin: 1.25rem 0.8rem 1.25rem 1.25rem;
+    width: 50%;
+    padding: 1.25rem 0.8rem 1.25rem 1.25rem;
   }
 
   .card-container-img-desktop {
@@ -94,9 +95,8 @@
   }
 
   .card-container-img-tablet {
-    width: 60%;
+    width: 50%;
     min-height: 10rem;
-    margin: 1.25rem 0.8rem;
     display: block;
     background-repeat: no-repeat;
     background-size: contain;
@@ -108,11 +108,11 @@
 
   /* ---Card text */
   .card-title {
-    font-size: 1rem;
-    font-weight: 600;
+    font-size: 1.5rem;
+    font-weight: 500;
     letter-spacing: 0.07rem;
-    line-height: 1.2rem;
-    padding: 0 0 0.5rem 0;
+    line-height: 1.7rem;
+    padding: 0 0 0.8rem 0;
   }
 
   .card-description {
@@ -124,13 +124,13 @@
   .card-tools {
     font-size: 0.7rem;
     font-weight: 700;
-    line-height: 1.2rem;
+    line-height: 1rem;
     padding: 0 0 0.8rem 0;
   }
 
   /* ---Project button */
   .btn-project {
-    height: 1.8rem;
+    height: 2rem;
     padding: 0rem 1rem;
     margin: 0 0 1rem 0;
     border-radius: 0.4rem;
@@ -149,7 +149,7 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    padding: 1.25rem 0 0 1.25rem;
+    padding: 1rem 0 0 1.25rem;
     min-height: 22rem;
     max-height: 22rem;
     border-radius: 0.6rem;
@@ -161,10 +161,7 @@
     margin: 0;
   }
 
-  .card-container-img-desktop {
-    display: none;
-  }
-
+  .card-container-img-desktop,
   .card-container-img-tablet {
     display: none;
   }
@@ -179,27 +176,25 @@
     background-size: cover;
   }
 
-  .card-description {
-    display: none;
-  }
-
-  .btn-project {
+  .card-description,
+  .btn-project,
+  .btn-container {
     display: none;
   }
 
   /* ---Card text */
   .card-title {
     font-size: 1.1rem;
-    font-weight: 600;
+    font-weight: 500;
     letter-spacing: 0.03rem;
-    line-height: 1.6rem;
+    line-height: 1.4rem;
     padding: 0 0 0.6rem 0;
   }
 
   .card-tools {
     font-size: 0.7rem;
     font-weight: 500;
-    line-height: 1.2rem;
-    padding: 0 0 1rem 0;
+    line-height: 1.1rem;
+    padding: 0 0 0.8rem 0;
   }
 }
