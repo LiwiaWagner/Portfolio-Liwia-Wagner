@@ -42,16 +42,16 @@ const About = () => {
       <article className="article-skills">
         <h6 className="article-sub-title">SKILLS</h6>
         <p>
-          Data Visualization Design + Dashboard Design + UX/UI Design + DX
-          Research + User Reasarch + Data Analysis + Data Modelling + Data
-          Processing
+          Data Modelling + Data Processing + Data Analysis + Data Visualization
+          Design + Dashboard Design + Product Design + UX/UI Design + Data
+          Experience (DX) Research
         </p>
       </article>
       <article className="article-tools">
         <h6 className="article-sub-title">TOOLS & LANGUAGES</h6>
         <p>
-          Tableau + Mapbox + Figma + SQL + HTML/CSS + JavaScript + React.js +
-          d3.js
+          Tableau + Figma + Mapbox + SQL + JavaScript + HTML/CSS + d3.js +
+          React.js
         </p>
       </article>
       <article className="article-social">

@@ -109,8 +109,8 @@
   --bc-project-id4: #a9bcc2;
 
   /* - background lighter colors */
-  --bc-light-project-id1: #e0d5dc;
-  --bc-light-project-id2: #e3e1f7;
+  --bc-light-project-id1: #e7dde3;
+  --bc-light-project-id2: #e0deed;
   --bc-light-project-id3: #efeef8;
   --bc-light-project-id4: #e9eef0;
 
@@ -152,7 +152,7 @@ body {
 h1 {
   font-size: 2.6rem;
   font-weight: 400;
-  padding: 4rem 0 1rem 0;
+  padding: 4rem 0 2rem 0;
 }
 
 h2 {
