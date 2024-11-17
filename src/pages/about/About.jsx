@@ -25,7 +25,7 @@ const About = () => {
           From a young age, I dreamed of studying and living abroad. At 25, I
           left everything I knew and moved to Denmark to attend business school.
           Along the way, I lived in the United States and South Africa before
-          ultimately returning to Poland, as there's no place like home.
+          ultimately returning to Poland, becasue there's no place like home.
         </p>
       </article>
 

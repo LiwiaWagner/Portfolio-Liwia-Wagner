@@ -1,3 +1,92 @@
-.css-b62m3t-container {
-  border-radius: 10px;
+/* Control (input area) */
+.custom-select__control {
+  background-color: rgba(128, 128, 128, 0.1) !important;
+  border-color: rgba(153, 153, 153, 0.2) !important;
+  font-family: "Manrope", serif !important;
+  font-size: 0.9rem !important;
+  color: var(--black) !important;
+}
+
+.custom-select__control:hover {
+  border-color: var(--grandma) !important;
+}
+
+.custom-select__control--is-focused {
+  border-color: var(--grandma) !important;
+  box-shadow: 0 0 0 1px var(--grandma) !important;
+}
+
+/* Menu (dropdown list) */
+.custom-select__menu {
+  background-color: transparent !important;
+  backdrop-filter: blur(15px) !important;
+  border-color: rgba(153, 153, 153, 0.2) !important;
+  border-radius: 0.6rem;
+  font-family: "Manrope", serif !important;
+  font-size: 0.9rem !important;
+  font-weight: 500 !important;
+  padding: 0.1rem 0.3rem;
+}
+
+/* Multi-value (selected items) */
+.custom-select__multi-value {
+  background-color: rgba(128, 128, 128, 0.2) !important;
+  font-family: "Manrope", serif !important;
+}
+
+/* Placeholder */
+.custom-select__placeholder {
+  color: #484848 !important;
+  font-family: "Manrope", serif !important;
+  font-size: 0.9rem !important;
+}
+
+/* Option (dropdown options) */
+.custom-select__option {
+  border-radius: 0.5rem;
+  color: var(--black) !important;
+}
+
+.custom-select__option:hover {
+  background-color: rgba(0, 0, 0, 0.1) !important;
+}
+
+.custom-select__option--is-focused {
+  background-color: rgba(0, 0, 0, 0.1) !important;
+}
+
+.custom-select__option--is-selected {
+  background-color: rgba(0, 0, 0, 0.3) !important;
+}
+
+/* Dropdown indicator (arrow) */
+.custom-select__dropdown-indicator {
+  color: rgba(0, 0, 0, 0.4) !important;
+}
+
+.custom-select__dropdown-indicator:hover {
+  color: var(--black) !important;
+}
+
+/* Indicator separator (vertical line) */
+.custom-select__indicator-separator {
+  background-color: rgba(0, 0, 0, 0.15) !important;
+}
+
+@media screen and (max-width: 900px) {
+  .custom-select__control {
+    font-size: 0.8rem !important;
+  }
+
+  /* Menu (dropdown list) */
+  .custom-select__menu {
+    border-radius: 0.5rem;
+    font-size: 0.8rem !important;
+    padding: 0.1rem 0.3rem;
+  }
+
+  /* Option (dropdown options) */
+  .custom-select__option {
+    border-radius: 0.4rem;
+  }
 }

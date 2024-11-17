@@ -23,7 +23,7 @@ export const cards = [
       "Enhancing Efficiency: Business Application for Supply Chain Optimization",
     description: `I used Figma to design a digital solution that addressed a client’s data experience challenges, focusing on optimizing their supply chain network. Over an eight-week period, I conducted extensive Data Experience (DX) research, which informed the design and prototyping of a business application aimed at streamlining and enhancing the efficiency of their operations.`,
     tools:
-      "Figma + DX Research + Data Viz Design + Product Design + UX/UI Design",
+      "Figma + Data Viz Design + Product Design + DX Research + UX/UI Design",
     toolsValues: [TOOLS.FIGMA.value],
     toolsLabels: [TOOLS.FIGMA.label],
     languagesValues: [],
@@ -117,7 +117,7 @@ export const cards = [
     title:
       "Visualizing Iris Species: A Comparative Analysis of Multiple Measures",
     description: `In this private project, I focused on visualizing the Iris Species dataset by utilizing scatterplot matrix and parallel coordinates charts to analyze key metrics. Although these visualizations are not typically used in business reporting, they are widely applied in statistical analysis for their ability to reveal complex patterns and relationships within the data.`,
-    tools: "HTML/CSS + JavaScript + d3.js + Data Viz Design + Data Analysis",
+    tools: "JavaScript + HTML/CSS + d3.js + Data Analysis + Data Viz Design",
     toolsValues: [],
     toolsLabels: [],
     languagesValues: [
@@ -170,7 +170,7 @@ export const cards = [
     description: `
     The capstone project, focused on preparing Cyclistic’s customer analysis, serves as the final assignment for the Google Business Intelligence Professional Certification, demonstrating the application of advanced BI skills in a real-world business context. This project not only reinforces technical expertise but also highlights the ability to derive actionable insights from data to support business decisions.`,
     tools:
-      "Tableau + Mapbox + SQL + Data Viz Design + Data Analysis + Data Modelling + Data Processing",
+      "SQL + Tableau + Mapbox + Data Modelling + Data Processing + Data Analysis + Data Viz Design",
     toolsValues: [TOOLS.TABLEAU.value, TOOLS.MAPBOX.value],
     toolsLabels: [TOOLS.TABLEAU.label, TOOLS.MAPBOX.label],
     languagesValues: [LANGUAGES.SQL.value],

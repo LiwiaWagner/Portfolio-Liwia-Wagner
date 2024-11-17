@@ -20,26 +20,25 @@ import "./filters.css";
 import "./home.css";
 
 const optionsExpertise = [
+  EXPERTISE.DATAMODELLING,
+  EXPERTISE.DATAPROCESSING,
+  EXPERTISE.DATAANALYSIS,
   EXPERTISE.DATAVIZDESIGN,
   EXPERTISE.DASHBOARDDESIGN,
   EXPERTISE.PRODUCTDESIGN,
   EXPERTISE.UXUIDESIGN,
   EXPERTISE.DXRESEARCH,
-  EXPERTISE.DATAANALYSIS,
-  EXPERTISE.DATAMODELLING,
-  EXPERTISE.DATAPROCESSING,
 ];
 
 const optionsLanguages = [
+  LANGUAGES.SQL,
   LANGUAGES.JAVASCRIPT,
   LANGUAGES.HTML,
-  LANGUAGES.CSS,
-  LANGUAGES.SQL,
   LANGUAGES.D3,
   LANGUAGES.REACT,
 ];
 
-const optionsTools = [TOOLS.FIGMA, TOOLS.TABLEAU, TOOLS.MAPBOX];
+const optionsTools = [TOOLS.TABLEAU, TOOLS.FIGMA, TOOLS.MAPBOX];
 
 const getConfig = (trigger, startColor, endColor) => {
   return {
@@ -183,7 +182,7 @@ const Home = () => {
           <h2 className="projects-title">ALL PROJECTS</h2>
         </div>
 
-        <h2 className="filter-section-title">Filter by</h2>
+        <h2 className="filter-section-title">Filter by:</h2>
 
         <div className="filter-section-container">
           <div className="filter-section">
@@ -193,6 +192,42 @@ const Home = () => {
                 options={optionsExpertise}
                 isMulti={true}
                 onChange={handleSelectChangeExpertise}
+                theme={(theme) => ({
+                  ...theme,
+                  borderRadius: "0.6rem",
+                })}
+                classNamePrefix="custom-select"
+                styles={{
+                  control: (base, state) => ({
+                    ...base,
+                    backgroundColor: "rgba(128, 128, 128, 0.1)",
+                    borderColor: state.isFocused
+                      ? "#999999"
+                      : "rgba(153, 153, 153, 0.2)",
+                    color: "black",
+                    fontFamily: "Manrope, serif",
+                    fontSize: "0.9rem",
+                    boxShadow: state.isFocused ? "0 0 0 1px #999999" : "none",
+                    "&:hover": {
+                      borderColor: "#999999",
+                    },
+                  }),
+                  menu: (base) => ({
+                    ...base,
+                    backgroundColor: "transparent",
+                    backdropFilter: "blur(15px)",
+                    borderRadius: "0.6rem",
+                  }),
+                  option: (base, state) => ({
+                    ...base,
+                    backgroundColor: state.isSelected
+                      ? "rgba(0, 0, 0, 0.3)"
+                      : state.isFocused
+                      ? "rgba(0, 0, 0, 0.1)"
+                      : "transparent",
+                    borderRadius: "0.5rem",
+                  }),
+                }}
               />
             </div>
           </div>
@@ -204,6 +239,42 @@ const Home = () => {
                 options={optionsLanguages}
                 isMulti={true}
                 onChange={handleSelectChangeLanguages}
+                theme={(theme) => ({
+                  ...theme,
+                  borderRadius: "0.6rem",
+                })}
+                classNamePrefix="custom-select"
+                styles={{
+                  control: (base, state) => ({
+                    ...base,
+                    backgroundColor: "rgba(128, 128, 128, 0.1)",
+                    borderColor: state.isFocused
+                      ? "#999999"
+                      : "rgba(153, 153, 153, 0.2)",
+                    color: "black",
+                    fontFamily: "Manrope, serif",
+                    fontSize: "0.9rem",
+                    boxShadow: state.isFocused ? "0 0 0 1px #999999" : "none",
+                    "&:hover": {
+                      borderColor: "#999999",
+                    },
+                  }),
+                  menu: (base) => ({
+                    ...base,
+                    backgroundColor: "transparent",
+                    backdropFilter: "blur(15px)",
+                    borderRadius: "0.6rem",
+                  }),
+                  option: (base, state) => ({
+                    ...base,
+                    backgroundColor: state.isSelected
+                      ? "rgba(0, 0, 0, 0.3)"
+                      : state.isFocused
+                      ? "rgba(0, 0, 0, 0.1)"
+                      : "transparent",
+                    borderRadius: "0.5rem",
+                  }),
+                }}
               />
             </div>
           </div>
@@ -215,6 +286,42 @@ const Home = () => {
                 options={optionsTools}
                 isMulti={true}
                 onChange={handleSelectChangeTool}
+                theme={(theme) => ({
+                  ...theme,
+                  borderRadius: "0.6rem",
+                })}
+                classNamePrefix="custom-select"
+                styles={{
+                  control: (base, state) => ({
+                    ...base,
+                    backgroundColor: "rgba(128, 128, 128, 0.1)",
+                    borderColor: state.isFocused
+                      ? "#999999"
+                      : "rgba(153, 153, 153, 0.2)",
+                    color: "black",
+                    fontFamily: "Manrope, serif",
+                    fontSize: "0.9rem",
+                    boxShadow: state.isFocused ? "0 0 0 1px #999999" : "none",
+                    "&:hover": {
+                      borderColor: "#999999",
+                    },
+                  }),
+                  menu: (base) => ({
+                    ...base,
+                    backgroundColor: "transparent",
+                    backdropFilter: "blur(15px)",
+                    borderRadius: "0.6rem",
+                  }),
+                  option: (base, state) => ({
+                    ...base,
+                    backgroundColor: state.isSelected
+                      ? "rgba(0, 0, 0, 0.3)"
+                      : state.isFocused
+                      ? "rgba(0, 0, 0, 0.1)"
+                      : "transparent",
+                    borderRadius: "0.5rem",
+                  }),
+                }}
               />
             </div>
           </div>
