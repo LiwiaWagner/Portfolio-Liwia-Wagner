@@ -2,7 +2,6 @@ import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/all";
 import React, { useState } from "react";
-import Select from "react-select";
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/scrollbar";
@@ -18,6 +17,7 @@ import { useScrollToHash } from "../../hooks/useScrollToHash";
 import "./carousel.css";
 import "./filters.css";
 import "./home.css";
+import { MultiSelect } from "../../components/multiSelect/MultiSelect";
 
 const optionsExpertise = [
   EXPERTISE.DATAMODELLING,
@@ -65,7 +65,7 @@ let prevColor = null;
 const Home = () => {
   useScrollToHash();
 
-  const [startColor, setStartColor] = useState("#E0D5DC");
+  const [startColor, setStartColor] = useState("#E7DDE3");
   const [expertise, setExpertise] = useState([]);
   const [languages, setLanguages] = useState([]);
   const [tools, setTools] = useState([]);
@@ -119,6 +119,7 @@ const Home = () => {
       "--background-color": startColor,
     });
 
+    // kolory backgroundu
     orderedCards.forEach((card) => {
       tl.to("body", getConfig(card.gsap.id, prevColor, card.gsap.toColor));
       prevColor = card.gsap.toColor;
@@ -188,46 +189,9 @@ const Home = () => {
           <div className="filter-section">
             <h5 className="filter-label">Expertise</h5>
             <div className="filters">
-              <Select
+              <MultiSelect
                 options={optionsExpertise}
-                isMulti={true}
                 onChange={handleSelectChangeExpertise}
-                theme={(theme) => ({
-                  ...theme,
-                  borderRadius: "0.6rem",
-                })}
-                classNamePrefix="custom-select"
-                styles={{
-                  control: (base, state) => ({
-                    ...base,
-                    backgroundColor: "rgba(128, 128, 128, 0.1)",
-                    borderColor: state.isFocused
-                      ? "#999999"
-                      : "rgba(153, 153, 153, 0.2)",
-                    color: "black",
-                    fontFamily: "Manrope, serif",
-                    fontSize: "0.9rem",
-                    boxShadow: state.isFocused ? "0 0 0 1px #999999" : "none",
-                    "&:hover": {
-                      borderColor: "#999999",
-                    },
-                  }),
-                  menu: (base) => ({
-                    ...base,
-                    backgroundColor: "transparent",
-                    backdropFilter: "blur(15px)",
-                    borderRadius: "0.6rem",
-                  }),
-                  option: (base, state) => ({
-                    ...base,
-                    backgroundColor: state.isSelected
-                      ? "rgba(0, 0, 0, 0.3)"
-                      : state.isFocused
-                      ? "rgba(0, 0, 0, 0.1)"
-                      : "transparent",
-                    borderRadius: "0.5rem",
-                  }),
-                }}
               />
             </div>
           </div>
@@ -235,46 +199,9 @@ const Home = () => {
           <div className="filter-section">
             <h5 className="filter-label">Programming Language</h5>
             <div className="filters">
-              <Select
+              <MultiSelect
                 options={optionsLanguages}
-                isMulti={true}
                 onChange={handleSelectChangeLanguages}
-                theme={(theme) => ({
-                  ...theme,
-                  borderRadius: "0.6rem",
-                })}
-                classNamePrefix="custom-select"
-                styles={{
-                  control: (base, state) => ({
-                    ...base,
-                    backgroundColor: "rgba(128, 128, 128, 0.1)",
-                    borderColor: state.isFocused
-                      ? "#999999"
-                      : "rgba(153, 153, 153, 0.2)",
-                    color: "black",
-                    fontFamily: "Manrope, serif",
-                    fontSize: "0.9rem",
-                    boxShadow: state.isFocused ? "0 0 0 1px #999999" : "none",
-                    "&:hover": {
-                      borderColor: "#999999",
-                    },
-                  }),
-                  menu: (base) => ({
-                    ...base,
-                    backgroundColor: "transparent",
-                    backdropFilter: "blur(15px)",
-                    borderRadius: "0.6rem",
-                  }),
-                  option: (base, state) => ({
-                    ...base,
-                    backgroundColor: state.isSelected
-                      ? "rgba(0, 0, 0, 0.3)"
-                      : state.isFocused
-                      ? "rgba(0, 0, 0, 0.1)"
-                      : "transparent",
-                    borderRadius: "0.5rem",
-                  }),
-                }}
               />
             </div>
           </div>
@@ -282,46 +209,9 @@ const Home = () => {
           <div className="filter-section">
             <h5 className="filter-label">Tool</h5>
             <div className="filters">
-              <Select
+              <MultiSelect
                 options={optionsTools}
-                isMulti={true}
                 onChange={handleSelectChangeTool}
-                theme={(theme) => ({
-                  ...theme,
-                  borderRadius: "0.6rem",
-                })}
-                classNamePrefix="custom-select"
-                styles={{
-                  control: (base, state) => ({
-                    ...base,
-                    backgroundColor: "rgba(128, 128, 128, 0.1)",
-                    borderColor: state.isFocused
-                      ? "#999999"
-                      : "rgba(153, 153, 153, 0.2)",
-                    color: "black",
-                    fontFamily: "Manrope, serif",
-                    fontSize: "0.9rem",
-                    boxShadow: state.isFocused ? "0 0 0 1px #999999" : "none",
-                    "&:hover": {
-                      borderColor: "#999999",
-                    },
-                  }),
-                  menu: (base) => ({
-                    ...base,
-                    backgroundColor: "transparent",
-                    backdropFilter: "blur(15px)",
-                    borderRadius: "0.6rem",
-                  }),
-                  option: (base, state) => ({
-                    ...base,
-                    backgroundColor: state.isSelected
-                      ? "rgba(0, 0, 0, 0.3)"
-                      : state.isFocused
-                      ? "rgba(0, 0, 0, 0.1)"
-                      : "transparent",
-                    borderRadius: "0.5rem",
-                  }),
-                }}
               />
             </div>
           </div>

@@ -69,6 +69,7 @@
 
 .code-highlight {
   border-radius: 0.7rem;
+  padding: 1rem 0.5rem !important;
 }
 
 .code-highlight pre {
