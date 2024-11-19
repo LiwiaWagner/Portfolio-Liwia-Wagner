@@ -65,7 +65,7 @@ let prevColor = null;
 const Home = () => {
   useScrollToHash();
 
-  const [startColor, setStartColor] = useState("#E7DDE3");
+  const [startColor, setStartColor] = useState("#E7DDE3"); // Initial background color
   const [expertise, setExpertise] = useState([]);
   const [languages, setLanguages] = useState([]);
   const [tools, setTools] = useState([]);
@@ -119,7 +119,7 @@ const Home = () => {
       "--background-color": startColor,
     });
 
-    // kolory backgroundu
+    // Background colors scroll
     orderedCards.forEach((card) => {
       tl.to("body", getConfig(card.gsap.id, prevColor, card.gsap.toColor));
       prevColor = card.gsap.toColor;

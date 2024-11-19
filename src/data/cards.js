@@ -16,7 +16,7 @@ export const cards = [
     htmlId: "one",
     gsap: {
       id: "#one",
-      toColor: "#E0D5DC",
+      toColor: "#E7DDE3",
     },
     order: 4,
     title:
@@ -62,7 +62,7 @@ export const cards = [
     htmlId: "two",
     gsap: {
       id: "#two",
-      toColor: "#D8D6E8",
+      toColor: "#E0DEED",
     },
     order: 1,
     title:
