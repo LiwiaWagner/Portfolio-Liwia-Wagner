@@ -177,8 +177,8 @@ const Home = () => {
           ))}
         </Swiper>
       </section>
-
-      <div id="view">
+      <div className="blank" id="view"></div>
+      <div>
         <div>
           <h2 className="projects-title">ALL PROJECTS</h2>
         </div>
