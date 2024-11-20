@@ -11,7 +11,7 @@ const Footer = () => {
     <div className="footer-container">
       <div className="footer-name">
         <LiaCopyrightSolid />{" "}
-        <strong className="footer-name-text">2024 Liwia Wagner</strong>
+        <strong className="footer-name-text">2025 Liwia Wagner</strong>
       </div>
       <div className="footer-icons">
         <a

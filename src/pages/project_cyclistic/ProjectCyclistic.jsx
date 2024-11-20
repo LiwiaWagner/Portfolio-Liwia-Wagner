@@ -395,15 +395,15 @@ export const ProjectCyclistic = () => {
         Google’s Six-Step Process of Processing Data
       </h1>
       <p className="project-content-intro-description">
-        The data was thoroughly cleaned and meticulously analyzed using SQL and
-        Tableau, adhering closely to Google's comprehensive six-step data
-        processing methodology, which includes the following stages: ask, where
-        key questions are identified to guide the analysis; prepare, which
-        involves gathering and organizing the necessary data; clean, ensuring
-        the data is free of errors and inconsistencies; analyze, where insights
-        are extracted through detailed examination; share, communicating the
-        findings in a clear and actionable format; and act, implementing
-        data-driven decisions based on the results of the analysis.
+        The data was thoroughly cleaned and meticulously analyzed using
+        PostgreSQL and Tableau, adhering closely to Google's comprehensive
+        six-step data processing methodology, which includes the following
+        stages: ask, where key questions are identified to guide the analysis;
+        prepare, which involves gathering and organizing the necessary data;
+        clean, ensuring the data is free of errors and inconsistencies; analyze,
+        where insights are extracted through detailed examination; share,
+        communicating the findings in a clear and actionable format; and act,
+        implementing data-driven decisions based on the results of the analysis.
       </p>
 
       <div className="project-container-sub-title-grid">
@@ -553,15 +553,15 @@ export const ProjectCyclistic = () => {
         </div>
       </div>
       <p className="project-content-description project-content-description-first project-content-description-code">
-        In this cleaning phase, the data was meticulously prepared to ensure
-        both accuracy and suitability for in-depth analysis. Having already
-        verified that the ride_id field was free of duplicates, I concentrated
-        on addressing NULL values within specific, high-priority fields. By
-        thoroughly reviewing these fields and removing rows containing NULL
-        values, I enhanced the dataset's completeness and reliability. This
-        careful cleaning process ensured that only high-quality, comprehensive
-        data remained, establishing a robust foundation for accurately analyzing
-        user behavior and bike usage patterns in the next phases.
+        In this cleaning phase, the data was prepared to ensure both accuracy
+        and suitability for in-depth analysis. Having already verified that the
+        ride_id field was free of duplicates, I concentrated on addressing NULL
+        values within specific, high-priority fields. By thoroughly reviewing
+        these fields and removing rows containing NULL values, I enhanced the
+        dataset's completeness and reliability. This careful cleaning process
+        ensured that only high-quality, comprehensive data remained,
+        establishing a robust foundation for accurately analyzing user behavior
+        and bike usage patterns in the next phases.
       </p>
 
       <div className="code-highlight-block">
@@ -620,7 +620,7 @@ export const ProjectCyclistic = () => {
         decisions for membership growth strategies.
       </p>
 
-      <p className="project-content-description project-content-description-code">
+      <p className="project-content-description">
         <b>Trip Duration:</b>
         this analysis measured the length of each ride in both minutes and
         hours, providing insights into the typical usage time for members and
@@ -689,7 +689,7 @@ export const ProjectCyclistic = () => {
         </SyntaxHighlighter>
       </div>
 
-      <p className="project-content-description">
+      <p className="project-content-description project-content-description-code">
         By concentrating on these elements, the analysis sought to produce
         actionable insights that would deepen Cyclistic’s understanding of rider
         behaviors and preferences. These findings are intended to support

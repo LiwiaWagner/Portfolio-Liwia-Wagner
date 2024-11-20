@@ -295,7 +295,12 @@
   }
 
   .code-highlight code {
-    font-size: 0.5rem;
+    font-size: 0.6rem;
+  }
+
+  .code-highlight {
+    border-radius: 0.7rem;
+    padding: 0.6rem 0.5rem !important;
   }
 
   .project-content-description {
@@ -321,10 +326,10 @@
   }
 
   .project-content-sub-sub-title {
-    font-size: 0.9rem;
+    font-size: 1rem;
     font-weight: 600;
     letter-spacing: 0.1rem;
-    padding: 0.8rem 0 0.2rem 0;
+    padding: 0.8rem 0 0.4rem 0;
   }
 
   .dashboard-res-note {

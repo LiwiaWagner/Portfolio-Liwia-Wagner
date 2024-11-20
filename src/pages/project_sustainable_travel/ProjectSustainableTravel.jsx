@@ -646,11 +646,11 @@ export const ProjectSustainableTravel = () => {
       </div>
       <p className="project-content-description project-content-description-first project-content-description-code">
         First, I created a database to store the data. This database includes
-        travel records from 2023 and 2024, sourced from both Egencia and
-        Netsuite. Annual carbon budgets are incorporated by business unit and
-        sub-unit, enabling precise emissions tracking. To support map-based
-        visualization of flight routes, I joined an additional table containing
-        latitude and longitude coordinates with the travel data.
+        travel records from 2023 and 2024, sourced from both Egencia and Oracle
+        Netsuite systems. Annual carbon budgets are incorporated by business
+        unit and sub-unit, enabling precise emissions tracking. To support
+        map-based visualization of flight routes, I joined an additional table
+        containing latitude and longitude coordinates with the travel data.
       </p>
       <div className="code-highlight-block">
         <SyntaxHighlighter
@@ -676,12 +676,13 @@ export const ProjectSustainableTravel = () => {
         the underlying query is complex, the view may lead to slower response
         times compared to a table, since it must reprocess the query each time
         it’s accessed. To overcome this limitation while still retaining the
-        benefits mentioned earlier—namely, avoiding unnecessary physical storage
-        use and keeping data up-to-date—I’ll use a materialized view. With a
-        materialized view, the data is stored physically, which significantly
-        boosts performance by allowing faster access without re-querying the
-        source tables each time. This approach combines the efficiency of a
-        traditional table with the flexibility of a view.
+        benefits mentioned earlier I’ll use a materialized view.
+      </p>
+      <p className="project-content-description">
+        With a materialized view, the data is stored physically, which
+        significantly boosts performance by allowing faster access without
+        re-querying the source tables each time. This approach combines the
+        efficiency of a traditional table with the flexibility of a view.
       </p>
       <div className="code-highlight-block">
         <SyntaxHighlighter
@@ -741,12 +742,14 @@ export const ProjectSustainableTravel = () => {
         Next, I’m performing thorough data quality checks on the IDs to ensure
         their consistency and accuracy. This includes verifying that the length
         of each ID is consistent with the expected format, as well as checking
-        for any duplicates within the dataset. These checks help ensure that
-        each record is unique and properly formatted, which is essential for
-        maintaining the integrity of the data and preventing potential errors
-        during analysis or reporting. By identifying and addressing any issues
-        with the IDs early on, I can ensure a cleaner, more reliable dataset for
-        subsequent analysis.
+        for any duplicates within the dataset.
+      </p>
+      <p className="project-content-description">
+        These checks help ensure that each record is unique and properly
+        formatted, which is essential for maintaining the integrity of the data
+        and preventing potential errors during analysis or reporting. By
+        identifying and addressing any issues with the IDs early on, I can
+        ensure a cleaner, more reliable dataset for subsequent analysis.
       </p>
       <div className="code-highlight-block">
         <SyntaxHighlighter
@@ -806,7 +809,7 @@ export const ProjectSustainableTravel = () => {
         fields, so I will begin the cleaning phase by removing these records to
         ensure data accuracy. Additionally, there are 138 null values in the
         "reason for travel" field. These nulls are expected, as this data is not
-        provided in the Netsuite system.
+        provided in the Oracle Netsuite system.
       </p>
       <div className="code-highlight-block">
         <SyntaxHighlighter
@@ -877,10 +880,10 @@ export const ProjectSustainableTravel = () => {
         breakdown to understand how emissions vary throughout the year.
       </p>
 
-      <p className="project-content-description project-content-description-code">
+      <p className="project-content-description">
         <b>Yearly CO₂ Emissions vs. Budget Spend:</b> The analysis of yearly CO₂
         emissions versus the budget focused on determining the percentage of the
-        budget used for emissions. This allowed us to assess how closely the
+        budget used for emissions. This allowed to assess how closely the
         emissions aligned with the allocated budget. To gain deeper insights, I
         added a breakdown by flight type to identify if any specific flight
         categories (e.g., domestic, international, long-haul) were
@@ -925,7 +928,7 @@ export const ProjectSustainableTravel = () => {
       </div>
 
       <p className="project-content-description project-content-description-code">
-        <b>Top 10 Travelers by CO₂ Emissions:</b>
+        <b>Top 10 Travellers by CO₂ Emissions:</b>
         This analysis identifies the top 10 employees who generate the highest
         carbon emissions. By adding information on the reason for travel, as
         well as the associated business and sub-business units, it becomes
@@ -1070,7 +1073,7 @@ export const ProjectSustainableTravel = () => {
         </SyntaxHighlighter>
       </div>
 
-      <p className="project-content-description">
+      <p className="project-content-description project-content-description-code">
         By focusing on these elements, the analysis aimed to generate actionable
         insights that enhance the understanding of carbon emissions within the
         company. It provided a clearer picture of emission patterns, enabling

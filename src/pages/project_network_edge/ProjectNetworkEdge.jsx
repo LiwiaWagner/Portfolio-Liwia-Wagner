@@ -35,67 +35,140 @@ export const ProjectNetworkEdge = () => {
       </div>
       <div className="project-content-container">
         <p className="project-ne-content-description">
-          I conducted six in-depth interviews with business users. Research
-          questions were framed around{" "}
-          <b>Data Experience (DX) Design Pillars</b> i.e. purpose, information
-          architecture, data presentation, visual hierarchy, interactivity, and
-          context.
+          I conducted in-depth interviews with business users to gather detailed
+          insights into their needs and preferences. The research questions for
+          these interviews were carefully structured around
+          <b> The Data Experience (DX) Six Design Pillars</b> i.e. purpose,
+          information architecture, data presentation, visual hierarchy,
+          interactivity, and context.
         </p>
-        <h4 className="project-content-sub-sub-title">PURPOSE</h4>
         <p className="project-ne-content-description">
-          Are you able to answer your key business questions or complete
-          analytical tasks with the current design? Are the outcomes actionable
-          or related to a specific decision or job task?
+          These pillars served as a framework to explore how users interact with
+          data and what design elements contribute to a better user experience.
+          For each pillar, I designed specific questions to uncover pain points,
+          usability challenges, and opportunities for improvement. This approach
+          ensured a comprehensive understanding of user requirements and guided
+          the development of solutions tailored to their needs.
+        </p>
+
+        <h4 className="project-content-sub-sub-title">01 PURPOSE</h4>
+        <p className="project-ne-content-description">
+          <ul>
+            <li> What primary goals do you hope to achieve with this data?</li>
+            <li>
+              Are you able to answer your key business questions or complete
+              analytical tasks with the current design?
+            </li>
+            <li>
+              Are the outcomes actionable or related to a specific decision or
+              job task?
+            </li>
+          </ul>
         </p>
         <h4 className="project-content-sub-sub-title">
-          INFORMATION ARCHITECTURE
+          02 INFORMATION ARCHITECTURE
         </h4>
         <p className="project-ne-content-description">
-          Information flow: what steps do you need to take to answer the key
-          questions or complete analytical tasks? Does navigation provide you
-          the flexibility to move between different levels of overview, and
-          zoom, in a way that fits well with your analytical flow? Can you
-          easily understand where you are, and what information is and isn’t
-          available? Can you easily scan the page and locate information
-          elements?
+          <ul>
+            <li>
+              Are there any difficulties in locating the information you need?
+            </li>
+            <li>
+              What steps do you need to take to answer the key questions or
+              complete analytical tasks?
+            </li>
+            <li>
+              Does navigation provide you the flexibility to move between
+              different levels of overview, and zoom, in a way that fits well
+              with your analytical flow?
+            </li>
+            <li>
+              Can you easily understand where you are, and what information is
+              and isn’t available?
+            </li>
+            <li>
+              Can you easily scan the page and locate information elements?
+            </li>
+          </ul>
         </p>
-        <h4 className="project-content-sub-sub-title">DATA PRESENTATION</h4>
+        <h4 className="project-content-sub-sub-title">03 DATA PRESENTATION</h4>
         <p className="project-nee-content-description">
-          What are the strengths and weaknesses of visual encoding in answering
-          the key questions? Is any unnecessary visual detail included that
-          competes for attention without adding significant value? How are new
-          users supported in understanding how to decode the data
-          representation?
+          <ul>
+            <li>
+              What are the strengths and weaknesses of visual encoding in
+              answering the key questions?
+            </li>
+            <li>
+              Is any unnecessary visual detail included that competes for
+              attention without adding significant value?
+            </li>
+            <li>
+              How are new users supported in understanding how to decode the
+              data representation?
+            </li>
+          </ul>
         </p>
-        <h4 className="project-content-sub-sub-title">VISUAL HIERARCHY</h4>
+        <h4 className="project-content-sub-sub-title">04 VISUAL HIERARCHY</h4>
         <p className="project-ne-content-description">
-          Is the relative importance of each text element visually clear? Which
-          sections, charts, or other elements of the viz draw your attention
-          most and least? Do these correspond to the elements of the viz that
-          should draw your most or least attention? Are there any elements that
-          could be de-emphasized to reduce visual clutter?
+          <ul>
+            <li>Can you quickly identify the most important information?</li>
+            <li>Do you find any areas visually overwhelming or unclear?</li>
+            <li>
+              Which sections, charts, or other elements of the viz draw your
+              attention most and least? Do these correspond to the elements of
+              the viz that should draw your most or least attention?
+            </li>
+            <li>
+              Are there any elements that could be de-emphasized to reduce
+              visual clutter?
+            </li>
+          </ul>
         </p>
-        <h4 className="project-content-sub-sub-title">INTERACTIVITY</h4>
+        <h4 className="project-content-sub-sub-title">05 INTERACTIVITY</h4>
         <p className="project-ne-content-description">
-          Can you easily discover and understand what interactive functionality
-          and options are available? What are the strengths and weaknesses of
-          the available interactive features? Are selections or other actions
-          easy for you to reverse?
+          <ul>
+            <li>
+              Can you easily discover and understand what interactive
+              functionality and options are available?
+            </li>
+            <li>
+              Are the interactive elements (e.g., filters, drill-downs) easy to
+              use?
+            </li>
+            <li>
+              What are the strengths and weaknesses of the available interactive
+              features?
+            </li>
+            <li>Are selections or other actions easy for you to reverse?</li>
+          </ul>
         </p>
-        <h4 className="project-content-sub-sub-title">CONTEXT</h4>
+        <h4 className="project-content-sub-sub-title">06 CONTEXT</h4>
         <p className="project-ne-content-description">
-          Is there meaningful context provided for accurate comparisons? For
-          understanding scale & magnitude? For understanding complex KPIs or
-          underlying business logic?
+          <ul>
+            <li>
+              Is there meaningful context provided for accurate comparisons? For
+              understanding scale & magnitude? For understanding complex KPIs or
+              underlying business logic?
+            </li>
+            <li>
+              Does the data provide sufficient context to understand its
+              significance?
+            </li>
+            <li>
+              Are there additional details or explanations you’d like to see
+              included?
+            </li>
+          </ul>
         </p>
         <p className="project-content-description">
-          Based on the research findings I prepared insights which indicated
-          problematic areas within user experience, data experience and overall
-          communication with users. To each insight I provided recommendations
-          and how those would translate into both, product design and data
-          design. Once I reviewed the recommendations together with product
-          owner I moved to the next step which was preparation of low fidelity
-          mock-up.
+          Based on the research findings, I compiled insights highlighting key
+          problem areas in user experience, data experience, and overall
+          communication with users. For each insight, I provided actionable
+          recommendations, detailing how these could be translated into both
+          product design and data design improvements. After reviewing these
+          recommendations with the product owner to ensure alignment with
+          project goals, I proceeded to the next step: creating a low-fidelity
+          mockup to visualize and implement the proposed solutions.
         </p>
       </div>
       <div className="project-container-sub-title-grid">
@@ -105,11 +178,23 @@ export const ProjectNetworkEdge = () => {
         </div>
       </div>
       <p className="project-content-description">
-        I prepared the low-fidelity interactive prototype using Figma. The main
-        goal was to translate user needs and frustrations uncovered during the
-        research phase to the data design that addresses and resolve them. I did
-        few iterations of the prototyping with product owner before moving to
-        the next step of usability testing.
+        I created a low-fidelity prototype using Figma, focusing on translating
+        the user needs and frustrations identified during the research phase
+        into a design that effectively addresses and resolves these issues. This
+        prototype served as an early-stage visualization of the data experience,
+        allowing stakeholders to see how user feedback was being incorporated.
+        My primary goal was to ensure the design aligned with user expectations
+        while addressing pain points uncovered during interviews.
+      </p>
+      <p className="project-content-description">
+        To refine the prototype, I collaborated closely with the product owner,
+        conducting several iterations to improve the design based on their input
+        and ensuring it met both user and business requirements. These iterative
+        sessions allowed us to identify potential areas of improvement early,
+        saving time and effort in later stages. Once we reached a version that
+        balanced user needs and project goals, we proceeded to the next phase of
+        usability testing to validate the prototype's effectiveness and gather
+        further feedback for fine-tuning the final design.
       </p>
       <div className="project-container-sub-title-grid">
         <div className="project-container-sub-title">
@@ -119,13 +204,30 @@ export const ProjectNetworkEdge = () => {
       </div>
 
       <p className="project-content-description">
-        I conducted usability testing with two user groups: those already
-        familiar with the product and well-versed in the data, and those who had
-        never used the product before and had no understanding of the data. I
-        measured how long it took each group to find the requested information
-        and whether there were any significant differences in their speed. The
-        final design decision was based on which data visualization helped users
-        retrieve the required information more efficiently.
+        I conducted usability testing with two distinct user groups to evaluate
+        the effectiveness of the design and ensure it met the needs of both
+        experienced and new users. The first group consisted of users who were
+        already familiar with the product and had a strong understanding of the
+        data, while the second group included individuals who had never used the
+        product and had no prior exposure to the data. This division allowed me
+        to assess the design's usability from multiple perspectives, ensuring it
+        could accommodate both seasoned users and newcomers.
+      </p>
+      <p className="project-content-description">
+        During the testing, I measured how long it took each group to locate
+        specific pieces of information within the design and noted any
+        significant differences in their speed and accuracy. Additionally, I
+        observed their interactions to identify any areas of confusion or
+        inefficiency. Feedback from both groups provided valuable insights into
+        how intuitive the design was and whether the data visualizations were
+        accessible to users with varying levels of familiarity.
+      </p>
+      <p className="project-content-description">
+        The final design decision was informed by these findings, prioritizing
+        the data visualization methods that enabled all users to retrieve the
+        required information more quickly and effectively. This approach ensured
+        the design was user-friendly and inclusive, supporting a seamless
+        experience for diverse audiences.
       </p>
 
       <div className="project-container-sub-title-grid">
@@ -136,12 +238,36 @@ export const ProjectNetworkEdge = () => {
       </div>
 
       <p className="project-content-description">
-        In the final phase, I created the application's design using Figma. My
-        focus at this stage was primarily on the visual aspects, including
-        selecting typography, colors, and contrast to guide user attention. I
-        ensured that all elements were properly scaled and aligned, maintained
-        the right amount of white space, and used visual hierarchy to reflect
-        the user's information flow.
+        In the final phase, I designed the application's interface using Figma,
+        focusing on creating a visually appealing and user-friendly experience.
+        This stage involved carefully selecting typography, colors, and contrast
+        to effectively guide user attention and enhance readability. I ensured
+        that each element was properly scaled and aligned to maintain a clean
+        and professional layout, paying close attention to detail to achieve a
+        cohesive design.
+      </p>
+      <p className="project-content-description">
+        Additionally, I emphasized the importance of white space, balancing the
+        visual elements to avoid clutter and make the interface intuitive and
+        easy to navigate. By applying principles of visual hierarchy, I
+        structured the design to reflect the natural flow of information,
+        directing users seamlessly through their tasks and helping them
+        prioritize key data. This approach ensured the application’s design was
+        not only aesthetically pleasing but also functionally optimized to meet
+        user needs.
+      </p>
+      <div className="content-separator"></div>
+      <p className="project-content-description">
+        The final design, along with the research findings, was presented to the
+        product owner and leadership team for their review and evaluation.
+        During this presentation, I highlighted key insights and design
+        decisions, providing a comprehensive overview of the user experience
+        improvements and data visualizations. The leadership team and product
+        owner assessed the proposed solutions to determine their alignment with
+        business goals and user needs. Based on this evaluation, they began
+        planning the next steps for implementing the development phase, ensuring
+        that the design was ready for execution and integration into the product
+        roadmap.
       </p>
     </div>
   );

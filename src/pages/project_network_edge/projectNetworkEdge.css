@@ -54,6 +54,11 @@
   color: var(--font-color-project-id1);
 }
 
+.content-separator {
+  grid-column: 3 / 11;
+  height: 2rem;
+}
+
 @media screen and (max-width: 900px) {
   .project-network-edge-intro .project-img {
     grid-column: 1 / 7;
@@ -62,6 +67,11 @@
 
   .project-img {
     padding: 2rem 3rem;
+  }
+
+  .content-separator {
+    grid-column: 1 / 7;
+    height: 0;
   }
 }
 
@@ -81,5 +91,10 @@
 
   .project-ne-content-description {
     padding: 0 0 0.8rem 0;
+  }
+
+  .content-separator {
+    grid-column: 1 / 6;
+    height: 1rem;
   }
 }

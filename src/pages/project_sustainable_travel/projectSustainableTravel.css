@@ -38,10 +38,6 @@
     grid-column: 1 / 7;
   }
 
-  .project-content-main-title {
-    grid-column: 1 / 5;
-  }
-
   .dashboard-img {
     grid-column: 3 / 7;
     width: 100%;

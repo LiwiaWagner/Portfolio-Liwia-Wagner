@@ -72,7 +72,7 @@ img {
 
 .article-sub-title {
   font-size: 1.1rem;
-  font-weight: 500;
+  font-weight: 600;
   padding: 0 0 0.5rem 0;
 }
 
@@ -207,7 +207,6 @@ img {
   }
 
   /* ---Main article */
-
   .article-main {
     grid-column: 1 / 6;
     margin: 2rem 0 0 0;
@@ -235,7 +234,7 @@ img {
   .article-main-p-1 {
     grid-column-start: 1 / 6;
     grid-row-start: 2;
-    padding: 0 0 1.5rem 0;
+    padding: 0 0 0.9rem 0;
     font-size: 0.9rem;
     line-height: 1.5rem;
     color: var(--black);
@@ -251,16 +250,17 @@ img {
   .article-main-bottom {
     grid-column: 1 / 6;
     grid-row-start: 2;
+    padding: 0 0 0.4rem 0;
   }
 
   .article-main-bottom p {
     font-size: 0.9rem;
     line-height: 1.5rem;
     color: var(--black);
+    padding: 0;
   }
 
   /* ---Picture*/
-
   .img-container {
     grid-column: 1 / 6;
     grid-row: 3 / 4;
@@ -272,10 +272,10 @@ img {
   }
 
   /* ---Bottom section */
-
   .article-sub-title {
     font-size: 1.15rem;
     font-weight: 500;
+    padding: 0 0 0.2rem 0;
   }
 
   .article-skills {
@@ -286,12 +286,23 @@ img {
     padding: 0.9rem 0 0 0;
   }
 
+  .article-skills p {
+    font-size: 0.875rem;
+    font-weight: 500;
+    letter-spacing: 0.04rem;
+    padding: 0 0 0.5rem 0;
+  }
+
   .article-tools {
     grid-column: 1 / 6;
     grid-row-start: 5;
     font-size: 0.9rem;
     line-height: 1.5rem;
-    padding: 0 0 0.9rem 0;
+    padding: 0;
+  }
+
+  .article-tools p {
+    padding: 0 0 0.5rem 0;
   }
 
   .article-social {
@@ -299,6 +310,6 @@ img {
     grid-row-start: 6;
     font-size: 0.9rem;
     line-height: 1.5rem;
-    padding: 0 0 0.9rem 0;
+    padding: 0;
   }
 }
