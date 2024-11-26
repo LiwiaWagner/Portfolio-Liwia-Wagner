@@ -10,7 +10,9 @@ function ProjectIntro(props) {
           {projectIntro.introType.map((intro, index) => {
             return (
               <div key={index}>
-                <h3 className="intro-sub-title">{intro.title}</h3>
+                {Boolean(intro.title) && (
+                  <h3 className="intro-sub-title">{intro.title}</h3>
+                )}
                 <p className="intro-description">{intro.paragraph}</p>
               </div>
             );

@@ -120,7 +120,16 @@ const Home = () => {
     });
 
     // Background colors scroll
-    orderedCards.forEach((card) => {
+    orderedCards.forEach((card, index) => {
+      if (index === 0) {
+        tl.to(
+          "body",
+          getConfig("#projects-title", prevColor, card.gsap.toColor)
+        );
+        prevColor = card.gsap.toColor;
+        return;
+      }
+
       tl.to("body", getConfig(card.gsap.id, prevColor, card.gsap.toColor));
       prevColor = card.gsap.toColor;
     });
@@ -180,7 +189,9 @@ const Home = () => {
       <div className="blank" id="view"></div>
       <div>
         <div>
-          <h2 className="projects-title">ALL PROJECTS</h2>
+          <h2 className="projects-title" id="projects-title">
+            ALL PROJECTS
+          </h2>
         </div>
 
         <h2 className="filter-section-title">Filter by:</h2>
