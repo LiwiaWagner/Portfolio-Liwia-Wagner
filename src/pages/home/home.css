@@ -296,16 +296,16 @@
   }
 
   .filter-section-container {
+    flex-direction: column;
     margin: 0 1.25rem 1rem 1.25rem;
   }
 
   .filter-label {
     font-size: 0.8rem;
-    /* font-weight: 400; */
     padding: 0 0 0.5rem 0;
   }
 
   .filters {
-    width: 16rem;
+    width: 100%;
   }
 }
