@@ -43,7 +43,7 @@
 }
 
 .card-tools {
-  font-family: "Spline Sans Mono", monospace;
+  font-family: "Manrope", sans-serif;
   font-size: 0.8rem;
   font-weight: 600;
   line-height: 1.2rem;
@@ -192,9 +192,9 @@
   }
 
   .card-tools {
-    font-size: 0.7rem;
+    font-size: 0.8rem;
     font-weight: 400;
-    line-height: 1rem;
+    line-height: 1.3rem;
     padding: 0 0 0.8rem 0;
   }
 }
