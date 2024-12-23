@@ -169,8 +169,8 @@
   .card-container-img-mobile {
     display: block;
     width: 100%;
-    min-height: 12.5rem;
-    max-height: 12.5rem;
+    min-height: 11.5rem;
+    max-height: 11.5rem;
     border-radius: 0.6rem 0 0.6rem 0;
     background-repeat: no-repeat;
     background-size: cover;
@@ -185,7 +185,7 @@
   /* ---Card text */
   .card-title {
     font-size: 1.15rem;
-    font-weight: 500;
+    font-weight: 600;
     letter-spacing: 0.03rem;
     line-height: 1.45rem;
     padding: 0 0 1rem 0;
