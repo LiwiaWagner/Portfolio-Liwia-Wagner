@@ -107,18 +107,21 @@
   --bc-project-id2: #b2add2;
   --bc-project-id3: #cfcbe3;
   --bc-project-id4: #a9bcc2;
+  --bc-project-id5: #d1d5db;
 
   /* - background lighter colors */
   --bc-light-project-id1: #e7dde3;
   --bc-light-project-id2: #e0deed;
   --bc-light-project-id3: #efeef8;
   --bc-light-project-id4: #e9eef0;
+  --bc-light-project-id5: #f3f4f6;
 
   /* - buttons colors */
   --btn-project-id1: #4d3b46;
   --btn-project-id2: #3e328e;
   --btn-project-id3: #6155bd;
   --btn-project-id4: #285766;
+  --btn-project-id5: #1f2937;
 
   /* - font colors */
   --font-color-project-id1: #4d3b46;

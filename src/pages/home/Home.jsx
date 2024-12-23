@@ -32,13 +32,21 @@ const optionsExpertise = [
 
 const optionsLanguages = [
   LANGUAGES.SQL,
+  LANGUAGES.TYPESCRIPT,
   LANGUAGES.JAVASCRIPT,
-  LANGUAGES.HTML,
-  LANGUAGES.D3,
+  LANGUAGES.HTMLCSS,
+  LANGUAGES.NEXT,
   LANGUAGES.REACT,
+  LANGUAGES.D3,
 ];
 
-const optionsTools = [TOOLS.TABLEAU, TOOLS.FIGMA, TOOLS.MAPBOX];
+const optionsTools = [
+  TOOLS.TABLEAU,
+  TOOLS.FIGMA,
+  TOOLS.MAPBOX,
+  TOOLS.TAILWIND,
+  TOOLS.TREMOR,
+];
 
 const getConfig = (trigger, startColor, endColor) => {
   return {
@@ -70,7 +78,7 @@ const Home = () => {
   const [languages, setLanguages] = useState([]);
   const [tools, setTools] = useState([]);
 
-  const topCards = [getCardById(2), getCardById(1), getCardById(3)];
+  const topCards = [getCardById(2), getCardById(1), getCardById(5)];
   const orderedCards = [...cards]
     .sort((a, b) => a.order - b.order)
     .filter((card) => {
