@@ -50,8 +50,8 @@ const About = () => {
       <article className="article-tools">
         <h6 className="article-sub-title">TOOLS & LANGUAGES</h6>
         <p>
-          Tableau + Figma + Mapbox + SQL + JavaScript + HTML/CSS + d3.js +
-          React.js
+          SQL + TypeScript + JavaScript + HTML/CSS + Next.js + React.js + d3.js
+          + Tableau + Figma + Mapbox + Tailwind + Tremor
         </p>
       </article>
       <article className="article-social">
