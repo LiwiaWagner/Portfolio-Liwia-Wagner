@@ -233,14 +233,14 @@
 
   .top-projects-container .card-title {
     font-size: 1rem;
-    font-weight: 500;
+    font-weight: 600;
     letter-spacing: 0;
     line-height: 1.45rem;
     padding: 0 0 0.6rem 0;
   }
 
   .top-projects-container .card-tools {
-    font-size: 0.6rem;
+    font-size: 0.7rem;
     font-weight: 400;
     line-height: 1rem;
     padding: 0 0 0.8rem 0;
@@ -273,6 +273,10 @@
     padding: 0 1.25rem 0 0;
     min-height: 7rem;
     max-height: 7rem;
+  }
+
+  .blank {
+    height: 2rem;
   }
 
   .top-projects-container .card-container-img-mobile {
