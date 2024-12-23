@@ -136,7 +136,7 @@ cte_cities AS (
     d.city_long AS departure_city_long,
     -- Added window functions to avoid Level of Detail 
     -- calculations on Tableau side, as they have negative
-    -- negative impact on the response time 
+    -- impact on the response time 
     SUM(t.co2_emission) OVER(PARTITION BY t.sub_business_unit, t.travel_year) 
       AS sum_co2_subbu,
     SUM(t.co2_emission) OVER(PARTITION BY t.business_unit, t.travel_year) 
