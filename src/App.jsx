@@ -1,5 +1,5 @@
-import React from "react";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import React, { useEffect } from "react";
+import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
 import Navbar from "./UI/navbar/Navbar.jsx";
 import Footer from "./UI/footer/Footer.jsx";
 import Home from "./pages/home/Home.jsx";
@@ -9,9 +9,20 @@ import { ProjectSustainableTravel } from "./pages/project_sustainable_travel/Pro
 import { ProjectIris } from "./pages/project_iris/ProjectIris.jsx";
 import { ProjectCyclistic } from "./pages/project_cyclistic/ProjectCyclistic.jsx";
 
+const ScrollToTopRouter = () => {
+  const location = useLocation();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [location.pathname]);
+
+  return null;
+};
+
 const App = () => {
   return (
     <BrowserRouter>
+      <ScrollToTopRouter />
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
