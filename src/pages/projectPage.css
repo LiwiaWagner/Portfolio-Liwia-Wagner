@@ -238,7 +238,7 @@
 @media screen and (max-width: 430px) {
   .project-main-container {
     gap: 0.9rem;
-    padding: 0 0.9rem;
+    padding: 0 1.25rem;
     grid-template-columns: repeat(5, 1fr);
   }
 
