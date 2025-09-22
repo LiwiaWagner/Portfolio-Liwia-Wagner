@@ -244,7 +244,8 @@ export const cards = [
     btn: {
       text: "GO TO DATA APPLICATION",
       color: "var(--btn-project-id5)",
-      refLink: "https://observablehq.com/d/40e11c389ce691ef",
+      refLink:
+        "https://nike-corporate-finance-data-app.vercel.app/income-statement/executive-summary",
     },
     images: {
       desktop: {
